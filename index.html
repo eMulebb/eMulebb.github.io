@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="eMule broadband edition is classic eMule, broadband-ready, with REST automation."
+    >
+    <title>eMule broadband edition</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="eMule broadband edition home">
+        <img src="assets/emule-logo.jpg" alt="" width="48" height="48">
+        <span>
+          <strong>eMule broadband edition</strong>
+          <small>code name emulebb</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#automation">Automation</a>
+        <a href="#repos">Repositories</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Classic eMule. Broadband-ready.</p>
+          <h1>eMule broadband edition</h1>
+          <p class="lead">
+            A power-user eMule for modern Windows, fast connections, large file
+            libraries, and local automation while keeping the stock eD2K/Kad
+            protocol.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/eMulebb/eMule">View source</a>
+            <a class="button secondary" href="https://github.com/eMulebb">GitHub organization</a>
+          </div>
+        </div>
+        <figure class="hero-visual" aria-label="eMule broadband edition product signal">
+          <img src="assets/emule-logo.jpg" alt="eMule logo">
+          <figcaption>
+            Built around compatibility, high-speed sharing, and release-grade testing.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="intro">
+        <p>
+          eMule broadband edition, code name <strong>emulebb</strong>, carries the
+          classic eMule desktop workflow forward as its own product. It focuses on
+          stock eD2K/Kad interoperability, safer long-running operation, broadband
+          upload behavior, controller integration, and a reproducible public release
+          process.
+        </p>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Built for current machines</p>
+          <h2>What eMule broadband edition focuses on</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>Broadband sharing</h3>
+            <p>
+              Bounded upload slot behavior, better queue control, weak-slot
+              recycling, and defaults that make sense for fast links.
+            </p>
+          </article>
+          <article>
+            <h3>Large file libraries</h3>
+            <p>
+              Safer shared-file handling, recursive share sync, startup cache
+              work, long-path support, stable sorting, and large collection
+              responsiveness. Linux ISOs included.
+            </p>
+          </article>
+          <article>
+            <h3>Safer operation</h3>
+            <p>
+              Persistence hardening, cleaner shutdown behavior, stale UI pointer
+              fixes, tighter WebServer validation, and fewer silent failure paths.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="automation" class="section split">
+        <div>
+          <p class="eyebrow">Local control surface</p>
+          <h2>REST automation without giving up the desktop app</h2>
+        </div>
+        <p>
+          eMule broadband edition exposes an authenticated JSON REST API through
+          the existing WebServer surface for trusted local controllers. The release
+          track includes transfer, search, server, Kad, status, and controller
+          integration work for modern workflows such as aMuTorrent and Arr-driven
+          automation.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Release discipline</p>
+          <h2>Proven before release</h2>
+        </div>
+        <div class="proof-list">
+          <span>Native tests</span>
+          <span>Python harnesses</span>
+          <span>REST smoke coverage</span>
+          <span>UI automation</span>
+          <span>Live eD2K/Kad scenarios</span>
+          <span>Arr integration checks</span>
+        </div>
+      </section>
+
+      <section id="repos" class="section repos">
+        <div class="section-heading">
+          <p class="eyebrow">Public workspace</p>
+          <h2>Primary repositories</h2>
+        </div>
+        <div class="repo-list">
+          <a href="https://github.com/eMulebb/eMule">
+            <strong>eMule</strong>
+            <span>desktop app and product source</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMulebb-setup">
+            <strong>eMulebb-setup</strong>
+            <span>reproducible workspace setup</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMule-build">
+            <strong>eMule-build</strong>
+            <span>build, validation, and release orchestration</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMule-build-tests">
+            <strong>eMule-build-tests</strong>
+            <span>native, Python, UI, REST, and live E2E tests</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMule-tooling">
+            <strong>eMule-tooling</strong>
+            <span>roadmap, backlog, audits, and reference docs</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>eMule broadband edition</span>
+      <a href="https://github.com/eMulebb">github.com/eMulebb</a>
+    </footer>
+  </body>
+</html>
+
