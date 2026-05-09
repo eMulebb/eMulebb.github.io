@@ -5,147 +5,262 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="eMule broadband edition is classic eMule, broadband-ready, with REST automation."
+      content="eMule broadband edition is eMule BB: a modern power-user eMule for broadband sharing, large libraries, REST automation, and stock eD2K/Kad compatibility."
     >
-    <title>eMule broadband edition</title>
+    <title>eMule broadband edition | eMule BB</title>
+    <link rel="preload" href="assets/emule-logo.jpg" as="image">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="eMule broadband edition home">
+        <img src="assets/emule-logo.jpg" alt="" width="44" height="44">
         <span>
           <strong>eMule broadband edition</strong>
-          <small>code name emulebb</small>
+          <small>eMule BB</small>
         </span>
       </a>
       <nav aria-label="Primary navigation">
         <a href="#features">Features</a>
+        <a href="#guide">Guide</a>
         <a href="#automation">Automation</a>
-        <a href="#team">Team</a>
-        <a href="#repos">Repositories</a>
+        <a href="#release">Release</a>
+        <a href="#repos">Repos</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Classic eMule. Broadband-ready.</p>
-          <h1>eMule broadband edition</h1>
+          <p class="eyebrow">Classic eMule, tuned for modern broadband</p>
+          <h1>eMule BB keeps eD2K and Kad useful for serious users.</h1>
           <p class="lead">
-            A power-user eMule for modern Windows, fast connections, large file
-            libraries, and local automation while keeping the stock eD2K/Kad
-            protocol.
+            A power-user eMule for fast upload links, large shared libraries,
+            always-on Windows sessions, and local controller workflows without
+            abandoning the familiar desktop app.
           </p>
-          <div class="actions">
-            <a class="button primary" href="https://github.com/eMulebb/eMule">View source</a>
-            <a class="button secondary" href="https://github.com/eMulebb">GitHub organization</a>
+          <div class="actions" aria-label="Project links">
+            <a class="button primary" href="https://github.com/eMulebb/eMule">Source</a>
+            <a class="button secondary" href="#guide">Product guide</a>
           </div>
         </div>
-        <div class="hero-visual" aria-label="eMule broadband edition product signal">
-          <span>eD2K</span>
-          <strong>Kad-ready broadband sharing</strong>
-          <p>Built around compatibility, high-speed sharing, and release-grade testing.</p>
-        </div>
+
+        <aside class="hero-panel" aria-label="eMule BB product summary">
+          <img src="assets/emule-logo.jpg" alt="eMule broadband edition logo" width="180" height="180">
+          <div class="signal-list">
+            <span>Stock eD2K/Kad compatibility</span>
+            <span>Broadband upload slot control</span>
+            <span>Authenticated JSON REST API</span>
+            <span>Release-grade validation workspace</span>
+          </div>
+        </aside>
       </section>
 
       <section class="intro">
         <p>
-          eMule broadband edition, code name <strong>emulebb</strong>, carries the
-          classic eMule desktop workflow forward as its own product. It focuses on
-          stock eD2K/Kad interoperability, safer long-running operation, broadband
-          upload behavior, controller integration, and a reproducible public release
-          process.
+          eMule broadband edition, compactly <strong>eMule BB</strong>, is an
+          independent product line for people who still value eMule's distributed
+          sharing model. It preserves the classic workflows while making the
+          client easier to run, observe, automate, and validate on current
+          Windows systems.
         </p>
       </section>
 
       <section id="features" class="section">
         <div class="section-heading">
-          <p class="eyebrow">Built for current machines</p>
-          <h2>What eMule broadband edition focuses on</h2>
+          <p class="eyebrow">Feature list</p>
+          <h2>Broadband features for power users and eMule aficionados</h2>
         </div>
-        <div class="feature-grid">
+
+        <div class="feature-table" aria-label="eMule broadband feature list">
           <article>
-            <h3>Broadband sharing</h3>
+            <span>Upload control</span>
+            <h3>Bounded broadband slots</h3>
             <p>
-              Bounded upload slot behavior, better queue control, weak-slot
-              recycling, and defaults that make sense for fast links.
+              Uses a configured upload budget and target slot count instead of
+              letting slot count drift toward legacy high-slot behavior on fast
+              links.
             </p>
           </article>
           <article>
-            <h3>Large file libraries</h3>
+            <span>Queue quality</span>
+            <h3>Weak-slot recycling</h3>
             <p>
-              Safer shared-file handling, recursive share sync, startup cache
-              work, long-path support, stable sorting, and large collection
-              responsiveness. Linux ISOs included.
+              Detects slow or stuck uploaders after warm-up, requeues them with
+              cooldown, and gives waiting clients a cleaner chance to fill the pipe.
             </p>
           </article>
           <article>
-            <h3>Safer operation</h3>
+            <span>Seeder tools</span>
+            <h3>Ratio-aware sharing</h3>
             <p>
-              Persistence hardening, cleaner shutdown behavior, stale UI pointer
-              fixes, tighter WebServer validation, and fewer silent failure paths.
+              Adds all-time and session ratio readouts, low-ratio file boost
+              controls, and optional LowID score deboosting for stricter seeders.
+            </p>
+          </article>
+          <article>
+            <span>Large libraries</span>
+            <h3>Safer shared-file handling</h3>
+            <p>
+              Focuses on recursive share sync, startup cache behavior, long-path
+              Windows libraries, stable sorting, and responsive large collections.
+            </p>
+          </article>
+          <article>
+            <span>Classic network</span>
+            <h3>eD2K and Kad first</h3>
+            <p>
+              Keeps stock protocol compatibility, server and Kad search modes,
+              shared files, upload queues, categories, known clients, and desktop
+              control as the product foundation.
+            </p>
+          </article>
+          <article>
+            <span>Operations</span>
+            <h3>Safer long runs</h3>
+            <p>
+              Improves persistence, shutdown behavior, WebServer validation,
+              background worker lifetime, and error paths that matter in always-on
+              sessions.
+            </p>
+          </article>
+          <article>
+            <span>Automation</span>
+            <h3>REST control surface</h3>
+            <p>
+              Exposes authenticated JSON endpoints for transfers, searches,
+              shared files, servers, Kad, status, logs, categories, and controlled
+              shutdown.
+            </p>
+          </article>
+          <article>
+            <span>Controller fit</span>
+            <h3>aMuTorrent and Arr workflows</h3>
+            <p>
+              Targets practical local integration: search, add, observe, and
+              manage eMule from companion tools while the native app remains in
+              charge.
+            </p>
+          </article>
+          <article>
+            <span>Release process</span>
+            <h3>Built to be proven</h3>
+            <p>
+              Uses native tests, Python harnesses, UI automation, REST smoke
+              checks, live eD2K/Kad scenarios, and controller integration gates.
             </p>
           </article>
         </div>
       </section>
 
-      <section id="automation" class="section split">
-        <div>
-          <p class="eyebrow">Local control surface</p>
-          <h2>REST automation without giving up the desktop app</h2>
-        </div>
-        <p>
-          eMule broadband edition exposes an authenticated JSON REST API through
-          the existing WebServer surface for trusted local controllers. The release
-          track includes transfer, search, server, Kad, status, and controller
-          integration work for modern workflows such as aMuTorrent and Arr-driven
-          automation.
-        </p>
-      </section>
-
-      <section class="section">
+      <section id="guide" class="section guide">
         <div class="section-heading">
-          <p class="eyebrow">Release discipline</p>
-          <h2>Proven before release</h2>
+          <p class="eyebrow">Product guide</p>
+          <h2>How to think about eMule BB</h2>
         </div>
-        <div class="proof-list">
-          <span>Native tests</span>
-          <span>Python harnesses</span>
-          <span>REST smoke coverage</span>
-          <span>UI automation</span>
-          <span>Live eD2K/Kad scenarios</span>
-          <span>Arr integration checks</span>
-        </div>
-      </section>
 
-      <section id="team" class="section team">
-        <div class="section-heading">
-          <p class="eyebrow">People, technically</p>
-          <h2>The Team</h2>
-        </div>
-        <div class="team-grid">
+        <div class="guide-grid">
           <article>
             <span>01</span>
-            <h3>Queue Morale Officer</h3>
+            <h3>Use it as eMule first</h3>
             <p>
-              Keeps upload slots feeling valued while reminding every packet that
-              fairness is a lifestyle, not a configuration option.
+              Start with the familiar eMule model: connect to trusted servers,
+              bootstrap Kad, search by server/global/Kad mode, organize categories,
+              and keep your shared directories deliberate.
             </p>
           </article>
           <article>
             <span>02</span>
-            <h3>Protocol Compatibility Diplomat</h3>
+            <h3>Tune upload for broadband</h3>
             <p>
-              Negotiates peacefully with two decades of clients, settings, and
-              folk wisdom that absolutely worked on someone's machine in 2006.
+              Set a finite upload limit, choose a realistic maximum upload client
+              count, and let the broadband policy favor fewer stronger slots over
+              hundreds of low-rate legacy-style sessions.
             </p>
           </article>
           <article>
             <span>03</span>
-            <h3>Release Candidate Whisperer</h3>
+            <h3>Run large libraries intentionally</h3>
             <p>
-              Listens carefully to builds until they confess which smoke test
-              they were planning to embarrass during the public release.
+              Use long-path capable Windows setups, keep share roots clean, let
+              recursive share sync and startup cache work for you, and watch the
+              ratio columns when curating rare files.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Automate locally, not blindly</h3>
+            <p>
+              Enable the WebServer/REST surface only for trusted networks, use
+              the API key, and connect tools that can respect native eMule search,
+              transfer, and delete semantics.
+            </p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>Validate before release use</h3>
+            <p>
+              Treat the public branch as active pre-release work until the
+              Release 1 gates are complete. Follow the build, test, and live E2E
+              evidence before calling a package production-ready.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="automation" class="section automation">
+        <div>
+          <p class="eyebrow">Controller surface</p>
+          <h2>REST automation without replacing the desktop app</h2>
+        </div>
+        <div class="automation-copy">
+          <p>
+            The broadband release track exposes a resource-oriented
+            <code>/api/v1</code> JSON API from the existing WebServer listener.
+            It authenticates with <code>X-API-Key</code>, serves JSON envelopes,
+            and keeps native eMule state changes marshaled through the app.
+          </p>
+          <div class="pill-list" aria-label="REST API areas">
+            <span>Transfers</span>
+            <span>Searches</span>
+            <span>Servers</span>
+            <span>Kad</span>
+            <span>Shared files</span>
+            <span>Uploads</span>
+            <span>Categories</span>
+            <span>Logs</span>
+            <span>Statistics</span>
+            <span>Preferences</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="release" class="section release">
+        <div class="section-heading">
+          <p class="eyebrow">Release posture</p>
+          <h2>Pre-release, but disciplined</h2>
+        </div>
+        <div class="release-grid">
+          <article>
+            <strong>Current line</strong>
+            <p>
+              Release 1.0 stabilization is tracked publicly, with broadband work
+              landing through reviewed app, test, build, and tooling repos.
+            </p>
+          </article>
+          <article>
+            <strong>Proof lanes</strong>
+            <p>
+              Release gates include native tests, REST contract checks, malformed
+              request coverage, UI automation, live eD2K/Kad scenarios, and
+              aMuTorrent/Arr validation.
+            </p>
+          </article>
+          <article>
+            <strong>Compatibility principle</strong>
+            <p>
+              Stock eD2K/Kad behavior remains the default. Broadband, REST, and
+              controller features are added around that compatibility goal.
             </p>
           </article>
         </div>
@@ -175,7 +290,7 @@
           </a>
           <a href="https://github.com/eMulebb/eMule-tooling">
             <strong>eMule-tooling</strong>
-            <span>roadmap, backlog, audits, and reference docs</span>
+            <span>roadmap, backlog, policy, audits, and reference docs</span>
           </a>
         </div>
       </section>
