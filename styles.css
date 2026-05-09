@@ -21,7 +21,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 104px;
+  scroll-padding-top: 88px;
 }
 
 body {
@@ -51,8 +51,8 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 14px clamp(20px, 4vw, 64px);
+  gap: 18px;
+  padding: 12px clamp(20px, 4vw, 64px);
   border-bottom: 1px solid rgba(21, 24, 29, 0.12);
   background: rgba(244, 245, 240, 0.95);
   backdrop-filter: blur(14px);
@@ -82,9 +82,12 @@ code {
 
 nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   gap: 8px;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
 }
 
 nav a,
@@ -113,7 +116,7 @@ main {
 }
 
 [id] {
-  scroll-margin-top: 104px;
+  scroll-margin-top: 88px;
 }
 
 .hero {
@@ -461,14 +464,21 @@ footer {
 
 @media (max-width: 920px) {
   html {
-    scroll-padding-top: 190px;
+    scroll-padding-top: 118px;
   }
 
   [id] {
-    scroll-margin-top: 190px;
+    scroll-margin-top: 118px;
   }
 
-  .site-header,
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   footer {
     align-items: flex-start;
     flex-direction: column;
@@ -507,11 +517,11 @@ footer {
 
 @media (max-width: 520px) {
   html {
-    scroll-padding-top: 220px;
+    scroll-padding-top: 126px;
   }
 
   [id] {
-    scroll-margin-top: 220px;
+    scroll-margin-top: 126px;
   }
 
   h1 {
