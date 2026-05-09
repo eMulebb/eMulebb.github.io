@@ -519,6 +519,16 @@ footer {
   color: #fff;
 }
 
+.stub-page {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.stub-page .section {
+  width: min(100%, 920px);
+}
+
 @media (max-width: 1180px) {
   .catalog-grid,
   .guide-grid,
