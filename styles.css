@@ -512,10 +512,22 @@ h3 {
 
 footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 28px clamp(20px, 6vw, 96px);
   background: var(--ink);
+  color: #fff;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.footer-links a {
   color: #fff;
 }
 
