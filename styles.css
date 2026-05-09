@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 104px;
 }
 
 body {
@@ -33,11 +34,6 @@ body {
 
 a {
   color: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
 }
 
 code {
@@ -58,24 +54,15 @@ code {
   gap: 24px;
   padding: 14px clamp(20px, 4vw, 64px);
   border-bottom: 1px solid rgba(21, 24, 29, 0.12);
-  background: rgba(244, 245, 240, 0.94);
+  background: rgba(244, 245, 240, 0.95);
   backdrop-filter: blur(14px);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  min-width: 270px;
+  min-width: 250px;
   text-decoration: none;
-}
-
-.brand img {
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  object-fit: cover;
 }
 
 .brand span {
@@ -84,7 +71,8 @@ code {
 }
 
 .brand small,
-.eyebrow {
+.eyebrow,
+.panel-kicker {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 800;
@@ -122,6 +110,10 @@ nav a:hover {
 
 main {
   overflow: hidden;
+}
+
+[id] {
+  scroll-margin-top: 104px;
 }
 
 .hero {
@@ -204,13 +196,14 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.hero-panel img {
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 26px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  object-fit: cover;
+.hero-panel h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.65rem, 4vw, 2.65rem);
+}
+
+.hero-panel p {
+  color: var(--muted);
+  font-weight: 700;
 }
 
 .signal-list,
@@ -296,6 +289,7 @@ h3 {
 .feature-table p,
 .guide-grid p,
 .release-grid p,
+.doc-list span,
 .repo-list span {
   color: var(--muted);
 }
@@ -308,12 +302,12 @@ h3 {
 
 .guide-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
 .guide-grid article {
-  min-height: 300px;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
   padding: 22px;
@@ -342,10 +336,54 @@ h3 {
   border-top: 5px solid var(--red);
 }
 
+.guide-grid article:nth-child(6) {
+  border-top: 5px solid var(--teal);
+}
+
 .guide-grid span {
-  margin-bottom: 42px;
+  margin-bottom: 34px;
   color: var(--muted);
   font-weight: 900;
+}
+
+.docs {
+  background: #fff;
+}
+
+.doc-list,
+.release-grid,
+.repo-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.doc-list a,
+.release-grid article,
+.repo-list a {
+  min-height: 170px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.doc-list a,
+.repo-list a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.doc-list a:hover {
+  border-color: var(--blue);
+  box-shadow: 0 14px 36px rgba(28, 32, 36, 0.11);
+}
+
+.doc-list strong,
+.repo-list strong {
+  font-size: 1.05rem;
 }
 
 .automation {
@@ -377,20 +415,8 @@ h3 {
   background: #fff;
 }
 
-.release-grid,
-.repo-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.release-grid article,
-.repo-list a {
+.release-grid article {
   min-height: 190px;
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
 }
 
 .release-grid strong {
@@ -409,19 +435,11 @@ h3 {
 
 .repo-list a {
   min-height: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none;
 }
 
 .repo-list a:hover {
   border-color: var(--teal);
   box-shadow: 0 14px 36px rgba(28, 32, 36, 0.11);
-}
-
-.repo-list strong {
-  font-size: 1.05rem;
 }
 
 footer {
@@ -435,12 +453,21 @@ footer {
 
 @media (max-width: 1180px) {
   .guide-grid,
+  .doc-list,
   .repo-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 920px) {
+  html {
+    scroll-padding-top: 190px;
+  }
+
+  [id] {
+    scroll-margin-top: 190px;
+  }
+
   .site-header,
   footer {
     align-items: flex-start;
@@ -466,11 +493,12 @@ footer {
 
   .hero-panel {
     justify-self: start;
-    max-width: 420px;
+    max-width: 500px;
   }
 
   .feature-table,
   .release-grid,
+  .doc-list,
   .guide-grid,
   .repo-list {
     grid-template-columns: 1fr;
@@ -478,6 +506,14 @@ footer {
 }
 
 @media (max-width: 520px) {
+  html {
+    scroll-padding-top: 220px;
+  }
+
+  [id] {
+    scroll-margin-top: 220px;
+  }
+
   h1 {
     font-size: 2.55rem;
   }
@@ -494,6 +530,7 @@ footer {
   .feature-table article,
   .guide-grid article,
   .release-grid article,
+  .doc-list a,
   .repo-list a,
   .hero-panel {
     padding: 20px;

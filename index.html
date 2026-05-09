@@ -8,13 +8,11 @@
       content="eMule broadband edition is eMule BB: a modern power-user eMule for broadband sharing, large libraries, REST automation, and stock eD2K/Kad compatibility."
     >
     <title>eMule broadband edition | eMule BB</title>
-    <link rel="preload" href="assets/emule-logo.jpg" as="image">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="eMule broadband edition home">
-        <img src="assets/emule-logo.jpg" alt="" width="44" height="44">
         <span>
           <strong>eMule broadband edition</strong>
           <small>eMule BB</small>
@@ -23,6 +21,7 @@
       <nav aria-label="Primary navigation">
         <a href="#features">Features</a>
         <a href="#guide">Guide</a>
+        <a href="#docs">Docs</a>
         <a href="#automation">Automation</a>
         <a href="#release">Release</a>
         <a href="#repos">Repos</a>
@@ -46,7 +45,13 @@
         </div>
 
         <aside class="hero-panel" aria-label="eMule BB product summary">
-          <img src="assets/emule-logo.jpg" alt="eMule broadband edition logo" width="180" height="180">
+          <p class="panel-kicker">Product posture</p>
+          <h2>Conservative where compatibility matters. Modern where control matters.</h2>
+          <p>
+            eMule BB keeps the native eMule workflow at the center and adds
+            broadband-aware queue behavior, local API control, and release-grade
+            validation around it.
+          </p>
           <div class="signal-list">
             <span>Stock eD2K/Kad compatibility</span>
             <span>Broadband upload slot control</span>
@@ -60,8 +65,8 @@
         <p>
           eMule broadband edition, compactly <strong>eMule BB</strong>, is an
           independent product line for people who still value eMule's distributed
-          sharing model. It preserves the classic workflows while making the
-          client easier to run, observe, automate, and validate on current
+          sharing model. It preserves the classic desktop workflows while making
+          the client easier to run, observe, automate, and validate on current
           Windows systems.
         </p>
       </section>
@@ -110,9 +115,8 @@
             <span>Classic network</span>
             <h3>eD2K and Kad first</h3>
             <p>
-              Keeps stock protocol compatibility, server and Kad search modes,
-              shared files, upload queues, categories, known clients, and desktop
-              control as the product foundation.
+              Keeps server/global/Kad search modes, shared files, upload queues,
+              categories, known clients, and desktop control as the product foundation.
             </p>
           </article>
           <article>
@@ -138,8 +142,7 @@
             <h3>aMuTorrent and Arr workflows</h3>
             <p>
               Targets practical local integration: search, add, observe, and
-              manage eMule from companion tools while the native app remains in
-              charge.
+              manage eMule from companion tools while the native app remains in charge.
             </p>
           </article>
           <article>
@@ -156,55 +159,96 @@
       <section id="guide" class="section guide">
         <div class="section-heading">
           <p class="eyebrow">Product guide</p>
-          <h2>How to think about eMule BB</h2>
+          <h2>A short operating model</h2>
         </div>
 
         <div class="guide-grid">
           <article>
             <span>01</span>
-            <h3>Use it as eMule first</h3>
+            <h3>Start from known-good eMule habits</h3>
             <p>
-              Start with the familiar eMule model: connect to trusted servers,
-              bootstrap Kad, search by server/global/Kad mode, organize categories,
-              and keep your shared directories deliberate.
+              Use trusted server lists, bootstrap Kad deliberately, keep incoming
+              and shared directories predictable, and preserve the classic
+              search/add/share workflow before layering automation on top.
             </p>
           </article>
           <article>
             <span>02</span>
-            <h3>Tune upload for broadband</h3>
+            <h3>Tune upload for your real link</h3>
             <p>
-              Set a finite upload limit, choose a realistic maximum upload client
-              count, and let the broadband policy favor fewer stronger slots over
-              hundreds of low-rate legacy-style sessions.
+              Set a finite upload limit, choose a realistic upload client target,
+              and let the broadband policy favor fewer stronger slots instead of
+              a hundred low-rate sessions.
             </p>
           </article>
           <article>
             <span>03</span>
-            <h3>Run large libraries intentionally</h3>
+            <h3>Curate large libraries</h3>
             <p>
-              Use long-path capable Windows setups, keep share roots clean, let
-              recursive share sync and startup cache work for you, and watch the
-              ratio columns when curating rare files.
+              Use long-path capable Windows setups, keep share roots clean, watch
+              all-time and session ratios, and treat rare files as deliberate
+              publishing decisions.
             </p>
           </article>
           <article>
             <span>04</span>
-            <h3>Automate locally, not blindly</h3>
+            <h3>Automate only on trusted networks</h3>
             <p>
-              Enable the WebServer/REST surface only for trusted networks, use
-              the API key, and connect tools that can respect native eMule search,
-              transfer, and delete semantics.
+              Enable the WebServer/REST surface with an API key, bind and firewall
+              it carefully, and use controllers that respect native eMule transfer
+              and delete semantics.
             </p>
           </article>
           <article>
             <span>05</span>
-            <h3>Validate before release use</h3>
+            <h3>Track release readiness</h3>
             <p>
-              Treat the public branch as active pre-release work until the
-              Release 1 gates are complete. Follow the build, test, and live E2E
-              evidence before calling a package production-ready.
+              Treat the public branch as active pre-release work until Release 1
+              gates, operator checks, and live E2E evidence say otherwise.
             </p>
           </article>
+          <article>
+            <span>06</span>
+            <h3>Use the docs for depth</h3>
+            <p>
+              The homepage stays compact. The detailed product guide, REST
+              contract, broadband notes, and release documents live as Markdown
+              in the public tooling repository.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="docs" class="section docs">
+        <div class="section-heading">
+          <p class="eyebrow">Read more</p>
+          <h2>Detailed guides and source documents</h2>
+        </div>
+        <div class="doc-list">
+          <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-EMULEBB.md">
+            <strong>eMule BB product guide</strong>
+            <span>Long-form setup, tuning, automation, and troubleshooting guidance.</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/FEATURE-BROADBAND.md">
+            <strong>Broadband controller notes</strong>
+            <span>Design background for bounded slots, weak-slot recycling, and queue policy.</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/rest/REST-API-CONTRACT.md">
+            <strong>REST API contract</strong>
+            <span>Human-readable contract for the authenticated JSON control surface.</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/rest/REST-API-OPENAPI.yaml">
+            <strong>OpenAPI contract</strong>
+            <span>Machine-readable endpoint and schema source for controller authors.</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/active/RELEASE-1.0.md">
+            <strong>Release 1 status</strong>
+            <span>Current release gates, evidence pointers, and readiness rules.</span>
+          </a>
+          <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-LONGPATHS.md">
+            <strong>Long-path guide</strong>
+            <span>Windows long-path reference for large shared libraries.</span>
+          </a>
         </div>
       </section>
 
