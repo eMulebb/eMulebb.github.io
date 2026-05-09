@@ -5,10 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="eMule broadband edition is eMule BB: a modern power-user eMule for broadband sharing, large libraries, REST automation, and stock eD2K/Kad compatibility."
+      content="eMule broadband edition, or eMule BB, is a modern eMule build for broadband upload control, large shared libraries, REST automation, eD2K, Kad, and power-user workflows."
     >
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="eMulebb">
+    <meta property="og:title" content="eMule broadband edition | eMule BB">
+    <meta
+      property="og:description"
+      content="Modern eMule for broadband upload control, large libraries, REST automation, eD2K/Kad compatibility, and release-grade validation."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emulebb.github.io/">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://emulebb.github.io/">
+    <link rel="alternate" hreflang="en" href="https://emulebb.github.io/">
+    <link rel="alternate" hreflang="es" href="https://emulebb.github.io/es/">
+    <link rel="alternate" hreflang="it" href="https://emulebb.github.io/it/">
+    <link rel="alternate" hreflang="pt" href="https://emulebb.github.io/pt/">
+    <link rel="alternate" hreflang="x-default" href="https://emulebb.github.io/">
     <title>eMule broadband edition | eMule BB</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "eMule broadband edition",
+        "alternateName": "eMule BB",
+        "applicationCategory": "FileSharingApplication",
+        "operatingSystem": "Windows",
+        "url": "https://emulebb.github.io/",
+        "codeRepository": "https://github.com/eMulebb/eMule",
+        "description": "Modern eMule for broadband upload control, large shared libraries, REST automation, eD2K/Kad compatibility, and power-user workflows."
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -20,7 +49,9 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#features">Features</a>
+        <a href="#catalog">Catalog</a>
         <a href="#guide">Guide</a>
+        <a href="#team">Team</a>
         <a href="#docs">Docs</a>
         <a href="#automation">Automation</a>
         <a href="#release">Release</a>
@@ -56,6 +87,7 @@
             <span>Stock eD2K/Kad compatibility</span>
             <span>Broadband upload slot control</span>
             <span>Authenticated JSON REST API</span>
+            <span>Release 1.0 evidence trail</span>
             <span>Release-grade validation workspace</span>
           </div>
         </aside>
@@ -75,6 +107,12 @@
         <div class="section-heading">
           <p class="eyebrow">Feature list</p>
           <h2>Broadband features for power users and eMule aficionados</h2>
+          <p>
+            The headline features are the ones operators feel first: fewer bad
+            upload slots, better large-library behavior, and an API surface that
+            lets companion tools cooperate with the desktop client instead of
+            pretending it is a generic downloader.
+          </p>
         </div>
 
         <div class="feature-table" aria-label="eMule broadband feature list">
@@ -156,6 +194,106 @@
         </div>
       </section>
 
+      <section id="catalog" class="section catalog">
+        <div class="section-heading">
+          <p class="eyebrow">Full feature catalog</p>
+          <h2>The BB feature map</h2>
+          <p>
+            The public feature set spans upload policy, storage hygiene, search,
+            REST, desktop ergonomics, and release validation. Some items are
+            already landed or passed for Release 1; future-facing items remain
+            documented in the backlog instead of being marketed as shipped.
+          </p>
+        </div>
+
+        <div class="catalog-grid">
+          <article>
+            <h3>Broadband upload and seeding</h3>
+            <ul>
+              <li>Fixed broadband upload slot cap</li>
+              <li>Weak-slot reclamation and cooldown</li>
+              <li>Finite upload budget model</li>
+              <li>Session transfer and time rotation controls</li>
+              <li>Low-ratio file boost</li>
+              <li>LowID score divisor</li>
+              <li>All-time/session ratio columns</li>
+              <li>Cooldown visibility in upload and queue lists</li>
+              <li>Large-send-buffer and prefetch behavior tied to slot targets</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Large-library and file handling</h3>
+            <ul>
+              <li>Long-path support follow-up work</li>
+              <li>Shared startup cache and known.met lookup index</li>
+              <li>Virtualized shared-files list</li>
+              <li>Large-tree UI refresh hardening</li>
+              <li>Live recursive share sync</li>
+              <li>Share-ignore policy with additive shareignore.dat</li>
+              <li>Download filename normalization on intake and completion</li>
+              <li>Disk-space floor hardening</li>
+              <li>Legacy import-flow retirement</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Search, server, and Kad</h3>
+            <ul>
+              <li>Stock eD2K server/global search modes</li>
+              <li>Native Kad search semantics</li>
+              <li>Search result ceilings for eD2K and Kad</li>
+              <li>REST search completeness pass</li>
+              <li>Server import and connect controls</li>
+              <li>Kad bootstrap and nodes.dat import APIs</li>
+              <li>Bind policy split for app sockets and WebServer</li>
+              <li>Modernized runtime limits for current hardware</li>
+              <li>Network, Kad, and NAT work tracked publicly for later releases</li>
+            </ul>
+          </article>
+          <article>
+            <h3>REST, controllers, and automation</h3>
+            <ul>
+              <li>Authenticated in-process JSON API</li>
+              <li>OpenAPI contract</li>
+              <li>Transfer detail endpoint</li>
+              <li>Upload list, queue, remove, and release-slot coverage</li>
+              <li>Curated runtime preferences surface</li>
+              <li>aMuTorrent live validation</li>
+              <li>Prowlarr, Radarr, and Sonarr proof lanes</li>
+              <li>Download completion hook</li>
+              <li>Typed errors and malformed-request hardening</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Desktop power-user ergonomics</h3>
+            <ul>
+              <li>Pro-user context menus</li>
+              <li>Always-on advanced controls</li>
+              <li>Main-shell keyboard shortcuts</li>
+              <li>Mnemonic audit</li>
+              <li>Classic tray balloon notification mode</li>
+              <li>DB-IP city geolocation and peer labels</li>
+              <li>Automatic IP filter update scheduling</li>
+              <li>IP filter policy work tracked for PeerGuardian-style lists</li>
+              <li>Known Clients performance work tracked for later expansion</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Reliability and release proof</h3>
+            <ul>
+              <li>Native tests and Python harnesses</li>
+              <li>REST smoke and contract coverage</li>
+              <li>UI automation</li>
+              <li>Live eD2K/Kad scenarios</li>
+              <li>Shared Files 50k-tree stress coverage</li>
+              <li>HTTPS and REST socket adversity gates</li>
+              <li>WebSocket and legacy socket leak-churn gates</li>
+              <li>Release 1.0 evidence trail</li>
+              <li>Public backlog for deferred and future feature work</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
       <section id="guide" class="section guide">
         <div class="section-heading">
           <p class="eyebrow">Product guide</p>
@@ -214,6 +352,64 @@
               The homepage stays compact. The detailed product guide, REST
               contract, broadband notes, and release documents live as Markdown
               in the public tooling repository.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="team" class="section team">
+        <div class="section-heading">
+          <p class="eyebrow">Team, allegedly</p>
+          <h2>The people keeping the queue from becoming performance art</h2>
+        </div>
+        <div class="team-grid">
+          <article>
+            <span>01</span>
+            <h3>Upload Slot Therapist</h3>
+            <p>
+              Helps underperforming slots process their feelings for exactly long
+              enough before escorting them back to the queue with a clipboard and
+              a cooldown.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Kad Bootstrap Archivist</h3>
+            <p>
+              Maintains the sacred list of nodes that worked once in 2007 and
+              therefore deserve a respectful, heavily validated second chance.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>LowID Diplomat</h3>
+            <p>
+              Explains, again, that firewalls are not a personality trait while
+              translating NAT problems into something the rest of the room can act on.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>known.met Sommelier</h3>
+            <p>
+              Detects subtle notes of stale cache, accidental recursion, and
+              "this folder was definitely smaller yesterday" in large shared libraries.
+            </p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>REST Contract Accountant</h3>
+            <p>
+              Counts every camelCase field twice, rejects vibes-based schemas,
+              and believes undocumented aliases are how civilizations decline.
+            </p>
+          </article>
+          <article>
+            <span>06</span>
+            <h3>Release Gate Bouncer</h3>
+            <p>
+              Lets builds into the room only after they bring tests, live evidence,
+              and a convincing explanation for what happened to the last socket.
             </p>
           </article>
         </div>
@@ -282,14 +478,14 @@
       <section id="release" class="section release">
         <div class="section-heading">
           <p class="eyebrow">Release posture</p>
-          <h2>Pre-release, but disciplined</h2>
+          <h2>Release 1.0 has an evidence trail, not a shrug</h2>
         </div>
         <div class="release-grid">
           <article>
-            <strong>Current line</strong>
+            <strong>Current status</strong>
             <p>
-              Release 1.0 stabilization is tracked publicly, with broadband work
-              landing through reviewed app, test, build, and tooling repos.
+              The Release 1.0 control document records fresh 2026-05-09 evidence,
+              package creation, and the pushed app tag <code>emule-bb-v1.0.0</code>.
             </p>
           </article>
           <article>
