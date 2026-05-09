@@ -1,14 +1,23 @@
-# eMulebb Pages Editing Policy
+# eMulebb Pages Agent Policy
 
 This repository publishes the public GitHub Pages site for eMule broadband
 edition.
 
-## Brand Asset Policy
+Read `docs/SITE-HANDBOOK.md` before making content, layout, SEO, locale, or
+publishing-policy changes.
 
-- Do not publish logo, mascot, or other brand image assets from this repository.
-- Keep the public site text-first unless a future maintainer explicitly changes
-  this policy.
-- Do not add copied application resource images such as `Logo.jpg`, favicon
-  derivatives, or generated logo replacements.
-- If a page needs a visual product signal, use typography, layout, color, and
-  structured content instead of image branding.
+## Hard Rules
+
+- Do not publish logo, mascot, favicon, screenshot, or other brand image assets
+  from this repository.
+- Keep the site text-first. If a page needs a product signal, use typography,
+  layout, color, and structured content instead of image branding.
+- Treat `eMule-tooling` active/reference docs as the source of truth. Pages
+  summarizes and links; it does not invent feature or release facts.
+- Only shipped, landed, passed, or release-proven features belong in the public
+  homepage feature/catalog copy.
+- Keep English canonical. Locale pages under `es/`, `it/`, and `pt/` are
+  generated from the English structure and stay `noindex,follow` until complete.
+- Use granular commits: separate policy, content, layout, SEO, and locale work.
+- Run the static validation checks in `docs/SITE-HANDBOOK.md` before committing
+  and pushing.
