@@ -15,11 +15,17 @@ backlog. Those live in the public `eMule-tooling` docs.
   linked source doc before publishing.
 - The homepage summarizes and directs readers. Long-form setup, tuning, release,
   and API details belong in Markdown docs.
-- Release status must be derived from
-  `eMule-tooling/docs/active/RELEASE-1.0.md`.
+- Release status must be derived from the `0.7.3` active release docs:
+  `RELEASE-0.7.3.md`, `RELEASE-0.7.3-CHECKLIST.md`,
+  `RELEASE-0.7.3-RUNBOOK.md`, and `RELEASE-0.7.3-GATE-HISTORY.md`.
+- The first public release target is `0.7.3`. It must be described as planned
+  and not yet released until the release docs and user confirmation say otherwise.
 - Feature details should prefer durable reference docs such as:
   - `docs/reference/GUIDE-EMULEBB.md`
   - `docs/reference/FEATURE-BROADBAND.md`
+  - `docs/reference/FEATURE-MODERN-LIMITS.md`
+  - `docs/reference/FEATURE-KAD.md`
+  - `docs/reference/FEATURE-PEERS-BANS.md`
   - `docs/rest/REST-API-CONTRACT.md`
   - `docs/rest/REST-API-OPENAPI.yaml`
 
@@ -46,39 +52,51 @@ structure update changes the contract:
 1. Header and primary navigation
 2. Hero
 3. Intro
-4. Features
-5. Shipped feature catalog
+4. Why/motivation
+5. Features
 6. Short guide
 7. Team/lore
 8. Docs
-9. Automation
-10. Release
-11. Repositories
-12. Footer
+9. Implementation method
+10. Automation
+11. Release
+12. Repositories
+13. Footer
 
 Rules:
 
 - Required navigation anchors must resolve to existing section IDs.
-- The homepage feature/catalog copy may highlight only shipped, landed, passed,
-  release-proven, or otherwise source-confirmed features.
+- Keep one homepage capability section: `Features`. Do not add separate
+  Highlights, Catalog, or similar duplicate feature sections.
+- The homepage feature copy may highlight only landed, documented,
+  passed, release-proven, or otherwise source-confirmed features.
 - Open, deferred, exploratory, or future backlog items must not be presented as
   shipped homepage features.
-- Future-facing items must stay out of homepage feature/catalog copy.
+- Future-facing items must stay out of homepage feature copy.
 - The Docs section may link to source documents that contain roadmap or backlog
   material, but the homepage must not rephrase those items as product features.
 - The Docs section should link to durable source documents rather than copying
   long explanations into the homepage.
+- The Why section may explain the learning and modernization exercise behind
+  the project, but it must not blur planned release status or imply a rewrite.
+- The Implementation method section may summarize engineering practice,
+  compatibility boundaries, API contracts, and release proof, but source docs
+  remain authoritative for detailed procedures.
 - The Team section may use sarcasm and lore, but it must not obscure product
   facts or make claims about unshipped behavior.
 
-## Feature Catalog Policy
+## Feature Policy
 
-Feature catalog entries should be short, verifiable, and grouped by operator
-mental model:
+Feature entries should be short, verifiable, and grouped by operator mental
+model:
 
 - Broadband upload and seeding
 - Large-library and file handling
 - Search, server, and Kad
+- VPN/interface binding and WebServer exposure policy
+- Modern performance limits
+- Kad hardening and peer protection
+- NAT/UPnP and network adversity validation
 - REST, controllers, and automation
 - Desktop power-user ergonomics
 - Reliability and release proof
@@ -87,8 +105,11 @@ Before adding or changing a feature entry:
 
 - Confirm the claim against `eMule-tooling` docs or the relevant source repo.
 - Avoid ambiguous labels like "modernized" unless the concrete behavior is named.
-- If a feature is not shipped or release-proven, keep it out of homepage feature
-  copy.
+- If a feature is not landed, documented, or source-confirmed, keep it out of
+  homepage feature copy.
+- Interface/VPN binding may be described as bind-target support and live-test
+  policy. Do not describe the external VPN kill-switch design as built into
+  eMule BB.
 - If a feature has changed status, update the source documentation first or link
   to the updated source.
 
@@ -154,7 +175,7 @@ Use granular commits. Split unrelated work:
 Commit messages should name the slice, for example:
 
 - `Document site maintenance policy`
-- `Update shipped feature catalog`
+- `Update feature copy`
 - `Fix mobile anchor layout`
 - `Refresh SEO metadata`
 - `Generate Spanish page`

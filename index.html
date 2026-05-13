@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="eMule broadband edition, or eMule BB, is a modern eMule build for broadband upload control, large shared libraries, REST automation, eD2K, Kad, and power-user workflows."
+      content="eMule broadband edition, or eMule BB, is a modern eMule build for broadband upload control, VPN/interface binding, improved performance defaults, large shared libraries, REST automation, eD2K, Kad, and power-user workflows."
     >
     <meta name="robots" content="index,follow">
     <meta name="author" content="eMulebb">
     <meta property="og:title" content="eMule broadband edition | eMule BB">
     <meta
       property="og:description"
-      content="Modern eMule for broadband upload control, large libraries, REST automation, eD2K/Kad compatibility, and release-grade validation."
+      content="Modern eMule for broadband upload control, VPN/interface binding, improved performance defaults, large libraries, REST automation, eD2K/Kad compatibility, and release-grade validation. First public release 0.7.3 is planned and not yet released."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://emulebb.github.io/">
@@ -36,7 +36,7 @@
         "operatingSystem": "Windows",
         "url": "https://emulebb.github.io/",
         "codeRepository": "https://github.com/eMulebb/eMule",
-        "description": "Modern eMule for broadband upload control, large shared libraries, REST automation, eD2K/Kad compatibility, and power-user workflows."
+        "description": "Modern eMule for broadband upload control, VPN/interface binding, improved performance defaults, large shared libraries, REST automation, eD2K/Kad compatibility, and power-user workflows. The first public release is planned as 0.7.3 and is not yet released."
       }
     </script>
   </head>
@@ -49,11 +49,12 @@
         </span>
       </a>
       <nav aria-label="Primary navigation">
+        <a href="#why">Why</a>
         <a href="#features">Features</a>
-        <a href="#catalog">Catalog</a>
         <a href="#guide">Guide</a>
         <a href="#team">Team</a>
         <a href="#docs">Docs</a>
+        <a href="#method">Method</a>
         <a href="#automation">Automation</a>
         <a href="#release">Release</a>
         <a href="#repos">Repos</a>
@@ -87,8 +88,10 @@
           <div class="signal-list">
             <span>Stock eD2K/Kad compatibility</span>
             <span>Broadband upload slot control</span>
+            <span>VPN/interface binding</span>
+            <span>Modern performance limits</span>
             <span>Authenticated JSON REST API</span>
-            <span>Release 1.0 evidence trail</span>
+            <span>Public 0.7.3 planned</span>
             <span>Release-grade validation workspace</span>
           </div>
         </aside>
@@ -104,26 +107,92 @@
         </p>
       </section>
 
-      <section id="features" class="section">
+      <section id="why" class="section motivation">
         <div class="section-heading">
-          <p class="eyebrow">Feature list</p>
-          <h2>Broadband features for power users and eMule aficionados</h2>
+          <p class="eyebrow">Why</p>
+          <h2>A legacy client is useful only if it can still be operated with confidence</h2>
           <p>
-            The headline features are the ones operators feel first: fewer bad
-            upload slots, better large-library behavior, and an API surface that
-            lets companion tools cooperate with the desktop client instead of
-            pretending it is a generic downloader.
+            eMule BB is partly a product effort and partly a disciplined learning
+            exercise: take a complex native Windows application with real network
+            behavior, preserve what still matters, and surround it with the kind
+            of build, test, documentation, automation, and release process expected
+            from a modern open-source project.
           </p>
         </div>
 
-        <div class="feature-table" aria-label="eMule broadband feature list">
+        <div class="motivation-grid" aria-label="eMule BB motivation">
+          <article>
+            <span>Product reason</span>
+            <h3>Keep eD2K and Kad practical</h3>
+            <p>
+              The goal is not nostalgia or a rewrite. It is to keep the classic
+              sharing model usable for long-lived sessions, rare files, deliberate
+              seeding, and users who still want a native desktop client.
+            </p>
+          </article>
+          <article>
+            <span>Engineering reason</span>
+            <h3>Move old assumptions into daylight</h3>
+            <p>
+              Legacy defaults around upload slots, timeouts, buffers, large
+              libraries, and WebServer exposure are made explicit so each change
+              can be reviewed, tested, documented, and adjusted without guessing.
+            </p>
+          </article>
+          <article>
+            <span>Release reason</span>
+            <h3>Practice modern proof on legacy code</h3>
+            <p>
+              The workspace treats release as an engineering artifact: source
+              policy, OpenAPI contracts, reproducible builds, package hashes,
+              live-network checks, and operator gates all have to line up before
+              the first public release tag is created.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Features</p>
+          <h2>What eMule BB adds around the classic client</h2>
+          <p>
+            The work is focused on operator-visible behavior: predictable upload
+            policy, safer network binding, modern fixed performance limits,
+            large-library operation, local automation, and release evidence that
+            can be checked before the planned <code>0.7.3</code> release is called
+            ready.
+          </p>
+        </div>
+
+        <div class="feature-table" aria-label="eMule broadband features">
           <article>
             <span>Upload control</span>
             <h3>Bounded broadband slots</h3>
             <p>
               Uses a configured upload budget and target slot count instead of
-              letting slot count drift toward legacy high-slot behavior on fast
-              links.
+              letting slot count drift toward legacy high-slot behavior. Slow
+              or stuck uploaders are evaluated after warm-up instead of forcing
+              the queue to compensate by opening many weak sessions.
+            </p>
+          </article>
+          <article>
+            <span>Network binding</span>
+            <h3>VPN and interface-aware binding</h3>
+            <p>
+              Resolves named IPv4-capable interfaces for bind targets, keeps
+              address overrides separate, and validates live profiles through an
+              explicit interface bind policy so network exposure is visible and
+              testable.
+            </p>
+          </article>
+          <article>
+            <span>Performance</span>
+            <h3>Modern fixed limits</h3>
+            <p>
+              Raises old-era defaults for half-open bursts, per-client upload
+              caps, socket buffers, disk buffering, queue size, source limits,
+              and timeout behavior while avoiding opaque auto-tuning.
             </p>
           </article>
           <article>
@@ -131,7 +200,8 @@
             <h3>Weak-slot recycling</h3>
             <p>
               Detects slow or stuck uploaders after warm-up, requeues them with
-              cooldown, and gives waiting clients a cleaner chance to fill the pipe.
+              cooldown, and gives waiting clients a cleaner chance to fill the
+              pipe without changing eMule's upload protocol.
             </p>
           </article>
           <article>
@@ -139,7 +209,8 @@
             <h3>Ratio-aware sharing</h3>
             <p>
               Adds all-time and session ratio readouts, low-ratio file boost
-              controls, and optional LowID score deboosting for stricter seeders.
+              controls, and optional LowID score deboosting so strict seeders
+              can see which files are receiving useful upload attention.
             </p>
           </article>
           <article>
@@ -147,7 +218,8 @@
             <h3>Safer shared-file handling</h3>
             <p>
               Focuses on recursive share sync, startup cache behavior, long-path
-              Windows libraries, stable sorting, and responsive large collections.
+              Windows libraries, stable sorting, and responsive large collections
+              where old UI and cache assumptions become visible at scale.
             </p>
           </article>
           <article>
@@ -155,7 +227,27 @@
             <h3>eD2K and Kad first</h3>
             <p>
               Keeps server/global/Kad search modes, shared files, upload queues,
-              categories, known clients, and desktop control as the product foundation.
+              categories, known clients, and desktop control as the product
+              foundation instead of flattening everything into a generic downloader.
+            </p>
+          </article>
+          <article>
+            <span>Kad hardening</span>
+            <h3>SafeKad and FastKad work</h3>
+            <p>
+              Brings Kad identity tracking, bad-node handling, bounded cleanup,
+              and response-time sampling into the current Kad paths without
+              changing the wire format or treating routing policy as a protocol fork.
+            </p>
+          </article>
+          <article>
+            <span>Peer protection</span>
+            <h3>Flood and abuse defenses</h3>
+            <p>
+              Tracks pre-handshake TCP error floods per IP, routes peer
+              friend/ban operations through REST, and keeps abuse handling
+              tied to existing eMule ban behavior instead of adding a second
+              punishment model.
             </p>
           </article>
           <article>
@@ -163,8 +255,17 @@
             <h3>Safer long runs</h3>
             <p>
               Improves persistence, shutdown behavior, WebServer validation,
-              background worker lifetime, and error paths that matter in always-on
-              sessions.
+              background worker lifetime, and error paths that matter when the
+              client is left running for days rather than minutes.
+            </p>
+          </article>
+          <article>
+            <span>NAT and exposure</span>
+            <h3>Mapping and WebServer controls</h3>
+            <p>
+              Keeps UPnP/NAT mapping work in the validation lane while REST
+              inherits WebServer bind, HTTPS, and allowed-IP exposure controls
+              from the existing listener.
             </p>
           </article>
           <article>
@@ -172,8 +273,9 @@
             <h3>REST control surface</h3>
             <p>
               Exposes authenticated JSON endpoints for transfers, searches,
-              shared files, servers, Kad, status, logs, categories, and controlled
-              shutdown.
+              shared files, servers, Kad, status, logs, categories, uploads,
+              statistics, preferences, and controlled shutdown through a documented
+              <code>/api/v1</code> contract.
             </p>
           </article>
           <article>
@@ -181,116 +283,18 @@
             <h3>aMuTorrent and Arr workflows</h3>
             <p>
               Targets practical local integration: search, add, observe, and
-              manage eMule from companion tools while the native app remains in charge.
+              manage eMule from companion tools while the native app remains the
+              authority for transfer state and file operations.
             </p>
           </article>
           <article>
             <span>Release process</span>
-            <h3>Built to be proven</h3>
+            <h3>0.7.3 release proof gates</h3>
             <p>
-              Uses native tests, Python harnesses, UI automation, REST smoke
-              checks, live eD2K/Kad scenarios, and controller integration gates.
+              Tracks community parity, REST and adapter drift, live controller
+              workflows, network adversity, packaging, and x64/ARM64 rehearsal
+              assets before tagging or publishing packages.
             </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="catalog" class="section catalog">
-        <div class="section-heading">
-          <p class="eyebrow">Full feature catalog</p>
-          <h2>The BB feature map</h2>
-          <p>
-            The public feature set spans upload policy, storage hygiene, search,
-            REST, desktop ergonomics, and release validation. Some items are
-            already landed or passed for Release 1; future-facing items remain
-            documented in the backlog instead of being marketed as shipped.
-          </p>
-        </div>
-
-        <div class="catalog-grid">
-          <article>
-            <h3>Broadband upload and seeding</h3>
-            <ul>
-              <li>Fixed broadband upload slot cap</li>
-              <li>Weak-slot reclamation and cooldown</li>
-              <li>Finite upload budget model</li>
-              <li>Session transfer and time rotation controls</li>
-              <li>Low-ratio file boost</li>
-              <li>LowID score divisor</li>
-              <li>All-time/session ratio columns</li>
-              <li>Cooldown visibility in upload and queue lists</li>
-              <li>Large-send-buffer and prefetch behavior tied to slot targets</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Large-library and file handling</h3>
-            <ul>
-              <li>Long-path support follow-up work</li>
-              <li>Shared startup cache and known.met lookup index</li>
-              <li>Virtualized shared-files list</li>
-              <li>Large-tree UI refresh hardening</li>
-              <li>Live recursive share sync</li>
-              <li>Share-ignore policy with additive shareignore.dat</li>
-              <li>Download filename normalization on intake and completion</li>
-              <li>Disk-space floor hardening</li>
-              <li>Legacy import-flow retirement</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Search, server, and Kad</h3>
-            <ul>
-              <li>Stock eD2K server/global search modes</li>
-              <li>Native Kad search semantics</li>
-              <li>Search result ceilings for eD2K and Kad</li>
-              <li>REST search completeness pass</li>
-              <li>Server import and connect controls</li>
-              <li>Kad bootstrap and nodes.dat import APIs</li>
-              <li>Bind policy split for app sockets and WebServer</li>
-              <li>Modernized runtime limits for current hardware</li>
-              <li>Network, Kad, and NAT work tracked publicly for later releases</li>
-            </ul>
-          </article>
-          <article>
-            <h3>REST, controllers, and automation</h3>
-            <ul>
-              <li>Authenticated in-process JSON API</li>
-              <li>OpenAPI contract</li>
-              <li>Transfer detail endpoint</li>
-              <li>Upload list, queue, remove, and release-slot coverage</li>
-              <li>Curated runtime preferences surface</li>
-              <li>aMuTorrent live validation</li>
-              <li>Prowlarr, Radarr, and Sonarr proof lanes</li>
-              <li>Download completion hook</li>
-              <li>Typed errors and malformed-request hardening</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Desktop power-user ergonomics</h3>
-            <ul>
-              <li>Pro-user context menus</li>
-              <li>Always-on advanced controls</li>
-              <li>Main-shell keyboard shortcuts</li>
-              <li>Mnemonic audit</li>
-              <li>Classic tray balloon notification mode</li>
-              <li>DB-IP city geolocation and peer labels</li>
-              <li>Automatic IP filter update scheduling</li>
-              <li>IP filter policy work tracked for PeerGuardian-style lists</li>
-              <li>Known Clients performance work tracked for later expansion</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Reliability and release proof</h3>
-            <ul>
-              <li>Native tests and Python harnesses</li>
-              <li>REST smoke and contract coverage</li>
-              <li>UI automation</li>
-              <li>Live eD2K/Kad scenarios</li>
-              <li>Shared Files 50k-tree stress coverage</li>
-              <li>HTTPS and REST socket adversity gates</li>
-              <li>WebSocket and legacy socket leak-churn gates</li>
-              <li>Release 1.0 evidence trail</li>
-              <li>Public backlog for deferred and future feature work</li>
-            </ul>
           </article>
         </div>
       </section>
@@ -342,8 +346,9 @@
             <span>05</span>
             <h3>Track release readiness</h3>
             <p>
-              Treat the public branch as active pre-release work until Release 1
-              gates, operator checks, and live E2E evidence say otherwise.
+              Treat the public branch as active pre-release work until the
+              planned <code>0.7.3</code> release gates, operator checks, and live
+              E2E evidence say otherwise.
             </p>
           </article>
           <article>
@@ -438,14 +443,65 @@
             <strong>OpenAPI contract</strong>
             <span>Machine-readable endpoint and schema source for controller authors.</span>
           </a>
-          <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/active/RELEASE-1.0.md">
-            <strong>Release 1 status</strong>
-            <span>Current release gates, evidence pointers, and readiness rules.</span>
+          <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/active/RELEASE-0.7.3.md">
+            <strong>Public 0.7.3 status</strong>
+            <span>Current planned beta gates, evidence pointers, and readiness rules.</span>
           </a>
           <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-LONGPATHS.md">
             <strong>Long-path guide</strong>
             <span>Windows long-path reference for large shared libraries.</span>
           </a>
+        </div>
+      </section>
+
+      <section id="method" class="section method">
+        <div class="section-heading">
+          <p class="eyebrow">Implementation method</p>
+          <h2>Modernize around the legacy core, then prove the result</h2>
+          <p>
+            The implementation style is intentionally conservative. eMule BB
+            changes local policy, limits, diagnostics, API boundaries, and release
+            discipline while keeping stock eD2K/Kad compatibility as the default.
+          </p>
+        </div>
+
+        <div class="method-grid" aria-label="eMule BB implementation methods">
+          <article>
+            <span>Compatibility</span>
+            <h3>No casual protocol drift</h3>
+            <p>
+              Kad and eD2K changes stay inside local routing, timing, validation,
+              and control paths. Wire formats, opcodes, and native desktop
+              workflows remain compatibility boundaries.
+            </p>
+          </article>
+          <article>
+            <span>Limits</span>
+            <h3>Fixed, reviewable defaults</h3>
+            <p>
+              Modern bandwidth, memory, socket, queue, and timeout assumptions
+              are expressed as explicit defaults or advanced preferences instead
+              of hidden adaptive behavior.
+            </p>
+          </article>
+          <article>
+            <span>REST</span>
+            <h3>Controller contracts, not screen scraping</h3>
+            <p>
+              The authenticated JSON API follows an OpenAPI-backed contract,
+              rejects malformed inputs, and marshals native state mutations
+              through the app where the desktop client owns that state.
+            </p>
+          </article>
+          <article>
+            <span>Release</span>
+            <h3>Evidence before labels</h3>
+            <p>
+              The release process records commands, commits, logs, package
+              paths, hashes, live evidence, and operator decisions so a release tag
+              is a checked outcome, not a naming exercise.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -479,29 +535,47 @@
       <section id="release" class="section release">
         <div class="section-heading">
           <p class="eyebrow">Release posture</p>
-          <h2>Release 1.0 has an evidence trail, not a shrug</h2>
+          <h2>Public release 0.7.3 is planned, gated, and not yet released</h2>
         </div>
         <div class="release-grid">
           <article>
             <strong>Current status</strong>
             <p>
-              The Release 1.0 control document records fresh 2026-05-09 evidence,
-              package creation, and the pushed app tag <code>emule-bb-v1.0.0</code>.
+              The first public release target is <code>0.7.3</code>. It is not yet
+              released. Final proof is currently paused by operator direction,
+              and public status stays tied to the active release docs.
             </p>
           </article>
           <article>
-            <strong>Proof lanes</strong>
+            <strong>Build and package proof</strong>
             <p>
-              Release gates include native tests, REST contract checks, malformed
-              request coverage, UI automation, live eD2K/Kad scenarios, and
-              aMuTorrent/Arr validation.
+              Required proof covers workspace validation, Debug and Release x64
+              app builds, Release ARM64 app builds, test binaries, package
+              generation, clean-worktree checks, and recorded SHA-256 hashes.
             </p>
           </article>
           <article>
-            <strong>Compatibility principle</strong>
+            <strong>Behavior proof</strong>
+            <p>
+              Test gates cover native suites, REST contract and OpenAPI drift,
+              malformed requests, UI automation, live controller-surface E2E,
+              full Release x64 live E2E, and network-adversity scenarios.
+            </p>
+          </article>
+          <article>
+            <strong>Controller proof</strong>
+            <p>
+              aMuTorrent, Prowlarr, Radarr, Sonarr, and qBittorrent-compatible
+              adapter lanes prove that automation works without weakening the
+              native <code>/api/v1</code> contract.
+            </p>
+          </article>
+          <article>
+            <strong>Compatibility proof</strong>
             <p>
               Stock eD2K/Kad behavior remains the default. Broadband, REST, and
-              controller features are added around that compatibility goal.
+              controller features are added around that compatibility goal and
+              compared against the community baseline where parity testing is useful.
             </p>
           </article>
         </div>
