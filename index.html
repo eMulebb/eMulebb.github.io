@@ -25,6 +25,7 @@
     <link rel="alternate" hreflang="pt" href="https://emulebb.github.io/pt/">
     <link rel="alternate" hreflang="x-default" href="https://emulebb.github.io/">
     <title>eMule broadband edition | eMule BB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
       {
@@ -52,9 +53,7 @@
         <a href="#why">Why</a>
         <a href="#features">Features</a>
         <a href="#guide">Guide</a>
-        <a href="#team">Team</a>
         <a href="#docs">Docs</a>
-        <a href="#method">Method</a>
         <a href="#automation">Automation</a>
         <a href="#release">Release</a>
         <a href="#repos">Repos</a>
@@ -165,135 +164,59 @@
           </p>
         </div>
 
-        <div class="feature-table" aria-label="eMule broadband features">
+        <div class="feature-table" aria-label="eMule broadband feature groups">
           <article>
-            <span>Upload control</span>
-            <h3>Bounded broadband slots</h3>
+            <span>Sharing and upload</span>
+            <h3>Broadband upload control</h3>
             <p>
-              Uses a configured upload budget and target slot count instead of
-              letting slot count drift toward legacy high-slot behavior. Slow
-              or stuck uploaders are evaluated after warm-up instead of forcing
-              the queue to compensate by opening many weak sessions.
+              Bounded slot targets, weak-slot recycling, ratio readouts, and
+              seeding controls keep fast upload links useful without changing
+              the eD2K upload protocol.
             </p>
           </article>
           <article>
-            <span>Network binding</span>
-            <h3>VPN and interface-aware binding</h3>
+            <span>Network control</span>
+            <h3>Binding, NAT, and exposure policy</h3>
             <p>
-              Resolves named IPv4-capable interfaces for bind targets, keeps
-              address overrides separate, and validates live profiles through an
-              explicit interface bind policy so network exposure is visible and
-              testable.
+              Interface-aware binding, UPnP/NAT mapping validation, HTTPS,
+              allowed-IP rules, and WebServer inheritance keep remote surfaces
+              explicit and testable.
             </p>
           </article>
           <article>
-            <span>Performance</span>
-            <h3>Modern fixed limits</h3>
+            <span>Performance and scale</span>
+            <h3>Modern defaults for large sessions</h3>
             <p>
-              Raises old-era defaults for half-open bursts, per-client upload
-              caps, socket buffers, disk buffering, queue size, source limits,
-              and timeout behavior while avoiding opaque auto-tuning.
-            </p>
-          </article>
-          <article>
-            <span>Queue quality</span>
-            <h3>Weak-slot recycling</h3>
-            <p>
-              Detects slow or stuck uploaders after warm-up, requeues them with
-              cooldown, and gives waiting clients a cleaner chance to fill the
-              pipe without changing eMule's upload protocol.
-            </p>
-          </article>
-          <article>
-            <span>Seeder tools</span>
-            <h3>Ratio-aware sharing</h3>
-            <p>
-              Adds all-time and session ratio readouts, low-ratio file boost
-              controls, and optional LowID score deboosting so strict seeders
-              can see which files are receiving useful upload attention.
-            </p>
-          </article>
-          <article>
-            <span>Large libraries</span>
-            <h3>Safer shared-file handling</h3>
-            <p>
-              Focuses on recursive share sync, startup cache behavior, long-path
-              Windows libraries, stable sorting, and responsive large collections
-              where old UI and cache assumptions become visible at scale.
+              Higher socket buffers, queue/source limits, file buffering,
+              timeout defaults, recursive share sync, and long-path guidance
+              target current Windows systems and large libraries.
             </p>
           </article>
           <article>
             <span>Classic network</span>
-            <h3>eD2K and Kad first</h3>
+            <h3>eD2K and Kad stay first</h3>
             <p>
-              Keeps server/global/Kad search modes, shared files, upload queues,
-              categories, known clients, and desktop control as the product
-              foundation instead of flattening everything into a generic downloader.
-            </p>
-          </article>
-          <article>
-            <span>Kad hardening</span>
-            <h3>SafeKad and FastKad work</h3>
-            <p>
-              Brings Kad identity tracking, bad-node handling, bounded cleanup,
-              and response-time sampling into the current Kad paths without
-              changing the wire format or treating routing policy as a protocol fork.
-            </p>
-          </article>
-          <article>
-            <span>Peer protection</span>
-            <h3>Flood and abuse defenses</h3>
-            <p>
-              Tracks pre-handshake TCP error floods per IP, routes peer
-              friend/ban operations through REST, and keeps abuse handling
-              tied to existing eMule ban behavior instead of adding a second
-              punishment model.
-            </p>
-          </article>
-          <article>
-            <span>Operations</span>
-            <h3>Safer long runs</h3>
-            <p>
-              Improves persistence, shutdown behavior, WebServer validation,
-              background worker lifetime, and error paths that matter when the
-              client is left running for days rather than minutes.
-            </p>
-          </article>
-          <article>
-            <span>NAT and exposure</span>
-            <h3>Mapping and WebServer controls</h3>
-            <p>
-              Keeps UPnP/NAT mapping work in the validation lane while REST
-              inherits WebServer bind, HTTPS, and allowed-IP exposure controls
-              from the existing listener.
+              Server, global, and Kad search remain the native foundation, with
+              Kad identity tracking, bad-node handling, cleanup, and timing work
+              kept inside compatibility boundaries.
             </p>
           </article>
           <article>
             <span>Automation</span>
-            <h3>REST control surface</h3>
+            <h3>REST and controller workflows</h3>
             <p>
-              Exposes authenticated JSON endpoints for transfers, searches,
-              shared files, servers, Kad, status, logs, categories, uploads,
-              statistics, preferences, and controlled shutdown through a documented
-              <code>/api/v1</code> contract.
+              Authenticated JSON endpoints cover transfers, searches, shared
+              files, servers, Kad, logs, categories, uploads, statistics,
+              preferences, and controlled shutdown from trusted local tools.
             </p>
           </article>
           <article>
-            <span>Controller fit</span>
-            <h3>aMuTorrent and Arr workflows</h3>
+            <span>Release discipline</span>
+            <h3>Evidence before public packages</h3>
             <p>
-              Targets practical local integration: search, add, observe, and
-              manage eMule from companion tools while the native app remains the
-              authority for transfer state and file operations.
-            </p>
-          </article>
-          <article>
-            <span>Release process</span>
-            <h3>0.7.3 release proof gates</h3>
-            <p>
-              Tracks community parity, REST and adapter drift, live controller
-              workflows, network adversity, packaging, and x64/ARM64 rehearsal
-              assets before tagging or publishing packages.
+              The planned <code>0.7.3</code> beta depends on validation across
+              native tests, REST contracts, live controller lanes, network
+              adversity, packaging, and x64/ARM64 rehearsals.
             </p>
           </article>
         </div>
@@ -363,64 +286,6 @@
         </div>
       </section>
 
-      <section id="team" class="section team">
-        <div class="section-heading">
-          <p class="eyebrow">Team, allegedly</p>
-          <h2>The people keeping the queue from becoming performance art</h2>
-        </div>
-        <div class="team-grid">
-          <article>
-            <span>01</span>
-            <h3>Upload Slot Therapist</h3>
-            <p>
-              Helps underperforming slots process their feelings for exactly long
-              enough before escorting them back to the queue with a clipboard and
-              a cooldown.
-            </p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Kad Bootstrap Archivist</h3>
-            <p>
-              Maintains the sacred list of nodes that worked once in 2007 and
-              therefore deserve a respectful, heavily validated second chance.
-            </p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>LowID Diplomat</h3>
-            <p>
-              Explains, again, that firewalls are not a personality trait while
-              translating NAT problems into something the rest of the room can act on.
-            </p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>known.met Sommelier</h3>
-            <p>
-              Detects subtle notes of stale cache, accidental recursion, and
-              "this folder was definitely smaller yesterday" in large shared libraries.
-            </p>
-          </article>
-          <article>
-            <span>05</span>
-            <h3>REST Contract Accountant</h3>
-            <p>
-              Counts every camelCase field twice, rejects vibes-based schemas,
-              and believes undocumented aliases are how civilizations decline.
-            </p>
-          </article>
-          <article>
-            <span>06</span>
-            <h3>Release Gate Bouncer</h3>
-            <p>
-              Lets builds into the room only after they bring tests, live evidence,
-              and a convincing explanation for what happened to the last socket.
-            </p>
-          </article>
-        </div>
-      </section>
-
       <section id="docs" class="section docs">
         <div class="section-heading">
           <p class="eyebrow">Read more</p>
@@ -467,57 +332,6 @@
             <strong>0.7.3 release dashboard</strong>
             <span>Current planned beta gates, evidence pointers, and readiness rules.</span>
           </a>
-        </div>
-      </section>
-
-      <section id="method" class="section method">
-        <div class="section-heading">
-          <p class="eyebrow">Implementation method</p>
-          <h2>Modernize around the legacy core, then prove the result</h2>
-          <p>
-            The implementation style is intentionally conservative. eMule BB
-            changes local policy, limits, diagnostics, API boundaries, and release
-            discipline while keeping stock eD2K/Kad compatibility as the default.
-          </p>
-        </div>
-
-        <div class="method-grid" aria-label="eMule BB implementation methods">
-          <article>
-            <span>Compatibility</span>
-            <h3>No casual protocol drift</h3>
-            <p>
-              Kad and eD2K changes stay inside local routing, timing, validation,
-              and control paths. Wire formats, opcodes, and native desktop
-              workflows remain compatibility boundaries.
-            </p>
-          </article>
-          <article>
-            <span>Limits</span>
-            <h3>Fixed, reviewable defaults</h3>
-            <p>
-              Modern bandwidth, memory, socket, queue, and timeout assumptions
-              are expressed as explicit defaults or advanced preferences instead
-              of hidden adaptive behavior.
-            </p>
-          </article>
-          <article>
-            <span>REST</span>
-            <h3>Controller contracts, not screen scraping</h3>
-            <p>
-              The authenticated JSON API follows an OpenAPI-backed contract,
-              rejects malformed inputs, and marshals native state mutations
-              through the app where the desktop client owns that state.
-            </p>
-          </article>
-          <article>
-            <span>Release</span>
-            <h3>Evidence before labels</h3>
-            <p>
-              The release process records commands, commits, logs, package
-              paths, hashes, live evidence, and operator decisions so a release tag
-              is a checked outcome, not a naming exercise.
-            </p>
-          </article>
         </div>
       </section>
 
@@ -597,6 +411,57 @@
         </div>
       </section>
 
+      <section id="method" class="section method">
+        <div class="section-heading">
+          <p class="eyebrow">Implementation method</p>
+          <h2>Modernize around the legacy core, then prove the result</h2>
+          <p>
+            The implementation style is intentionally conservative. eMule BB
+            changes local policy, limits, diagnostics, API boundaries, and release
+            discipline while keeping stock eD2K/Kad compatibility as the default.
+          </p>
+        </div>
+
+        <div class="method-grid" aria-label="eMule BB implementation methods">
+          <article>
+            <span>Compatibility</span>
+            <h3>No casual protocol drift</h3>
+            <p>
+              Kad and eD2K changes stay inside local routing, timing, validation,
+              and control paths. Wire formats, opcodes, and native desktop
+              workflows remain compatibility boundaries.
+            </p>
+          </article>
+          <article>
+            <span>Limits</span>
+            <h3>Fixed, reviewable defaults</h3>
+            <p>
+              Modern bandwidth, memory, socket, queue, and timeout assumptions
+              are expressed as explicit defaults or advanced preferences instead
+              of hidden adaptive behavior.
+            </p>
+          </article>
+          <article>
+            <span>REST</span>
+            <h3>Controller contracts, not screen scraping</h3>
+            <p>
+              The authenticated JSON API follows an OpenAPI-backed contract,
+              rejects malformed inputs, and marshals native state mutations
+              through the app where the desktop client owns that state.
+            </p>
+          </article>
+          <article>
+            <span>Release</span>
+            <h3>Evidence before labels</h3>
+            <p>
+              The release process records commands, commits, logs, package
+              paths, hashes, live evidence, and operator decisions so a release tag
+              is a checked outcome, not a naming exercise.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section id="repos" class="section repos">
         <div class="section-heading">
           <p class="eyebrow">Public workspace</p>
@@ -623,6 +488,40 @@
             <strong>eMule-tooling</strong>
             <span>roadmap, backlog, policy, audits, and reference docs</span>
           </a>
+        </div>
+      </section>
+
+      <section id="team" class="section team">
+        <div class="section-heading">
+          <p class="eyebrow">Project lore</p>
+          <h2>The people keeping the queue from becoming performance art</h2>
+        </div>
+        <div class="team-grid">
+          <article>
+            <span>01</span>
+            <h3>Upload Slot Therapist</h3>
+            <p>
+              Helps underperforming slots process their feelings for exactly long
+              enough before escorting them back to the queue with a clipboard and
+              a cooldown.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Kad Bootstrap Archivist</h3>
+            <p>
+              Maintains the sacred list of nodes that worked once in 2007 and
+              therefore deserve a respectful, heavily validated second chance.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Release Gate Bouncer</h3>
+            <p>
+              Lets builds into the room only after they bring tests, live evidence,
+              and a convincing explanation for what happened to the last socket.
+            </p>
+          </article>
         </div>
       </section>
     </main>
