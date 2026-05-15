@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="eMule broadband edition, of eMule BB, is een moderne eMule-build voor breedbanduploadcontrole, VPN/interface-binding, verbeterde prestatiestandaarden, grote gedeelde bibliotheken, REST-automatisering, eD2K, Kad en workflows voor hoofdgebruikers." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="eMulebb" name="author"/>
+<meta content="eMule broadband edition | eMule BB in het Nederlands" property="og:title"/>
+<meta content="Moderne eMule voor controle over breedbanduploads, VPN/interface-binding, verbeterde prestatiestandaarden, grote bibliotheken, REST-automatisering, eD2K/Kad-compatibiliteit en validatie op releaseniveau. De eerste publieke release 0.7.3 is gepland, maar is nog niet vrijgegeven." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://emulebb.github.io/nl/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<link href="https://emulebb.github.io/nl/" rel="canonical"/>
+<link href="https://emulebb.github.io/sitemap.xml" rel="sitemap" type="application/xml"/><link href="https://emulebb.github.io/" hreflang="en" rel="alternate"/><link href="https://emulebb.github.io/es/" hreflang="es" rel="alternate"/><link href="https://emulebb.github.io/pt-br/" hreflang="pt-BR" rel="alternate"/><link href="https://emulebb.github.io/pt-pt/" hreflang="pt-PT" rel="alternate"/><link href="https://emulebb.github.io/it/" hreflang="it" rel="alternate"/><link href="https://emulebb.github.io/ru/" hreflang="ru" rel="alternate"/><link href="https://emulebb.github.io/de/" hreflang="de" rel="alternate"/><link href="https://emulebb.github.io/fr/" hreflang="fr" rel="alternate"/><link href="https://emulebb.github.io/pl/" hreflang="pl" rel="alternate"/><link href="https://emulebb.github.io/nl/" hreflang="nl" rel="alternate"/><link href="https://emulebb.github.io/tr/" hreflang="tr" rel="alternate"/><link href="https://emulebb.github.io/" hreflang="x-default" rel="alternate"/>
+<title>eMule broadband edition | eMule BB in het Nederlands</title>
+<link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<script type="application/ld+json">
+      {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "eMule broadband edition",
+              "alternateName": "eMule BB",
+              "applicationCategory": "FileSharingApplication",
+              "operatingSystem": "Windows",
+              "url": "https://emulebb.github.io/nl/",
+              "codeRepository": "https://github.com/eMulebb/eMule",
+              "description": "Moderne eMule voor controle over breedbanduploads, VPN/interface-binding, verbeterde prestatiestandaarden, grote gedeelde bibliotheken, REST-automatisering, eD2K/Kad-compatibiliteit en workflows voor krachtige gebruikers. De eerste publieke release staat gepland als 0.7.3 en is nog niet uitgebracht."
+      }
+    </script>
+</head>
+<body>
+<header class="site-header">
+<a aria-label="eMule broadband edition home" class="brand" href="#top">
+<span>
+<strong>eMule broadband edition</strong>
+<small>eMule BB</small>
+</span>
+</a>
+<nav aria-label="Primary navigation">
+<a href="#why">Waarom</a>
+<a href="#features">Functies</a>
+<a href="#guide">Gids</a>
+<a href="#docs">Docs</a>
+<a href="#automation">Automatisering</a>
+<a href="#release">Release</a>
+<a href="#repos">Repos</a>
+</nav>
+</header>
+<main id="top">
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow">Klassieke eMule, afgestemd op moderne breedband</p>
+<h1>eMule BB houdt eD2K en Kad nuttig voor serieuze gebruikers.</h1>
+<p class="lead">
+            Een power-user eMule voor snelle uploadlinks, grote gedeelde bibliotheken,
+            altijd ingeschakelde Windows-sessies en lokale controllerworkflows zonder
+            het verlaten van de vertrouwde desktop-app.
+          </p>
+<div aria-label="Project links" class="actions">
+<a class="button primary" href="https://github.com/eMulebb/eMule">Broncode</a>
+<a class="button secondary" href="#guide">Productgids</a>
+</div>
+</div>
+<aside aria-label="eMule BB product summary" class="hero-panel">
+<p class="panel-kicker">Producthouding</p>
+<h2>Conservatief waar compatibiliteit ertoe doet. Modern waar controle ertoe doet.</h2>
+<p>
+            eMule BB houdt de oorspronkelijke eMule-workflow centraal en voegt toe
+            breedbandbewust wachtrijgedrag, lokale API-controle en release-grade
+            validatie eromheen.
+          </p>
+<div class="signal-list">
+<span>Standaard eD2K/Kad-compatibiliteit</span>
+<span>Controle van breedbanduploadslots</span>
+<span>VPN/interface-binding</span>
+<span>Moderne prestatielimieten</span>
+<span>Geverifieerde JSON REST API</span>
+<span>Openbare 0.7.3 gepland</span>
+<span>Werkruimte voor validatie op releaseniveau</span>
+</div>
+</aside>
+</section>
+<section class="intro">
+<p>
+          eMule broadband edition, compact <strong>eMule BB</strong>, is een
+          onafhankelijke productlijn voor mensen die nog steeds waarde hechten aan de gedistribueerde eMule
+          deelmodel. Het behoudt de klassieke desktopworkflows tijdens het maken
+          de client is eenvoudiger uit te voeren, te observeren, te automatiseren en te valideren op basis van stroom
+          Windows-systemen.
+        </p>
+</section>
+<section class="section motivation" id="why">
+<div class="section-heading">
+<p class="eyebrow">Why</p>
+<h2>Een oude client is alleen nuttig als deze nog steeds met vertrouwen kan worden gebruikt</h2>
+<p>
+            eMule BB is deels een productinspanning en deels een gedisciplineerd leerproces
+            oefening: neem een complexe native Windows-applicatie met een echt netwerk
+            gedrag, behoud wat er nog steeds toe doet, en omring het met het soort
+            van het verwachte bouw-, test-, documentatie-, automatiserings- en releaseproces
+            van een modern open-sourceproject.
+          </p>
+</div>
+<div aria-label="eMule BB motivation" class="motivation-grid">
+<article>
+<span>Productreden</span>
+<h3>Houd eD2K en Kad praktisch</h3>
+<p>
+              Het doel is geen nostalgie of een herschrijving. Het is om de klassieker te behouden
+              deelmodel bruikbaar voor langdurige sessies, zeldzame bestanden, opzettelijk
+              Seeding en gebruikers die nog steeds een native desktopclient willen.
+            </p>
+</article>
+<article>
+<span>Technische reden</span>
+<h3>Verplaats oude aannames naar het daglicht</h3>
+<p>
+              Verouderde standaardinstellingen rond uploadslots, time-outs, buffers, groot
+              bibliotheken en WebServer-blootstelling worden expliciet gemaakt, zodat elke wijziging wordt doorgevoerd
+              kunnen worden beoordeeld, getest, gedocumenteerd en aangepast zonder te raden.
+            </p>
+</article>
+<article>
+<span>Reden vrijgeven</span>
+<h3>Oefen modern bewijs op oudere code</h3>
+<p>
+              De werkruimte beschouwt release als een technisch artefact: bron
+              beleid, OpenAPI-contracten, reproduceerbare builds, pakket-hashes,
+              live-netwerkcontroles en operatorpoorten moeten allemaal eerder in de rij staan
+              de eerste openbare releasetag wordt gemaakt.
+            </p>
+</article>
+</div>
+</section>
+<section class="section" id="features">
+<div class="section-heading">
+<p class="eyebrow">Features</p>
+<h2>Wat eMule BB toevoegt rond de klassieke client</h2>
+<p>
+            Het werk is gericht op operator-zichtbaar gedrag: voorspelbare upload
+            beleid, veiligere netwerkbinding, moderne vaste prestatielimieten,
+            grote bibliotheekactiviteiten, lokale automatisering en het vrijgeven van bewijs daarvoor
+            kan vóór het geplande worden gecontroleerd <code>0.7.3</code> vrijlating wordt genoemd
+            klaar.
+          </p>
+</div>
+<div aria-label="eMule broadband feature groups" class="feature-table">
+<article>
+<span>Delen en uploaden</span>
+<h3>Controle over breedbandupload</h3>
+<p>
+              Gelimiteerde slotdoelen, recycling van zwakke slots, verhoudingsuitlezingen en
+              Seeding-controles houden snelle uploadlinks bruikbaar zonder te veranderen
+              het eD2K uploadprotocol.
+            </p>
+</article>
+<article>
+<span>Netwerkcontrole</span>
+<h3>Bindend, NAT en blootstellingsbeleid</h3>
+<p>
+              Interfacebewuste binding, UPnP/NAT-toewijzingsvalidatie, HTTPS,
+              allow-IP-regels en WebServer-overerving zorgen ervoor dat externe oppervlakken behouden blijven
+              expliciet en toetsbaar.
+            </p>
+</article>
+<article>
+<span>Prestaties en schaal</span>
+<h3>Moderne standaardinstellingen voor grote sessies</h3>
+<p>
+              Hogere socketbuffers, wachtrij-/bronlimieten, bestandsbuffering,
+              time-outstandaarden, recursieve deelsynchronisatie en lange-padbegeleiding
+              richt zich op huidige Windows-systemen en grote bibliotheken.
+            </p>
+</article>
+<article>
+<span>Klassiek netwerk</span>
+<h3>eD2K en Kad blijven eerst</h3>
+<p>
+              Server-, globale en Kad-zoekopdrachten blijven de oorspronkelijke basis
+              Kad identiteitscontrole, afhandeling van slechte knooppunten, opschoning en timingwerkzaamheden
+              binnen compatibiliteitsgrenzen gehouden.
+            </p>
+</article>
+<article>
+<span>Automation</span>
+<h3>REST en controllerworkflows</h3>
+<p>
+              Geauthenticeerde JSON-eindpunten omvatten overdrachten, zoekopdrachten, gedeeld
+              bestanden, servers, Kad, logs, categorieën, uploads, statistieken,
+              voorkeuren en gecontroleerd afsluiten via vertrouwde lokale tools.
+            </p>
+</article>
+<article>
+<span>Laat discipline los</span>
+<h3>Bewijs vóór openbare pakketten</h3>
+<p>
+              De geplande <code>0.7.3</code> bèta is afhankelijk van validatie overal
+              native tests, REST contracten, live controllerlanen, netwerk
+              tegenslag, verpakking en x64/ARM64 repetities.
+            </p>
+</article>
+</div>
+</section>
+<section class="section guide" id="guide">
+<div class="section-heading">
+<p class="eyebrow">Productgids</p>
+<h2>Een kort operationeel model</h2>
+</div>
+<div class="guide-grid">
+<article>
+<span>01</span>
+<h3>Begin met bekende goede eMule-gewoonten</h3>
+<p>
+              Gebruik vertrouwde serverlijsten, bootstrap Kad opzettelijk op en blijf binnenkomen
+              en gedeelde mappen voorspelbaar, en behoud de klassieker
+              zoek/voeg toe/deel workflow voordat u de automatisering er bovenop legt.
+            </p>
+</article>
+<article>
+<span>02</span>
+<h3>Stem de upload af op uw echte link</h3>
+<p>
+              Stel een eindige uploadlimiet in, kies een realistisch uploadclientdoel,
+              en laat het breedbandbeleid minder sterkere slots bevoordelen in plaats van
+              honderd sessies tegen laag tarief.
+            </p>
+</article>
+<article>
+<span>03</span>
+<h3>Beheer grote bibliotheken</h3>
+<p>
+              Gebruik Windows-installaties die geschikt zijn voor lange paden, houd de wortels van het aandeel schoon en kijk
+              all-time- en sessieverhoudingen, en behandel zeldzame bestanden als opzettelijk
+              besluiten publiceren.
+            </p>
+</article>
+<article>
+<span>04</span>
+<h3>Automatiseer alleen op vertrouwde netwerken</h3>
+<p>
+              Schakel het WebServer/REST-oppervlak in met een API-sleutel, binding en firewall
+              Ga hier zorgvuldig mee om en gebruik controllers die de native eMule-overdracht respecteren
+              en semantiek verwijderen.
+            </p>
+</article>
+<article>
+<span>05</span>
+<h3>Houd de gereedheid voor release bij</h3>
+<p>
+              Behandel de publieke sector als actief pre-releasewerk tot de
+              gepland <code>0.7.3</code> vrijgavepoorten, operatorcontroles en live
+              E2E-bewijs zegt anders.
+            </p>
+</article>
+<article>
+<span>06</span>
+<h3>Gebruik de documenten voor diepgang</h3>
+<p>
+              De startpagina blijft compact. De gedetailleerde productgids, REST
+              contract, breedbandnotities en releasedocumenten live als Markdown
+              in de openbare toolingrepository.
+            </p>
+</article>
+</div>
+</section>
+<section class="section docs" id="docs">
+<div class="section-heading">
+<p class="eyebrow">Lees meer</p>
+<h2>Gedetailleerde handleidingen en brondocumenten</h2>
+</div>
+<div class="doc-list">
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-EMULEBB.md">
+<strong>eMule BB productgids</strong>
+<span>Productoverzicht voor installatie, afstemming, automatisering en releasebewust gebruik.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-SETUP.md">
+<strong>Installatiehandleiding</strong>
+<span>Installatiemodel, profielgedrag bij eerste gebruik en praktische opstartnotities.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-NETWORK.md">
+<strong>Netwerkgids</strong>
+<span>eD2K, Kad, binding, UPnP, firewall en verbindingsdiagnosereferentie.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-SHARING.md">
+<strong>Gids voor delen</strong>
+<span>Gedeelde mappen, bewaakte shares, grote bibliotheken en gedeelde beleidsbestanden.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-DOWNLOADS-SEARCH.md">
+<strong>Downloads en zoekgids</strong>
+<span>Zoekmodi, resultaatvertrouwen, categorieën en bestandsworkflows voor hoofdgebruikers.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-CONTROLLERS-REST.md">
+<strong>Controllers en REST-gids</strong>
+<span>Vertrouwde lokale controllergebruiks- en automatiseringsgrenzen.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/rest/REST-API-CONTRACT.md">
+<strong>REST API-contract</strong>
+<span>Voor mensen leesbaar contract voor het geverifieerde JSON-besturingsoppervlak.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/rest/REST-API-ADAPTERS.md">
+<strong>REST adaptercontracten</strong>
+<span>qBittorrent-compatibel en Torznab-adapteroppervlak voor controllerauteurs.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-TROUBLESHOOTING.md">
+<strong>Gids voor probleemoplossing</strong>
+<span>Symptoomgestuurde controles op lage ID, netwerkproblemen, delen en automatisering.</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/active/RELEASE-0.7.3.md">
+<strong>0.7.3 releasedashboard</strong>
+<span>Huidige geplande bètapoorten, aanwijzingen voor bewijsmateriaal en gereedheidsregels.</span>
+</a>
+</div>
+</section>
+<section class="section automation" id="automation">
+<div>
+<p class="eyebrow">Controller-oppervlak</p>
+<h2>REST automatisering zonder de desktop-app te vervangen</h2>
+</div>
+<div class="automation-copy">
+<p>
+            Het breedband-releasetraject legt een resource-georiënteerde bloot
+            <code>/api/v1</code> JSON API van de bestaande WebServer-listener.
+            Het authenticeert met <code>X-API-Key</code>, serveert JSON enveloppen,
+            en zorgt ervoor dat de oorspronkelijke eMule-statuswijzigingen via de app worden doorgevoerd.
+          </p>
+<div aria-label="REST API areas" class="pill-list">
+<span>Transfers</span>
+<span>Searches</span>
+<span>Servers</span>
+<span>Kad</span>
+<span>Gedeelde bestanden</span>
+<span>Uploads</span>
+<span>Categories</span>
+<span>Logs</span>
+<span>Statistics</span>
+<span>Preferences</span>
+</div>
+</div>
+</section>
+<section class="section release" id="release">
+<div class="section-heading">
+<p class="eyebrow">Laat de houding los</p>
+<h2>Publieke release 0.7.3 is gepland, afgesloten en nog niet vrijgegeven</h2>
+</div>
+<div class="release-grid">
+<article>
+<strong>Huidige status</strong>
+<p>
+              Het eerste doel voor publieke vrijgave is <code>0.7.3</code>. Dat is het nog niet
+              vrijgegeven. Het definitieve bewijs wordt momenteel gepauzeerd op aanwijzing van de operator.
+              en de publieke status blijft gekoppeld aan de actieve releasedocumenten.
+            </p>
+</article>
+<article>
+<strong>Bouw- en verpakkingsproof</strong>
+<p>
+              Het vereiste bewijs heeft betrekking op validatie van de werkruimte, debuggen en vrijgeven x64
+              app-builds, release ARM64 app-builds, binaire bestanden testen, pakket
+              generatie, clean-worktree-controles en opgenomen SHA-256-hashes.
+            </p>
+</article>
+<article>
+<strong>Gedragsbestendig</strong>
+<p>
+              Testpoorten hebben betrekking op native suites, REST contract en OpenAPI drift,
+              verkeerd opgemaakte verzoeken, UI-automatisering, live controller-surface E2E,
+              volledige release x64 live E2E en netwerk-tegenspoedscenario's.
+            </p>
+</article>
+<article>
+<strong>Controller-proof</strong>
+<p>
+              Compatibel met aMuTorrent, Prowlarr, Radarr, Sonarr en qBittorrent
+              adapterlanen bewijzen dat automatisering werkt zonder de
+              inheems <code>/api/v1</code> contract.
+            </p>
+</article>
+<article>
+<strong>Compatibiliteitsbewijs</strong>
+<p>
+              Het gedrag van voorraad eD2K/Kad blijft de standaard. Breedband, REST en
+              controllerfuncties zijn toegevoegd rond dat compatibiliteitsdoel en
+              vergeleken met de basislijn van de gemeenschap, waar pariteitstesten nuttig zijn.
+            </p>
+</article>
+</div>
+</section>
+<section class="section method" id="method">
+<div class="section-heading">
+<p class="eyebrow">Implementatiemethode</p>
+<h2>Moderniseer rond de oude kern en bewijs vervolgens het resultaat</h2>
+<p>
+            De implementatiestijl is opzettelijk conservatief. eMule BB
+            verandert lokaal beleid, limieten, diagnostiek, API-grenzen en release
+            discipline terwijl de standaard eD2K/Kad-compatibiliteit behouden blijft.
+          </p>
+</div>
+<div aria-label="eMule BB implementation methods" class="method-grid">
+<article>
+<span>Compatibility</span>
+<h3>Geen toevallige protocolafwijking</h3>
+<p>
+              Kad en eD2K wijzigingen blijven binnen de lokale routing, timing, validatie,
+              en controlepaden. Wire-formaten, opcodes en native desktop
+              workflows blijven compatibiliteitsgrenzen.
+            </p>
+</article>
+<article>
+<span>Limits</span>
+<h3>Vaste, controleerbare standaardwaarden</h3>
+<p>
+              Moderne aannames over bandbreedte, geheugen, socket, wachtrij en time-out
+              worden in plaats daarvan uitgedrukt als expliciete standaardinstellingen of geavanceerde voorkeuren
+              van verborgen adaptief gedrag.
+            </p>
+</article>
+<article>
+<span>REST</span>
+<h3>Controllercontracten, geen screenscraping</h3>
+<p>
+              De geverifieerde JSON API volgt een door OpenAPI ondersteund contract,
+              verwerpt misvormde input en zorgt voor mutaties in de oorspronkelijke staat
+              via de app waarvan de desktopclient eigenaar is van die status.
+            </p>
+</article>
+<article>
+<span>Release</span>
+<h3>Bewijs vóór etiketten</h3>
+<p>
+              Het releaseproces registreert opdrachten, commits, logs, pakketten
+              paden, hashes, live bewijsmateriaal en beslissingen van operators, dus een release-tag
+              is een gecontroleerde uitkomst, geen naamgevingsoefening.
+            </p>
+</article>
+</div>
+</section>
+<section class="section repos" id="repos">
+<div class="section-heading">
+<p class="eyebrow">Openbare werkruimte</p>
+<h2>Primaire opslagplaatsen</h2>
+</div>
+<div class="repo-list">
+<a href="https://github.com/eMulebb/eMule">
+<strong>eMule</strong>
+<span>desktop-app en productbron</span>
+</a>
+<a href="https://github.com/eMulebb/eMulebb-setup">
+<strong>eMulebb-setup</strong>
+<span>reproduceerbare werkplekopstelling</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-build">
+<strong>eMule-build</strong>
+<span>build-, validatie- en release-orkestratie</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-build-tests">
+<strong>eMule-build-tests</strong>
+<span>native, Python, UI, REST en live E2E-tests</span>
+</a>
+<a href="https://github.com/eMulebb/eMule-tooling">
+<strong>eMule-tooling</strong>
+<span>roadmap, backlog, beleid, audits en referentiedocumenten</span>
+</a>
+</div>
+</section>
+<section class="section team" id="team">
+<div class="section-heading">
+<p class="eyebrow">Projectoverlevering</p>
+<h2>De mensen die ervoor zorgen dat de wachtrij geen performancekunst wordt</h2>
+</div>
+<div class="team-grid">
+<article>
+<span>01</span>
+<h3>Upload Slottherapeut</h3>
+<p>
+              Helpt slecht presterende slots hun gevoelens precies lang te verwerken
+              genoeg voordat je ze met een klembord terug naar de wachtrij begeleidt en
+              een afkoeling.
+            </p>
+</article>
+<article>
+<span>02</span>
+<h3>Kad Bootstrap-archivaris</h3>
+<p>
+              Onderhoudt de heilige lijst met knooppunten die ooit in 2007 hebben gewerkt en
+              verdienen daarom een respectvolle, zwaar gevalideerde tweede kans.
+            </p>
+</article>
+<article>
+<span>03</span>
+<h3>Laat de poortuitsmijter los</h3>
+<p>
+              Laten we de kamer pas inbouwen nadat ze tests, live bewijsmateriaal hebben meegebracht,
+              en een overtuigende verklaring voor wat er met de laatste socket is gebeurd.
+            </p>
+</article>
+</div>
+</section>
+</main>
+<footer>
+<span>eMule broadband edition</span>
+<div aria-label="Footer links" class="footer-links">
+<a href="../">English</a>
+<a href="../es/">Español</a>
+<a href="../pt-br/">Português (Brasil)</a>
+<a href="../pt-pt/">Português (Portugal)</a>
+<a href="../it/">Italiano</a>
+<a href="../ru/">Русский</a>
+<a href="../de/">Deutsch</a>
+<a href="../fr/">Français</a>
+<a href="../pl/">Polski</a>
+<a href="../nl/">Nederlands</a>
+<a href="../tr/">Türkçe</a>
+<a href="https://github.com/eMulebb">GitHub</a>
+</div>
+</footer>
+</body>
+</html>

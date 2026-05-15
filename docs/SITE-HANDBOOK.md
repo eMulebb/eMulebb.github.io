@@ -116,9 +116,13 @@ Before adding or changing a feature entry:
 ## Localization Policy
 
 - English (`/`) is canonical.
-- Spanish (`/es/`), Italian (`/it/`), and Portuguese (`/pt/`) are generated from
-  the English structure.
-- Locale placeholders must use `noindex,follow`.
+- Static locale pages are generated from the English structure for the canonical
+  release language set:
+  `/es/`, `/pt-br/`, `/pt-pt/`, `/it/`, `/ru/`, `/de/`, `/fr/`, `/pl/`,
+  `/nl/`, and `/tr/`.
+- Completed locale pages use `index,follow`.
+- `/pt/` is a compatibility chooser for the regional Portuguese pages and must
+  stay `noindex,follow` and out of `sitemap.xml`.
 - Complete localized pages must:
   - match the English section contract
   - use translated titles, descriptions, headings, and body copy
@@ -145,7 +149,7 @@ Search/publishing rules:
 
 - `robots.txt` must point to `sitemap.xml`.
 - `sitemap.xml` must include only complete, indexable pages.
-- Locale stubs stay out of `sitemap.xml`.
+- Locale stubs and compatibility chooser pages stay out of `sitemap.xml`.
 - Metadata must not mention or point to logos/images while the no-logo policy is
   active.
 
@@ -207,14 +211,21 @@ foreach ($anchor in $anchors) {
 Curated tooling-doc link check:
 
 ```powershell
-$html = Get-Content -Raw index.html
-$urls = [regex]::Matches($html, 'https://github.com/eMulebb/eMule-tooling/blob/main/([^\"]+)') |
-  ForEach-Object { $_.Groups[1].Value } |
-  Sort-Object -Unique
-foreach ($path in $urls) {
-  $local = Join-Path '..\eMulebb-workspace\repos\eMule-tooling' ($path -replace '/', '\')
-  if (-not (Test-Path -LiteralPath $local)) {
-    throw "Missing linked doc: $path"
+$files = @(
+  'index.html', 'es/index.html', 'pt-br/index.html', 'pt-pt/index.html',
+  'it/index.html', 'ru/index.html', 'de/index.html', 'fr/index.html',
+  'pl/index.html', 'nl/index.html', 'tr/index.html'
+)
+foreach ($file in $files) {
+  $html = Get-Content -Raw $file
+  $urls = [regex]::Matches($html, 'https://github.com/eMulebb/eMule-tooling/blob/main/([^\"]+)') |
+    ForEach-Object { $_.Groups[1].Value } |
+    Sort-Object -Unique
+  foreach ($path in $urls) {
+    $local = Join-Path '..\eMulebb-workspace\repos\eMule-tooling' ($path -replace '/', '\')
+    if (-not (Test-Path -LiteralPath $local)) {
+      throw "Missing linked doc: ${file}: $path"
+    }
   }
 }
 ```
@@ -222,12 +233,21 @@ foreach ($path in $urls) {
 Locale metadata check:
 
 ```powershell
-$files = @('index.html', 'es/index.html', 'it/index.html', 'pt/index.html')
+$files = @(
+  'index.html', 'es/index.html', 'pt-br/index.html', 'pt-pt/index.html',
+  'it/index.html', 'ru/index.html', 'de/index.html', 'fr/index.html',
+  'pl/index.html', 'nl/index.html', 'tr/index.html'
+)
 foreach ($file in $files) {
   $html = Get-Content -Raw $file
   if ($html -notmatch '<title>') { throw "Missing title: $file" }
-  if ($html -notmatch 'rel="canonical"') { throw "Missing canonical: $file" }
+  if ($html -notmatch '<link[^>]+rel="canonical"') { throw "Missing canonical: $file" }
   if ($html -notmatch 'hreflang="x-default"') { throw "Missing x-default: $file" }
+  if ($html -notmatch 'content="index,follow"') { throw "Locale not indexable: $file" }
+}
+$pt = Get-Content -Raw 'pt/index.html'
+if ($pt -notmatch 'content="noindex,follow"') {
+  throw 'Portuguese chooser must remain noindex'
 }
 ```
 
@@ -249,9 +269,17 @@ mobile rendering before pushing.
 Current public files:
 
 - `index.html`: canonical English page
-- `es/index.html`: Spanish placeholder
-- `it/index.html`: Italian placeholder
-- `pt/index.html`: Portuguese placeholder
+- `es/index.html`: Spanish page
+- `pt-br/index.html`: Brazilian Portuguese page
+- `pt-pt/index.html`: European Portuguese page
+- `it/index.html`: Italian page
+- `ru/index.html`: Russian page
+- `de/index.html`: German page
+- `fr/index.html`: French page
+- `pl/index.html`: Polish page
+- `nl/index.html`: Dutch page
+- `tr/index.html`: Turkish page
+- `pt/index.html`: noindex Portuguese compatibility chooser
 - `styles.css`: shared styles
 - `robots.txt`: crawler policy
 - `sitemap.xml`: indexable URL list
