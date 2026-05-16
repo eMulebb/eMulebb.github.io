@@ -43,6 +43,14 @@
 <title>{{ content.title }}</title>
 <link href="{{ pico_cdn }}" rel="stylesheet"/>
 <link href="{{ page.stylesheet_href }}" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_measurement_id }}"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ ga_measurement_id }}');
+    </script>
 <script type="application/ld+json">
       {
               "@context": "https://schema.org",
@@ -179,9 +187,7 @@
 <footer>
 <span>eMule broadband edition</span>
 <div aria-label="{{ content.footer_links_label }}" class="footer-links">
-{%- for locale in footer_locales %}
-        <a href="{{ locale.href }}">{{ locale.label }}</a>
-{%- endfor %}
+        <a href="{{ language_href }}">{{ content.languages_link_label }}</a>
         <a href="https://github.com/eMulebb">GitHub</a>
       </div>
 </footer>

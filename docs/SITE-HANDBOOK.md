@@ -116,16 +116,23 @@ Before adding or changing a feature entry:
 ## Localization Policy
 
 - English (`/`) is canonical.
-- Static locale pages are generated from the English structure for the canonical
-  release language set:
-  `/es/`, `/pt-br/`, `/pt-pt/`, `/it/`, `/ru/`, `/de/`, `/fr/`, `/pl/`,
-  `/nl/`, and `/tr/`.
+- Static locale pages are generated from the English structure for the stock
+  eMule language set:
+  `/ar-ae/`, `/eu/`, `/bg/`, `/ca/`, `/cs/`, `/da/`, `/el/`, `/es/`,
+  `/ast/`, `/et/`, `/fa/`, `/fi/`, `/br/`, `/pt-br/`, `/pt-pt/`, `/gl/`,
+  `/he/`, `/hu/`, `/it/`, `/ja/`, `/ko/`, `/lt/`, `/lv/`, `/mt/`, `/nb/`,
+  `/ru/`, `/de/`, `/fr/`, `/pl/`, `/nl/`, `/nn/`, `/ro/`, `/sl/`, `/sq/`,
+  `/sv/`, `/tr/`, `/uk/`, `/ug-cn/`, `/ca-valencia/`,
+  `/ca-valencia-racv/`, `/vi/`, `/zh-cn/`, and `/zh-tw/`.
 - Generated HTML is committed for GitHub Pages, but localized homepage content
-  must be changed in `tools/render_pages.py` and rendered through the Jinja2
+  must be changed through structured JSON under `content/` or the shared
+  renderer rules in `tools/render_pages.py`, then rendered through the Jinja2
   templates under `templates/`.
 - Completed locale pages use `index,follow`.
-- `/pt/` is a compatibility chooser for the regional Portuguese pages and must
-  stay `noindex,follow` and out of `sitemap.xml`.
+- `/languages/` is the indexable language selector and is included in
+  `sitemap.xml`.
+- Do not add generic compatibility chooser URLs such as `/pt/`; Portuguese is
+  represented by the real regional pages `/pt-br/` and `/pt-pt/`.
 - Complete localized pages must:
   - match the English section contract
   - use translated titles, descriptions, headings, and body copy
@@ -156,7 +163,8 @@ Search/publishing rules:
 
 - `robots.txt` must point to `sitemap.xml`.
 - `sitemap.xml` must include only complete, indexable pages.
-- Locale stubs and compatibility chooser pages stay out of `sitemap.xml`.
+- Locale stubs and non-indexable compatibility chooser pages stay out of
+  `sitemap.xml`.
 - Metadata must not mention or point to logos/images while the no-logo policy is
   active.
 
@@ -202,7 +210,7 @@ python -m pip install -r requirements.txt
 python tools\render_pages.py --lastmod 2026-05-16 --check
 python ..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate
 git diff --check
-rg -n "emule-logo|Logo\.jpg|<img|\.jpg|\.png|\.gif|favicon" index.html styles.css es pt-br pt-pt it ru de fr pl nl tr pt
+rg -n "emule-logo|Logo\.jpg|<img|\.jpg|\.png|\.gif|favicon" index.html styles.css ar-ae eu bg ca cs da el es ast et fa fi br pt-br pt-pt gl he hu it ja ko lt lv mt nb ru de fr pl nl nn ro sl sq sv tr uk ug-cn ca-valencia ca-valencia-racv vi zh-cn zh-tw languages
 ```
 
 Anchor check:
@@ -221,11 +229,9 @@ foreach ($anchor in $anchors) {
 Curated tooling-doc link check:
 
 ```powershell
-$files = @(
-  'index.html', 'es/index.html', 'pt-br/index.html', 'pt-pt/index.html',
-  'it/index.html', 'ru/index.html', 'de/index.html', 'fr/index.html',
-  'pl/index.html', 'nl/index.html', 'tr/index.html'
-)
+$files = Get-ChildItem -Recurse -Filter index.html |
+  Where-Object { $_.FullName -notmatch '\\.git\\' } |
+  ForEach-Object { $_.FullName }
 foreach ($file in $files) {
   $html = Get-Content -Raw $file
   $urls = [regex]::Matches($html, 'https://github.com/eMulebb/eMule-tooling/blob/main/([^\"]+)') |
@@ -243,11 +249,9 @@ foreach ($file in $files) {
 Locale metadata check:
 
 ```powershell
-$files = @(
-  'index.html', 'es/index.html', 'pt-br/index.html', 'pt-pt/index.html',
-  'it/index.html', 'ru/index.html', 'de/index.html', 'fr/index.html',
-  'pl/index.html', 'nl/index.html', 'tr/index.html'
-)
+$files = Get-ChildItem -Recurse -Filter index.html |
+  Where-Object { $_.FullName -notmatch '\\.git\\' } |
+  ForEach-Object { $_.FullName }
 foreach ($file in $files) {
   $html = Get-Content -Raw $file
   if ($html -notmatch '<title>') { throw "Missing title: $file" }
@@ -255,10 +259,7 @@ foreach ($file in $files) {
   if ($html -notmatch 'hreflang="x-default"') { throw "Missing x-default: $file" }
   if ($html -notmatch 'content="index,follow"') { throw "Locale not indexable: $file" }
 }
-$pt = Get-Content -Raw 'pt/index.html'
-if ($pt -notmatch 'content="noindex,follow"') {
-  throw 'Portuguese chooser must remain noindex'
-}
+if (Test-Path -LiteralPath 'pt/index.html') { throw 'Unexpected generic Portuguese chooser' }
 ```
 
 Robots and sitemap check:
@@ -279,17 +280,9 @@ mobile rendering before pushing.
 Current public files:
 
 - `index.html`: canonical English page
-- `es/index.html`: Spanish page
-- `pt-br/index.html`: Brazilian Portuguese page
-- `pt-pt/index.html`: European Portuguese page
-- `it/index.html`: Italian page
-- `ru/index.html`: Russian page
-- `de/index.html`: German page
-- `fr/index.html`: French page
-- `pl/index.html`: Polish page
-- `nl/index.html`: Dutch page
-- `tr/index.html`: Turkish page
-- `pt/index.html`: noindex Portuguese compatibility chooser
+- locale `index.html` files under the stock eMule language directories listed
+  in the Localization Policy
+- `languages/index.html`: indexable language selector
 - `styles.css`: shared styles
 - `robots.txt`: crawler policy
 - `sitemap.xml`: indexable URL list

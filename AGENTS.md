@@ -16,12 +16,13 @@ publishing-policy changes.
   summarizes and links; it does not invent feature or release facts.
 - Only shipped, landed, passed, or release-proven features belong in the public
   homepage feature/catalog copy.
-- Keep English canonical. Completed locale pages live under `es/`, `pt-br/`,
-  `pt-pt/`, `it/`, `ru/`, `de/`, `fr/`, `pl/`, `nl/`, and `tr/`; they should
-  match the English section structure, use reciprocal `hreflang` links, and
-  stay `index,follow`.
-- Keep `pt/` as the Portuguese regional chooser only; it must stay
-  `noindex,follow` and must not be listed in `sitemap.xml`.
+- Keep English canonical. Completed locale pages are generated for stock eMule
+  languages from `tools\render_pages.py` and JSON copy under `content\`; they
+  should match the English section structure, use reciprocal `hreflang` links,
+  and stay `index,follow`.
+- Use `/languages/` as the language selector. Do not add generic compatibility
+  locale chooser URLs such as `/pt/` unless they are real indexable locale
+  pages with their own maintained copy.
 - The generated HTML pages are committed, but the production source is the
   Jinja2 renderer in `tools\render_pages.py` plus templates under `templates\`.
 - Preserve technical terms such as `eD2K`, `Kad`, `REST`, `JSON`, `API`,
@@ -44,5 +45,4 @@ publishing-policy changes.
 - Use `python ..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate`
   before publishing locale, metadata, sitemap, asset-policy, or navigation
   changes.
-- Use `python ..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py --pages-root . write-sitemap --lastmod YYYY-MM-DD`
-  to regenerate `sitemap.xml` from the canonical locale table.
+- Use the renderer to regenerate `sitemap.xml` from the canonical locale table.

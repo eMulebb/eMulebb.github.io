@@ -1,0 +1,3332 @@
+{
+  "de": {
+    "content": {
+      "automation": {
+        "eyebrow": "Controller-Oberfläche",
+        "h2": "REST automation, ohne die Desktop-App zu ersetzen",
+        "p": "Die Breitband-Release-Linie stellt über den vorhandenen WebServer-Listener eine ressourcenorientierte JSON API <code>/api/v1</code> bereit. Sie authentifiziert mit <code>X-API-Key</code>, liefert JSON-Envelopes und führt native eMule-Statusänderungen über die App.",
+        "pills": [
+          "Transfers",
+          "Suchen",
+          "Server",
+          "Kad",
+          "Freigaben",
+          "Uploads",
+          "Kategorien",
+          "Logs",
+          "Statistiken",
+          "Preferences"
+        ],
+        "pills_label": "REST API Bereiche"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Breitband-Upload-Kontrolle",
+            "p": "Begrenzte Slot-Ziele, Recycling schwacher Slots, Ratio-Anzeigen und Seeding-Kontrollen halten schnelle Uploads nützlich, ohne das eD2K-Upload-Protokoll zu ändern.",
+            "span": "Freigabe und Upload"
+          },
+          {
+            "h3": "Binding, NAT und Expositions-Policy",
+            "p": "Interface-aware binding, UPnP/NAT-Validierung, HTTPS, allowed-IP-Regeln und WebServer-Vererbung halten entfernte Oberflächen explizit und testbar.",
+            "span": "Netzwerkkontrolle"
+          },
+          {
+            "h3": "Aktuelle Defaults für große Sitzungen",
+            "p": "Größere Socket-Buffer, Queue/Source-Limits, file buffering, Timeouts, rekursive Sync und long-path guidance zielen auf heutige Windows-Systeme und große Freigaben.",
+            "span": "Leistung und Skalierung"
+          },
+          {
+            "h3": "eD2K und Kad bleiben zuerst",
+            "p": "Server-, globale und Kad-Suche bleiben die native Basis, mit Kad-Identität, Bad-Node-Behandlung, Cleanup und Timing innerhalb kompatibler Grenzen.",
+            "span": "Klassisches Netzwerk"
+          },
+          {
+            "h3": "REST und Controller-Workflows",
+            "p": "Authentifizierte JSON-Endpunkte decken Transfers, Suchen, Freigaben, Server, Kad, Logs, Kategorien, Uploads, Statistiken, Preferences und kontrolliertes Shutdown ab.",
+            "span": "Automatisierung"
+          },
+          {
+            "h3": "Nachweise vor öffentlichen Paketen",
+            "p": "Die geplante Beta <code>0.7.3</code> hängt von nativen Tests, REST-Verträgen, Live-Controller-Lanes, Netzwerk-Adversity, Packaging und x64/ARM64-Proben ab.",
+            "span": "Release-Disziplin"
+          }
+        ],
+        "eyebrow": "Funktionen",
+        "h2": "Was eMule BB um den klassischen Client ergänzt",
+        "p": "Die Arbeit zielt auf sichtbares Betreiberverhalten: vorhersehbare Upload-Policy, sichereres binding, feste Leistungsgrenzen, große Freigaben, lokale Automatisierung und Nachweise für das geplante Release <code>0.7.3</code>."
+      },
+      "footer_links_label": "Footer-Links",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Mit bewährten eMule-Gewohnheiten starten",
+            "p": "Nutze vertrauenswürdige Serverlisten, starte Kad bewusst, halte incoming und freigegebene Ordner berechenbar und bewahre den klassischen Workflow vor der Automatisierung.",
+            "span": ""
+          },
+          {
+            "h3": "Upload auf den echten Anschluss abstimmen",
+            "p": "Setze ein endliches Upload-Limit, wähle ein realistisches Client-Ziel und lass die Breitband-Policy weniger, aber stärkere Slots bevorzugen.",
+            "span": ""
+          },
+          {
+            "h3": "Große Freigaben pflegen",
+            "p": "Nutze Windows mit long paths, halte Freigabe-Wurzeln sauber, beobachte Ratios und behandle seltene Dateien als bewusste Veröffentlichungen.",
+            "span": ""
+          },
+          {
+            "h3": "Nur in vertrauenswürdigen Netzen automatisieren",
+            "p": "Aktiviere WebServer/REST mit API key, setze binding und Firewall sauber und nutze Controller, die native eMule-Semantik respektieren.",
+            "span": ""
+          },
+          {
+            "h3": "Release-Reife verfolgen",
+            "p": "Betrachte die öffentliche Branch als aktives Pre-Release, bis <code>0.7.3</code>-Gates, Operator-Checks und Live-E2E-Nachweise etwas anderes sagen.",
+            "span": ""
+          },
+          {
+            "h3": "Für Tiefe die Dokumentation nutzen",
+            "p": "Die Homepage bleibt kompakt. Produktguide, REST-Vertrag, Breitbandnotizen und Release-Dokumente liegen als Markdown im Tooling-Repository.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Produktguide",
+        "h2": "Ein kurzes Betriebsmodell",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "Klassischer eMule, abgestimmt auf heutige Breitbandanschlüsse",
+        "guide": "Produktguide",
+        "h1": "eMule BB hält eD2K und Kad für ernsthafte Nutzer brauchbar.",
+        "lead": "Ein eMule für Power User mit schnellen Uploads, großen Freigaben, dauerhaft laufenden Windows-Sitzungen und lokalen Controller-Workflows, ohne die vertraute Desktop-App aufzugeben.",
+        "panel_h2": "Konservativ, wo Kompatibilität zählt. Modern, wo Kontrolle zählt.",
+        "panel_kicker": "Produktlinie",
+        "panel_p": "eMule BB stellt den nativen eMule-Workflow in den Mittelpunkt und ergänzt ihn um breitbandtaugliche Queue-Logik, lokale API-Steuerung und Release-Validierung.",
+        "signals": [
+          "Originale eD2K/Kad-Kompatibilität",
+          "Kontrolle der Upload-Slots",
+          "VPN/interface binding",
+          "Aktuelle Leistungsgrenzen",
+          "Authentifizierte JSON REST API",
+          "Öffentliche 0.7.3 geplant",
+          "Workspace für Release-Validierung"
+        ],
+        "source": "Quellcode"
+      },
+      "intro": "eMule broadband edition, kurz <strong>eMule BB</strong>, ist eine eigenständige Produktlinie für Menschen, die das verteilte Modell von eMule weiterhin schätzen. Sie bewahrt die klassischen Desktop-Workflows und macht den Client auf heutigen Windows-Systemen leichter betreibbar, beobachtbar, automatisierbar und validierbar.",
+      "meta_description": "eMule BB ist eine moderne eMule-Ausgabe für Breitband-Upload-Kontrolle, VPN/interface binding, aktuelle Leistungsgrenzen, große Freigaben, REST automation, eD2K, Kad und Power-User-Workflows.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Kein beiläufiger Protocol drift",
+            "p": "Kad- und eD2K-Änderungen bleiben in lokalem Routing, Timing, Validierung und Kontrolle. Wire formats, opcodes und native Workflows sind Kompatibilitätsgrenzen.",
+            "span": "Kompatibilität"
+          },
+          {
+            "h3": "Feste, prüfbare Defaults",
+            "p": "Moderne Annahmen zu bandwidth, Speicher, socket, queue und timeout werden als explizite Defaults oder Advanced Preferences abgebildet.",
+            "span": "Limits"
+          },
+          {
+            "h3": "Controller-Verträge, kein screen scraping",
+            "p": "Die authentifizierte JSON API folgt einem OpenAPI-Vertrag, lehnt malformed inputs ab und führt native Mutationen über die App.",
+            "span": "REST"
+          },
+          {
+            "h3": "Nachweise vor Labels",
+            "p": "Der Prozess zeichnet Befehle, Commits, Logs, Paketpfade, Hashes, Live-Nachweise und Operator-Entscheidungen auf, damit ein Tag ein geprüftes Ergebnis ist.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Implementierungsmethode",
+        "h2": "Um den Legacy-Kern modernisieren, dann das Ergebnis beweisen",
+        "p": "Der Stil ist bewusst konservativ. eMule BB ändert lokale Policy, Limits, Diagnostik, API-Grenzen und Release-Disziplin, während eD2K/Kad-Kompatibilität Default bleibt."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Warum"
+        },
+        {
+          "id": "features",
+          "label": "Funktionen"
+        },
+        {
+          "id": "guide",
+          "label": "Guide"
+        },
+        {
+          "id": "docs",
+          "label": "Dokumentation"
+        },
+        {
+          "id": "automation",
+          "label": "Automatisierung"
+        },
+        {
+          "id": "release",
+          "label": "Veröffentlichung"
+        },
+        {
+          "id": "repos",
+          "label": "Repos"
+        }
+      ],
+      "nav_label": "Hauptnavigation",
+      "og_description": "Moderner eMule für Breitband-Upload-Kontrolle, VPN/interface binding, aktuelle Leistungsgrenzen, große Bibliotheken, REST automation, eD2K/Kad-Kompatibilität und Release-Validierung. Die erste öffentliche Version 0.7.3 ist geplant und noch nicht veröffentlicht.",
+      "og_title": "eMule broadband edition | eMule BB auf Deutsch",
+      "product_summary_label": "eMule BB Kurzfassung",
+      "project_links_label": "Projektlinks",
+      "release": {
+        "cards": [
+          {
+            "h3": "Aktueller Stand",
+            "p": "Das erste öffentliche Ziel ist <code>0.7.3</code>. Es ist noch nicht veröffentlicht. Der finale Nachweis ist durch Operator-Vorgabe pausiert, der öffentliche Stand bleibt an aktive Release-Dokumente gebunden.",
+            "span": ""
+          },
+          {
+            "h3": "Build- und Paketnachweis",
+            "p": "Der Nachweis umfasst Workspace-Validierung, Debug- und Release-x64-Builds, Release-ARM64-Builds, Test-Binaries, Paketgenerierung, saubere Worktree und SHA-256-Hashes.",
+            "span": ""
+          },
+          {
+            "h3": "Verhaltensnachweis",
+            "p": "Die Gates umfassen native Suites, REST-Vertrag, OpenAPI drift, malformed requests, UI automation, live Controller-Surface E2E, vollständiges Release x64 live E2E und Netzwerk-Adversity.",
+            "span": ""
+          },
+          {
+            "h3": "Controller-Nachweis",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr und qBittorrent-kompatible Lanes zeigen Automatisierung, ohne den nativen Vertrag <code>/api/v1</code> zu schwächen.",
+            "span": ""
+          },
+          {
+            "h3": "Kompatibilitätsnachweis",
+            "p": "Das originale eD2K/Kad-Verhalten bleibt Default. Breitband, REST und Controller werden um dieses Kompatibilitätsziel herum ergänzt.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Release-Status",
+        "h2": "Die öffentliche Version 0.7.3 ist geplant, gegated und noch nicht veröffentlicht",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Öffentlicher Workspace",
+        "h2": "Primäre Repositories",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "Moderner eMule für Breitband-Upload-Kontrolle, VPN/interface binding, aktuelle Leistungsgrenzen, große Freigaben, REST automation, eD2K/Kad-Kompatibilität und Power-User-Workflows. Die erste öffentliche Version ist als 0.7.3 geplant und noch nicht veröffentlicht.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Upload-Slot-Therapeut",
+            "p": "Gibt schwachen Slots genau lange genug Raum für ihre Gefühle, bevor sie mit Formular und cooldown zurück in die Queue gehen.",
+            "span": ""
+          },
+          {
+            "h3": "Kad-Bootstrap-Archivar",
+            "p": "Bewahrt die heilige Liste von Nodes, die 2007 einmal funktionierten und eine sorgfältig validierte zweite Chance verdienen.",
+            "span": ""
+          },
+          {
+            "h3": "Release-Gate-Türsteher",
+            "p": "Lässt Builds nur herein, wenn sie Tests, Live-Nachweise und eine plausible Erklärung zum letzten Socket mitbringen.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Projektkultur",
+        "h2": "Die Leute, die verhindern, dass die Queue zur Performance-Kunst wird",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB auf Deutsch",
+      "why": {
+        "cards": [
+          {
+            "h3": "eD2K und Kad praktisch halten",
+            "p": "Es geht nicht um Nostalgie und nicht um einen Rewrite. Das klassische Modell soll für lange Sitzungen, seltene Dateien, bewusstes Seeding und native Desktop-Nutzung brauchbar bleiben.",
+            "span": "Produktgrund"
+          },
+          {
+            "h3": "Alte Annahmen sichtbar machen",
+            "p": "Defaults für Upload-Slots, Timeouts, Buffer, große Freigaben und WebServer-Exposition werden explizit, damit sie geprüft, getestet und dokumentiert werden können.",
+            "span": "Technischer Grund"
+          },
+          {
+            "h3": "Moderne Nachweise auf Legacy-Code anwenden",
+            "p": "Der Workspace behandelt Release als technisches Artefakt: Source-Policy, OpenAPI-Verträge, reproduzierbare Builds, Hashes, Live-Prüfungen und Operator-Gates müssen zusammenpassen.",
+            "span": "Release-Grund"
+          }
+        ],
+        "eyebrow": "Warum",
+        "h2": "Ein Legacy-Client ist nur nützlich, wenn man ihn noch verlässlich betreiben kann",
+        "p": "eMule BB ist Produktarbeit und disziplinierte Technik zugleich: eine native Windows-Anwendung mit echtem Netzwerkverhalten erhalten und mit modernem Build-, Test-, Dokumentations-, Automatisierungs- und Release-Prozess umgeben."
+      }
+    },
+    "doc_section": [
+      "Mehr lesen",
+      "Detaillierte Guides und Quelldokumente"
+    ],
+    "docs": {
+      "controllers": [
+        "Controller- und REST-Guide",
+        "Nutzung vertrauenswürdiger lokaler Controller und Automatisierungsgrenzen."
+      ],
+      "downloads": [
+        "Download- und Such-Guide",
+        "Suchmodi, Vertrauen in Ergebnisse, Kategorien und Power-User-Workflows."
+      ],
+      "emulebb": [
+        "eMule BB Produktguide",
+        "Überblick für Setup, Tuning, Automatisierung und release-bewusste Nutzung."
+      ],
+      "network": [
+        "Netzwerk-Guide",
+        "Referenz zu eD2K, Kad, binding, UPnP, Firewall und Verbindungsdiagnose."
+      ],
+      "release": [
+        "0.7.3 Release-Dashboard",
+        "Geplante Beta-Gates, Evidenzverweise und Readiness-Regeln."
+      ],
+      "rest_adapters": [
+        "REST Adapter Verträge",
+        "qBittorrent-compatible und Torznab Oberfläche für Controller-Autoren."
+      ],
+      "rest_contract": [
+        "REST API Vertrag",
+        "Lesbarer Vertrag für die authentifizierte JSON-Steuerfläche."
+      ],
+      "setup": [
+        "Setup-Guide",
+        "Installationsmodell, First-run-Profil und praktische Startnotizen."
+      ],
+      "sharing": [
+        "Freigabe-Guide",
+        "Freigegebene Ordner, überwachte shares, große Bibliotheken und Policy-Dateien."
+      ],
+      "troubleshooting": [
+        "Troubleshooting-Guide",
+        "Symptomgeführte Checks für Low ID, Netzwerk, Freigaben und Automatisierung."
+      ]
+    },
+    "language_link": "Sprachen",
+    "menu": {
+      "close_label": "Hauptnavigation schließen",
+      "label": "Menü",
+      "open_label": "Hauptnavigation öffnen"
+    },
+    "repo_section": [
+      "Öffentlicher Workspace",
+      "Primäre Repositories"
+    ],
+    "repos": {
+      "build": "Build-, Validierungs- und Release-Orchestrierung",
+      "emule": "Desktop-App und Produktquellen",
+      "setup": "reproduzierbares Workspace-Setup",
+      "tests": "native, Python-, UI-, REST- und live E2E-Tests",
+      "tooling": "Roadmap, Backlog, Policy, Audits und Referenzdocs"
+    }
+  },
+  "es": {
+    "content": {
+      "automation": {
+        "eyebrow": "Superficie de control",
+        "h2": "REST automation sin reemplazar la aplicación de escritorio",
+        "p": "La línea de release de banda ancha expone una JSON API <code>/api/v1</code> orientada a recursos desde el listener WebServer existente. Autentica con <code>X-API-Key</code>, sirve envoltorios JSON y mantiene los cambios de estado de eMule canalizados por la aplicación.",
+        "pills": [
+          "Transferencias",
+          "Búsquedas",
+          "Servidores",
+          "Kad",
+          "Archivos compartidos",
+          "Uploads",
+          "Categorías",
+          "Logs",
+          "Estadísticas",
+          "Preferencias"
+        ],
+        "pills_label": "Áreas de REST API"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Control de upload en banda ancha",
+            "p": "Objetivos acotados de slots, reciclaje de slots débiles, ratios visibles y controles de seeding mantienen útiles los enlaces rápidos sin cambiar el protocolo de upload eD2K.",
+            "span": "Compartir y upload"
+          },
+          {
+            "h3": "Binding, NAT y exposición",
+            "p": "Interface-aware binding, validación UPnP/NAT, HTTPS, reglas de IP permitida y herencia de WebServer mantienen las superficies remotas explícitas y comprobables.",
+            "span": "Control de red"
+          },
+          {
+            "h3": "Valores actuales para sesiones grandes",
+            "p": "Buffers de socket mayores, límites de queue/source, file buffering, timeouts, sync recursiva y guía de long paths apuntan a Windows actuales y bibliotecas grandes.",
+            "span": "Rendimiento y escala"
+          },
+          {
+            "h3": "eD2K y Kad siguen primero",
+            "p": "Las búsquedas Server, global y Kad siguen siendo la base, con identidad Kad, manejo de nodos malos, limpieza y timing dentro de límites compatibles.",
+            "span": "Red clásica"
+          },
+          {
+            "h3": "REST y workflows de control",
+            "p": "Endpoints JSON autenticados cubren transferencias, búsquedas, archivos compartidos, servidores, Kad, logs, categorías, uploads, estadísticas, preferencias y apagado controlado.",
+            "span": "Automatización"
+          },
+          {
+            "h3": "Evidencia antes de paquetes públicos",
+            "p": "La beta <code>0.7.3</code> depende de pruebas nativas, contratos REST, carriles live de controladores, adversidad de red, packaging y ensayos x64/ARM64.",
+            "span": "Disciplina de release"
+          }
+        ],
+        "eyebrow": "Funciones",
+        "h2": "Lo que eMule BB añade alrededor del cliente clásico",
+        "p": "El trabajo se centra en comportamiento visible para el operador: política de upload predecible, binding más seguro, límites fijos de rendimiento, bibliotecas grandes, automatización local y evidencia para el release planificado <code>0.7.3</code>."
+      },
+      "footer_links_label": "Enlaces del pie",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Partir de buenos hábitos de eMule",
+            "p": "Usa listas de servidores fiables, arranca Kad con intención, mantén predecibles las carpetas incoming y compartidas, y conserva el workflow clásico antes de añadir automatización.",
+            "span": ""
+          },
+          {
+            "h3": "Ajustar el upload al enlace real",
+            "p": "Define un límite de upload finito, elige un objetivo realista de clientes y deja que la política de banda ancha favorezca menos slots, pero más fuertes.",
+            "span": ""
+          },
+          {
+            "h3": "Cuidar bibliotecas grandes",
+            "p": "Usa Windows con long paths, mantén limpias las raíces compartidas, vigila ratios y trata los archivos raros como decisiones deliberadas de publicación.",
+            "span": ""
+          },
+          {
+            "h3": "Automatizar solo en redes confiables",
+            "p": "Activa WebServer/REST con API key, aplica binding y firewall con cuidado, y usa controladores que respeten la semántica nativa de eMule.",
+            "span": ""
+          },
+          {
+            "h3": "Seguir la preparación del release",
+            "p": "Trata la rama pública como pre-release activo hasta que los gates <code>0.7.3</code>, las comprobaciones de operador y la evidencia live E2E indiquen lo contrario.",
+            "span": ""
+          },
+          {
+            "h3": "Usar la documentación para profundizar",
+            "p": "La página principal es compacta. La guía de producto, el contrato REST, las notas de banda ancha y los documentos de release viven como Markdown en el repositorio de tooling.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Guía del producto",
+        "h2": "Un modelo breve de operación",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "El eMule clásico, ajustado para la banda ancha actual",
+        "guide": "Guía del producto",
+        "h1": "eMule BB mantiene eD2K y Kad útiles para usuarios exigentes.",
+        "lead": "Un eMule para usuarios avanzados con enlaces de upload rápidos, bibliotecas compartidas grandes, sesiones de Windows siempre activas y workflows locales de control sin abandonar la aplicación de escritorio conocida.",
+        "panel_h2": "Conservador donde importa la compatibilidad. Moderno donde importa el control.",
+        "panel_kicker": "Enfoque del producto",
+        "panel_p": "eMule BB mantiene el workflow nativo de eMule en el centro y añade colas pensadas para banda ancha, control local por API y validación de release a su alrededor.",
+        "signals": [
+          "Compatibilidad eD2K/Kad de serie",
+          "Control de slots de upload en banda ancha",
+          "VPN/interface binding",
+          "Límites de rendimiento actuales",
+          "JSON REST API autenticada",
+          "0.7.3 pública planificada",
+          "Workspace de validación de release"
+        ],
+        "source": "Código fuente"
+      },
+      "intro": "eMule broadband edition, en corto <strong>eMule BB</strong>, es una línea de producto independiente para quienes todavía valoran el modelo distribuido de eMule. Conserva los workflows clásicos de escritorio y hace que el cliente sea más fácil de ejecutar, observar, automatizar y validar en sistemas Windows actuales.",
+      "meta_description": "eMule BB es una edición moderna de eMule para controlar uploads en banda ancha, VPN/interface binding, mejores límites de rendimiento, bibliotecas compartidas grandes, REST automation, eD2K, Kad y workflows avanzados.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Sin drift casual del protocolo",
+            "p": "Los cambios Kad y eD2K se mantienen en rutas locales, timing, validación y control. Formatos wire, opcodes y workflows nativos son límites de compatibilidad.",
+            "span": "Compatibilidad"
+          },
+          {
+            "h3": "Valores fijos y revisables",
+            "p": "Los supuestos modernos de bandwidth, memoria, socket, queue y timeout se expresan como defaults explícitos o preferencias avanzadas.",
+            "span": "Límites"
+          },
+          {
+            "h3": "Contratos de control, no screen scraping",
+            "p": "La JSON API autenticada sigue un contrato OpenAPI, rechaza entradas malformadas y canaliza mutaciones nativas por la aplicación.",
+            "span": "REST"
+          },
+          {
+            "h3": "Evidencia antes que etiquetas",
+            "p": "El proceso registra comandos, commits, logs, rutas de paquetes, hashes, evidencia live y decisiones de operador para que el tag sea un resultado comprobado.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Método de implementación",
+        "h2": "Modernizar alrededor del núcleo legado y después probar el resultado",
+        "p": "El estilo es deliberadamente conservador. eMule BB cambia política local, límites, diagnósticos, límites de API y disciplina de release, manteniendo la compatibilidad eD2K/Kad como valor por defecto."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Por qué"
+        },
+        {
+          "id": "features",
+          "label": "Funciones"
+        },
+        {
+          "id": "guide",
+          "label": "Guía"
+        },
+        {
+          "id": "docs",
+          "label": "Documentación"
+        },
+        {
+          "id": "automation",
+          "label": "Automatización"
+        },
+        {
+          "id": "release",
+          "label": "Lanzamiento"
+        },
+        {
+          "id": "repos",
+          "label": "Repositorios"
+        }
+      ],
+      "nav_label": "Navegación principal",
+      "og_description": "eMule moderno para controlar uploads en banda ancha, VPN/interface binding, límites de rendimiento actuales, bibliotecas grandes, REST automation, compatibilidad eD2K/Kad y validación de release. La primera versión pública 0.7.3 está planificada y aún no se ha publicado.",
+      "og_title": "eMule broadband edition | eMule BB en español",
+      "product_summary_label": "Resumen de eMule BB",
+      "project_links_label": "Enlaces del proyecto",
+      "release": {
+        "cards": [
+          {
+            "h3": "Estado actual",
+            "p": "El primer objetivo público es <code>0.7.3</code>. Aún no se ha publicado. La prueba final está pausada por dirección del operador y el estado público sigue ligado a los documentos activos.",
+            "span": ""
+          },
+          {
+            "h3": "Prueba de build y paquete",
+            "p": "La evidencia requerida cubre validación del workspace, builds Debug y Release x64, builds Release ARM64, binarios de prueba, paquetes, worktree limpio y hashes SHA-256.",
+            "span": ""
+          },
+          {
+            "h3": "Prueba de comportamiento",
+            "p": "Los gates cubren suites nativas, contrato REST, drift OpenAPI, requests malformados, automatización UI, E2E live de controladores, Release x64 live E2E completo y adversidad de red.",
+            "span": ""
+          },
+          {
+            "h3": "Prueba de controladores",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr y carriles compatibles con qBittorrent prueban automatización sin debilitar el contrato nativo <code>/api/v1</code>.",
+            "span": ""
+          },
+          {
+            "h3": "Prueba de compatibilidad",
+            "p": "El comportamiento eD2K/Kad de serie sigue siendo el valor por defecto. Banda ancha, REST y controladores se añaden alrededor de ese objetivo de compatibilidad.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Estado del release",
+        "h2": "La versión pública 0.7.3 está planificada, tiene gates y aún no se ha publicado",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Workspace público",
+        "h2": "Repositorios principales",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "eMule moderno para controlar uploads en banda ancha, VPN/interface binding, límites de rendimiento actuales, bibliotecas compartidas grandes, REST automation, compatibilidad eD2K/Kad y workflows avanzados. La primera versión pública está planificada como 0.7.3 y aún no se ha publicado.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Terapeuta de slots de upload",
+            "p": "Ayuda a los slots flojos a procesar sus sentimientos el tiempo justo antes de devolverlos a la queue con formulario y cooldown.",
+            "span": ""
+          },
+          {
+            "h3": "Archivista de bootstrap Kad",
+            "p": "Conserva la lista sagrada de nodos que funcionaron una vez en 2007 y merecen una segunda oportunidad, bien validada.",
+            "span": ""
+          },
+          {
+            "h3": "Portero de gates de release",
+            "p": "Deja entrar builds solo si traen pruebas, evidencia live y una explicación convincente sobre el último socket.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Cultura del proyecto",
+        "h2": "La gente que evita que la queue se vuelva teatro de rendimiento",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB en español",
+      "why": {
+        "cards": [
+          {
+            "h3": "Mantener eD2K y Kad prácticos",
+            "p": "El objetivo no es la nostalgia ni una reescritura. Es mantener útil el modelo clásico para sesiones largas, archivos raros, seeding deliberado y usuarios que aún quieren un cliente nativo.",
+            "span": "Motivo de producto"
+          },
+          {
+            "h3": "Poner los supuestos antiguos a la vista",
+            "p": "Los valores por defecto de slots de upload, timeouts, buffers, bibliotecas grandes y exposición de WebServer quedan explícitos para poder revisarlos, probarlos y documentarlos.",
+            "span": "Motivo técnico"
+          },
+          {
+            "h3": "Probar código legado con métodos actuales",
+            "p": "El workspace trata el release como un artefacto de ingeniería: política de fuentes, contratos OpenAPI, builds reproducibles, hashes, pruebas live y gates de operador deben coincidir.",
+            "span": "Motivo de release"
+          }
+        ],
+        "eyebrow": "Por qué",
+        "h2": "Un cliente legado solo sirve si todavía puede operarse con confianza",
+        "p": "eMule BB es a la vez producto y ejercicio de ingeniería disciplinada: conservar una aplicación nativa de Windows con comportamiento real de red y rodearla de build, pruebas, documentación, automatización y proceso de release modernos."
+      }
+    },
+    "doc_section": [
+      "Más información",
+      "Guías detalladas y documentos fuente"
+    ],
+    "docs": {
+      "controllers": [
+        "Guía de controladores y REST",
+        "Uso de controladores locales confiables y límites de automatización."
+      ],
+      "downloads": [
+        "Guía de descargas y búsqueda",
+        "Modos de búsqueda, confianza en resultados, categorías y workflows avanzados."
+      ],
+      "emulebb": [
+        "Guía de producto eMule BB",
+        "Visión de conjunto para instalación, ajuste, automatización y uso atento al release."
+      ],
+      "network": [
+        "Guía de red",
+        "Referencia de eD2K, Kad, binding, UPnP, firewall y diagnóstico de conexión."
+      ],
+      "release": [
+        "Panel de release 0.7.3",
+        "Gates de beta planificados, evidencias y reglas de preparación."
+      ],
+      "rest_adapters": [
+        "Contratos de adaptadores REST",
+        "Superficie qBittorrent-compatible y Torznab para autores de controladores."
+      ],
+      "rest_contract": [
+        "Contrato REST API",
+        "Contrato legible de la superficie JSON autenticada."
+      ],
+      "setup": [
+        "Guía de instalación",
+        "Modelo de instalación, primer perfil y notas prácticas de arranque."
+      ],
+      "sharing": [
+        "Guía de compartición",
+        "Directorios compartidos, shares monitorizados, bibliotecas grandes y archivos de política."
+      ],
+      "troubleshooting": [
+        "Guía de diagnóstico",
+        "Comprobaciones por síntoma para Low ID, red, compartición y automatización."
+      ]
+    },
+    "language_link": "Idiomas",
+    "menu": {
+      "close_label": "Cerrar navegación principal",
+      "label": "Menú",
+      "open_label": "Abrir navegación principal"
+    },
+    "repo_section": [
+      "Workspace público",
+      "Repositorios principales"
+    ],
+    "repos": {
+      "build": "orquestación de build, validación y release",
+      "emule": "aplicación desktop y fuente del producto",
+      "setup": "setup reproducible del workspace",
+      "tests": "pruebas nativas, Python, UI, REST y live E2E",
+      "tooling": "roadmap, backlog, políticas, auditorías y docs de referencia"
+    }
+  },
+  "fr": {
+    "content": {
+      "automation": {
+        "eyebrow": "Surface de contrôle",
+        "h2": "REST automation sans remplacer l'application desktop",
+        "p": "La ligne de release haut débit expose une JSON API <code>/api/v1</code> orientée ressources depuis le listener WebServer existant. Elle authentifie avec <code>X-API-Key</code>, sert des enveloppes JSON et garde les changements d'état eMule relayés par l'application.",
+        "pills": [
+          "Transferts",
+          "Recherches",
+          "Serveurs",
+          "Kad",
+          "Fichiers partagés",
+          "Uploads",
+          "Catégories",
+          "Logs",
+          "Statistiques",
+          "Préférences"
+        ],
+        "pills_label": "Domaines REST API"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Contrôle d'upload haut débit",
+            "p": "Objectifs de slots bornés, recyclage des slots faibles, lecture des ratios et contrôles de seeding gardent les liens rapides utiles sans changer le protocole eD2K.",
+            "span": "Partage et upload"
+          },
+          {
+            "h3": "Binding, NAT et exposition",
+            "p": "Interface-aware binding, validation UPnP/NAT, HTTPS, règles allowed-IP et héritage WebServer gardent les surfaces distantes explicites et testables.",
+            "span": "Contrôle réseau"
+          },
+          {
+            "h3": "Defaults actuels pour grandes sessions",
+            "p": "Buffers socket plus élevés, limites queue/source, file buffering, timeouts, sync récursive et long paths ciblent Windows actuels et les grandes bibliothèques.",
+            "span": "Performance et échelle"
+          },
+          {
+            "h3": "eD2K et Kad restent prioritaires",
+            "p": "Les recherches Server, globales et Kad restent la base native, avec identité Kad, traitement des mauvais nœuds, cleanup et timing dans des limites compatibles.",
+            "span": "Réseau classique"
+          },
+          {
+            "h3": "REST et workflows de contrôle",
+            "p": "Des endpoints JSON authentifiés couvrent transferts, recherches, fichiers partagés, serveurs, Kad, logs, catégories, uploads, statistiques, préférences et shutdown contrôlé.",
+            "span": "Automatisation"
+          },
+          {
+            "h3": "Des preuves avant les paquets publics",
+            "p": "La beta <code>0.7.3</code> dépend de tests natifs, contrats REST, lanes live de contrôleurs, adversité réseau, packaging et répétitions x64/ARM64.",
+            "span": "Discipline de release"
+          }
+        ],
+        "eyebrow": "Fonctions",
+        "h2": "Ce qu'eMule BB ajoute autour du client classique",
+        "p": "Le travail vise le comportement visible par l'opérateur : upload prévisible, binding plus sûr, limites fixes de performance, grandes bibliothèques, automatisation locale et preuves pour la release prévue <code>0.7.3</code>."
+      },
+      "footer_links_label": "Liens de pied de page",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Partir des bonnes habitudes eMule",
+            "p": "Utilisez des listes de serveurs fiables, amorcez Kad avec attention, gardez incoming et dossiers partagés prévisibles et conservez le workflow classique avant l'automatisation.",
+            "span": ""
+          },
+          {
+            "h3": "Régler l'upload sur le lien réel",
+            "p": "Définissez une limite d'upload finie, choisissez une cible réaliste de clients et laissez la politique haut débit favoriser moins de slots, mais plus solides.",
+            "span": ""
+          },
+          {
+            "h3": "Soigner les grandes bibliothèques",
+            "p": "Utilisez Windows avec long paths, gardez les racines de partage propres, suivez les ratios et traitez les fichiers rares comme des choix de publication.",
+            "span": ""
+          },
+          {
+            "h3": "Automatiser seulement sur des réseaux fiables",
+            "p": "Activez WebServer/REST avec API key, appliquez binding et firewall soigneusement et utilisez des contrôleurs respectant la sémantique native d'eMule.",
+            "span": ""
+          },
+          {
+            "h3": "Suivre la préparation de la release",
+            "p": "Considérez la branche publique comme pre-release actif jusqu'à ce que les gates <code>0.7.3</code>, contrôles opérateur et preuves live E2E disent le contraire.",
+            "span": ""
+          },
+          {
+            "h3": "Utiliser la documentation pour le détail",
+            "p": "La page d'accueil reste compacte. Guide produit, contrat REST, notes haut débit et documents de release vivent en Markdown dans le dépôt tooling.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Guide produit",
+        "h2": "Un modèle court d'exploitation",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "L'eMule classique, réglé pour le haut débit actuel",
+        "guide": "Guide produit",
+        "h1": "eMule BB garde eD2K et Kad utiles pour les utilisateurs exigeants.",
+        "lead": "Un eMule pour utilisateurs avancés, avec uploads rapides, grandes bibliothèques partagées, sessions Windows permanentes et workflows locaux de contrôle sans abandonner l'application desktop familière.",
+        "panel_h2": "Conservateur quand la compatibilité compte. Moderne quand le contrôle compte.",
+        "panel_kicker": "Positionnement",
+        "panel_p": "eMule BB garde le workflow natif d'eMule au centre et ajoute une gestion de queue adaptée au haut débit, un contrôle local par API et une validation de release.",
+        "signals": [
+          "Compatibilité eD2K/Kad d'origine",
+          "Contrôle des upload slots",
+          "VPN/interface binding",
+          "Limites de performance actuelles",
+          "JSON REST API authentifiée",
+          "0.7.3 publique prévue",
+          "Workspace de validation release"
+        ],
+        "source": "Code source"
+      },
+      "intro": "eMule broadband edition, ou simplement <strong>eMule BB</strong>, est une ligne de produit indépendante pour celles et ceux qui accordent encore de la valeur au modèle distribué d'eMule. Elle conserve les workflows desktop classiques et rend le client plus simple à exécuter, observer, automatiser et valider sur les systèmes Windows actuels.",
+      "meta_description": "eMule BB est une édition moderne d'eMule pour le contrôle d'upload haut débit, VPN/interface binding, des limites de performance actuelles, de grandes bibliothèques partagées, REST automation, eD2K, Kad et des workflows avancés.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Pas de protocol drift au hasard",
+            "p": "Les changements Kad et eD2K restent dans le routage local, le timing, la validation et le contrôle. Wire formats, opcodes et workflows natifs restent des frontières.",
+            "span": "Compatibilité"
+          },
+          {
+            "h3": "Defaults fixes et révisables",
+            "p": "Les hypothèses modernes de bandwidth, mémoire, socket, queue et timeout sont exprimées comme defaults explicites ou préférences avancées.",
+            "span": "Limites"
+          },
+          {
+            "h3": "Contrats de contrôle, pas de screen scraping",
+            "p": "La JSON API authentifiée suit un contrat OpenAPI, rejette les entrées malformées et relaie les mutations natives par l'application.",
+            "span": "REST"
+          },
+          {
+            "h3": "Des preuves avant les labels",
+            "p": "Le processus enregistre commandes, commits, logs, chemins de paquets, hashes, preuves live et décisions opérateur pour qu'un tag soit un résultat vérifié.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Méthode d'implémentation",
+        "h2": "Moderniser autour du noyau legacy, puis prouver le résultat",
+        "p": "Le style est volontairement conservateur. eMule BB modifie politique locale, limites, diagnostics, frontières API et discipline de release tout en gardant la compatibilité eD2K/Kad par défaut."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Pourquoi"
+        },
+        {
+          "id": "features",
+          "label": "Fonctions"
+        },
+        {
+          "id": "guide",
+          "label": "Guide"
+        },
+        {
+          "id": "docs",
+          "label": "Documentation"
+        },
+        {
+          "id": "automation",
+          "label": "Automatisation"
+        },
+        {
+          "id": "release",
+          "label": "Publication"
+        },
+        {
+          "id": "repos",
+          "label": "Dépôts"
+        }
+      ],
+      "nav_label": "Navigation principale",
+      "og_description": "eMule moderne pour le contrôle d'upload haut débit, VPN/interface binding, de grandes bibliothèques, REST automation, la compatibilité eD2K/Kad et la validation de release. La première version publique 0.7.3 est prévue et n'est pas encore publiée.",
+      "og_title": "eMule broadband edition | eMule BB en français",
+      "product_summary_label": "Résumé eMule BB",
+      "project_links_label": "Liens du projet",
+      "release": {
+        "cards": [
+          {
+            "h3": "État actuel",
+            "p": "La première cible publique est <code>0.7.3</code>. Elle n'est pas encore publiée. La preuve finale est suspendue par consigne opérateur et l'état public reste lié aux documents actifs.",
+            "span": ""
+          },
+          {
+            "h3": "Preuve de build et paquet",
+            "p": "La preuve requise couvre validation workspace, builds Debug et Release x64, builds Release ARM64, binaires de test, génération de paquet, worktree propre et hashes SHA-256.",
+            "span": ""
+          },
+          {
+            "h3": "Preuve de comportement",
+            "p": "Les gates couvrent suites natives, contrat REST, drift OpenAPI, requests malformées, UI automation, E2E live des contrôleurs, Release x64 live E2E complet et adversité réseau.",
+            "span": ""
+          },
+          {
+            "h3": "Preuve des contrôleurs",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr et lanes compatibles qBittorrent prouvent l'automatisation sans affaiblir le contrat natif <code>/api/v1</code>.",
+            "span": ""
+          },
+          {
+            "h3": "Preuve de compatibilité",
+            "p": "Le comportement eD2K/Kad d'origine reste default. Haut débit, REST et contrôleurs s'ajoutent autour de cet objectif de compatibilité.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "État de release",
+        "h2": "La version publique 0.7.3 est prévue, soumise à gates et pas encore publiée",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Workspace public",
+        "h2": "Dépôts principaux",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "eMule moderne pour le contrôle d'upload haut débit, VPN/interface binding, de grandes bibliothèques partagées, REST automation, la compatibilité eD2K/Kad et des workflows avancés. La première version publique est prévue comme 0.7.3 et n'est pas encore publiée.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Thérapeute des upload slots",
+            "p": "Laisse les slots faibles gérer leurs émotions juste assez longtemps avant de les renvoyer dans la queue avec formulaire et cooldown.",
+            "span": ""
+          },
+          {
+            "h3": "Archiviste du bootstrap Kad",
+            "p": "Garde la liste sacrée de nœuds qui a fonctionné une fois en 2007 et mérite une seconde chance soigneusement validée.",
+            "span": ""
+          },
+          {
+            "h3": "Videur des gates de release",
+            "p": "Ne laisse entrer les builds que s'ils apportent tests, preuves live et explication crédible du dernier socket.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Culture du projet",
+        "h2": "L'équipe qui empêche la queue de devenir du théâtre de performance",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB en français",
+      "why": {
+        "cards": [
+          {
+            "h3": "Garder eD2K et Kad pratiques",
+            "p": "Le but n'est ni la nostalgie ni une réécriture. Il s'agit de garder le modèle classique utilisable pour les longues sessions, les fichiers rares, le seeding volontaire et les utilisateurs qui veulent encore un client natif.",
+            "span": "Raison produit"
+          },
+          {
+            "h3": "Rendre visibles les anciennes hypothèses",
+            "p": "Les defaults d'upload slots, timeouts, buffers, grandes bibliothèques et exposition WebServer deviennent explicites, donc révisables, testables et documentables.",
+            "span": "Raison technique"
+          },
+          {
+            "h3": "Appliquer une preuve moderne à du code legacy",
+            "p": "Le workspace traite la release comme un artefact d'ingénierie : politique source, contrats OpenAPI, builds reproductibles, hashes, contrôles live et gates opérateur doivent converger.",
+            "span": "Raison release"
+          }
+        ],
+        "eyebrow": "Pourquoi",
+        "h2": "Un client legacy n'est utile que s'il reste exploitable avec confiance",
+        "p": "eMule BB est à la fois un produit et une discipline d'ingénierie : préserver une application Windows native avec un vrai comportement réseau, puis l'entourer de build, tests, documentation, automatisation et processus de release modernes."
+      }
+    },
+    "doc_section": [
+      "En savoir plus",
+      "Guides détaillés et documents sources"
+    ],
+    "docs": {
+      "controllers": [
+        "Guide contrôleurs et REST",
+        "Usage de contrôleurs locaux fiables et limites d'automatisation."
+      ],
+      "downloads": [
+        "Guide téléchargements et recherche",
+        "Modes de recherche, confiance dans les résultats, catégories et workflows avancés."
+      ],
+      "emulebb": [
+        "Guide produit eMule BB",
+        "Vue d'ensemble pour setup, réglage, automatisation et usage attentif à la release."
+      ],
+      "network": [
+        "Guide réseau",
+        "Référence eD2K, Kad, binding, UPnP, firewall et diagnostic de connexion."
+      ],
+      "release": [
+        "Tableau release 0.7.3",
+        "Gates beta prévus, pointeurs de preuve et règles de préparation."
+      ],
+      "rest_adapters": [
+        "Contrats adaptateurs REST",
+        "Surface qBittorrent-compatible et Torznab pour auteurs de contrôleurs."
+      ],
+      "rest_contract": [
+        "Contrat REST API",
+        "Contrat lisible de la surface JSON authentifiée."
+      ],
+      "setup": [
+        "Guide de setup",
+        "Modèle d'installation, profil initial et notes pratiques de démarrage."
+      ],
+      "sharing": [
+        "Guide de partage",
+        "Dossiers partagés, shares surveillés, grandes bibliothèques et fichiers de policy."
+      ],
+      "troubleshooting": [
+        "Guide de dépannage",
+        "Contrôles par symptôme pour Low ID, réseau, partage et automatisation."
+      ]
+    },
+    "language_link": "Langues",
+    "menu": {
+      "close_label": "Fermer la navigation principale",
+      "label": "Menu",
+      "open_label": "Ouvrir la navigation principale"
+    },
+    "repo_section": [
+      "Workspace public",
+      "Dépôts principaux"
+    ],
+    "repos": {
+      "build": "orchestration build, validation et release",
+      "emule": "application desktop et source produit",
+      "setup": "setup reproductible du workspace",
+      "tests": "tests natifs, Python, UI, REST et live E2E",
+      "tooling": "roadmap, backlog, policy, audits et docs de référence"
+    }
+  },
+  "it": {
+    "content": {
+      "automation": {
+        "eyebrow": "Superficie di controllo",
+        "h2": "REST automation senza sostituire l'app desktop",
+        "p": "La linea di release banda larga espone una JSON API <code>/api/v1</code> orientata alle risorse dal listener WebServer esistente. Autentica con <code>X-API-Key</code>, serve envelope JSON e mantiene le modifiche allo stato eMule instradate tramite l'app.",
+        "pills": [
+          "Trasferimenti",
+          "Ricerche",
+          "Server",
+          "Kad",
+          "File condivisi",
+          "Upload",
+          "Categorie",
+          "Log",
+          "Statistiche",
+          "Preferenze"
+        ],
+        "pills_label": "Aree REST API"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Controllo upload per banda larga",
+            "p": "Target limitati per slot, riciclo degli slot deboli, lettura dei ratio e controlli di seeding mantengono utili gli upload veloci senza cambiare il protocollo eD2K.",
+            "span": "Condivisione e upload"
+          },
+          {
+            "h3": "Binding, NAT e policy di esposizione",
+            "p": "Interface-aware binding, validazione UPnP/NAT, HTTPS, regole allowed-IP ed ereditarietà WebServer mantengono esplicite e testabili le superfici remote.",
+            "span": "Controllo rete"
+          },
+          {
+            "h3": "Default attuali per sessioni grandi",
+            "p": "Buffer socket maggiori, limiti queue/source, file buffering, timeout, sync ricorsiva e guida long paths puntano a Windows attuali e grandi librerie.",
+            "span": "Prestazione e scala"
+          },
+          {
+            "h3": "eD2K e Kad restano al centro",
+            "p": "Ricerca Server, globale e Kad restano la base nativa, con identità Kad, gestione nodi cattivi, cleanup e timing entro confini compatibili.",
+            "span": "Rete classica"
+          },
+          {
+            "h3": "REST e workflow di controllo",
+            "p": "Endpoint JSON autenticati coprono trasferimenti, ricerche, file condivisi, server, Kad, log, categorie, upload, statistiche, preferenze e shutdown controllato.",
+            "span": "Automazione"
+          },
+          {
+            "h3": "Evidenza prima dei pacchetti pubblici",
+            "p": "La beta <code>0.7.3</code> dipende da test nativi, contratti REST, lane live dei controller, avversità di rete, packaging e prove x64/ARM64.",
+            "span": "Disciplina di release"
+          }
+        ],
+        "eyebrow": "Funzioni",
+        "h2": "Cosa aggiunge eMule BB intorno al client classico",
+        "p": "Il lavoro punta a comportamento visibile all'operatore: upload prevedibile, binding più sicuro, limiti fissi di prestazione, grandi librerie, automazione locale ed evidenza per la release pianificata <code>0.7.3</code>."
+      },
+      "footer_links_label": "Link di fondo pagina",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Parti dalle buone abitudini di eMule",
+            "p": "Usa liste server fidate, avvia Kad con attenzione, mantieni prevedibili incoming e cartelle condivise e conserva il workflow classico prima dell'automazione.",
+            "span": ""
+          },
+          {
+            "h3": "Regola l'upload sul link reale",
+            "p": "Imposta un limite finito, scegli un target realistico di client e lascia che la policy banda larga favorisca meno slot ma più solidi.",
+            "span": ""
+          },
+          {
+            "h3": "Cura le grandi librerie",
+            "p": "Usa Windows con long paths, tieni pulite le radici condivise, osserva i ratio e tratta i file rari come scelte deliberate di pubblicazione.",
+            "span": ""
+          },
+          {
+            "h3": "Automatizza solo su reti fidate",
+            "p": "Abilita WebServer/REST con API key, applica binding e firewall con cura e usa controller che rispettino la semantica nativa di eMule.",
+            "span": ""
+          },
+          {
+            "h3": "Segui la prontezza della release",
+            "p": "Considera la branch pubblica come pre-release attivo finché i gate <code>0.7.3</code>, i check operatore e l'evidenza live E2E non dicono altro.",
+            "span": ""
+          },
+          {
+            "h3": "Usa la documentazione per i dettagli",
+            "p": "La homepage resta compatta. Guida prodotto, contratto REST, note banda larga e documenti release sono Markdown nel repository di tooling.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Guida prodotto",
+        "h2": "Un modello operativo breve",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "Il classico eMule, tarato per la banda larga attuale",
+        "guide": "Guida prodotto",
+        "h1": "eMule BB mantiene eD2K e Kad utili per utenti esigenti.",
+        "lead": "Un eMule per power user con upload veloci, grandi librerie condivise, sessioni Windows sempre attive e workflow locali di controllo senza abbandonare la familiare app desktop.",
+        "panel_h2": "Conservativo dove conta la compatibilità. Moderno dove conta il controllo.",
+        "panel_kicker": "Posizionamento",
+        "panel_p": "eMule BB mantiene al centro il workflow nativo di eMule e vi aggiunge code adatte alla banda larga, controllo locale via API e validazione di release.",
+        "signals": [
+          "Compatibilità eD2K/Kad originale",
+          "Controllo degli upload slot",
+          "VPN/interface binding",
+          "Limiti di prestazione attuali",
+          "JSON REST API autenticata",
+          "0.7.3 pubblica pianificata",
+          "Workspace di validazione release"
+        ],
+        "source": "Codice sorgente"
+      },
+      "intro": "eMule broadband edition, in breve <strong>eMule BB</strong>, è una linea di prodotto indipendente per chi dà ancora valore al modello distribuito di eMule. Conserva i workflow desktop classici e rende il client più semplice da eseguire, osservare, automatizzare e validare sui sistemi Windows attuali.",
+      "meta_description": "eMule BB è una edizione moderna di eMule per controllo upload su banda larga, VPN/interface binding, limiti di prestazione attuali, grandi librerie condivise, REST automation, eD2K, Kad e workflow avanzati.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Niente drift casuale del protocollo",
+            "p": "Le modifiche Kad ed eD2K restano in routing locale, timing, validazione e controllo. Wire format, opcode e workflow desktop nativi sono confini di compatibilità.",
+            "span": "Compatibilità"
+          },
+          {
+            "h3": "Default fissi e revisionabili",
+            "p": "Ipotesi moderne su bandwidth, memoria, socket, queue e timeout sono default espliciti o preferenze avanzate, non comportamento adattivo nascosto.",
+            "span": "Limiti"
+          },
+          {
+            "h3": "Contratti di controllo, non screen scraping",
+            "p": "La JSON API autenticata segue un contratto OpenAPI, respinge input malformati e instrada le mutazioni native tramite l'app.",
+            "span": "REST"
+          },
+          {
+            "h3": "Evidenza prima delle etichette",
+            "p": "Il processo registra comandi, commit, log, percorsi pacchetto, hash, evidenza live e decisioni operatore così il tag è un esito verificato.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Metodo di implementazione",
+        "h2": "Modernizzare intorno al nucleo legacy, poi provare il risultato",
+        "p": "Lo stile è intenzionalmente conservativo. eMule BB cambia policy locali, limiti, diagnostica, confini API e disciplina di release mantenendo default la compatibilità eD2K/Kad."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Perché"
+        },
+        {
+          "id": "features",
+          "label": "Funzioni"
+        },
+        {
+          "id": "guide",
+          "label": "Guida"
+        },
+        {
+          "id": "docs",
+          "label": "Documentazione"
+        },
+        {
+          "id": "automation",
+          "label": "Automazione"
+        },
+        {
+          "id": "release",
+          "label": "Rilascio"
+        },
+        {
+          "id": "repos",
+          "label": "Repository"
+        }
+      ],
+      "nav_label": "Navigazione principale",
+      "og_description": "eMule moderno per controllo upload su banda larga, VPN/interface binding, limiti di prestazione attuali, grandi librerie, REST automation, compatibilità eD2K/Kad e validazione di release. La prima versione pubblica 0.7.3 è pianificata e non è ancora uscita.",
+      "og_title": "eMule broadband edition | eMule BB in italiano",
+      "product_summary_label": "Sintesi di eMule BB",
+      "project_links_label": "Link del progetto",
+      "release": {
+        "cards": [
+          {
+            "h3": "Stato attuale",
+            "p": "Il primo target pubblico è <code>0.7.3</code>. Non è ancora uscito. La prova finale è in pausa su indicazione dell'operatore e lo stato pubblico resta legato ai documenti attivi.",
+            "span": ""
+          },
+          {
+            "h3": "Prova di build e pacchetto",
+            "p": "La prova richiesta copre validazione workspace, build Debug e Release x64, build Release ARM64, binari di test, generazione pacchetti, worktree pulita e hash SHA-256.",
+            "span": ""
+          },
+          {
+            "h3": "Prova di comportamento",
+            "p": "I gate coprono suite native, contratto REST, drift OpenAPI, request malformate, automazione UI, E2E live dei controller, Release x64 live E2E completo e avversità di rete.",
+            "span": ""
+          },
+          {
+            "h3": "Prova dei controller",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr e lane compatibili qBittorrent provano automazione senza indebolire il contratto nativo <code>/api/v1</code>.",
+            "span": ""
+          },
+          {
+            "h3": "Prova di compatibilità",
+            "p": "Il comportamento eD2K/Kad originale resta default. Banda larga, REST e controller vengono aggiunti attorno a questo obiettivo di compatibilità.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Stato della release",
+        "h2": "La release pubblica 0.7.3 è pianificata, ha gate e non è ancora uscita",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Workspace pubblico",
+        "h2": "Repository principali",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "eMule moderno per controllo upload su banda larga, VPN/interface binding, limiti di prestazione attuali, grandi librerie condivise, REST automation, compatibilità eD2K/Kad e workflow avanzati. La prima versione pubblica è pianificata come 0.7.3 e non è ancora uscita.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Terapeuta degli upload slot",
+            "p": "Aiuta gli slot deboli a elaborare i propri sentimenti il tempo giusto prima di rimandarli in queue con appunti e cooldown.",
+            "span": ""
+          },
+          {
+            "h3": "Archivista del bootstrap Kad",
+            "p": "Custodisce la lista sacra di nodi che funzionò una volta nel 2007 e merita una seconda occasione ben validata.",
+            "span": ""
+          },
+          {
+            "h3": "Addetto ai gate di release",
+            "p": "Fa entrare le build solo se portano test, evidenza live e una spiegazione plausibile sull'ultimo socket.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Cultura del progetto",
+        "h2": "Le persone che impediscono alla queue di diventare teatro prestazionale",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB in italiano",
+      "why": {
+        "cards": [
+          {
+            "h3": "Tenere pratici eD2K e Kad",
+            "p": "Non è nostalgia e non è una riscrittura. Serve a mantenere utile il modello classico per sessioni lunghe, file rari, seeding deliberato e utenti che vogliono ancora un client nativo.",
+            "span": "Motivo di prodotto"
+          },
+          {
+            "h3": "Rendere visibili le vecchie ipotesi",
+            "p": "Default per upload slot, timeout, buffer, grandi librerie ed esposizione WebServer diventano espliciti, quindi revisionabili, testabili e documentabili.",
+            "span": "Motivo tecnico"
+          },
+          {
+            "h3": "Applicare prove moderne a codice legacy",
+            "p": "Il workspace tratta la release come un artefatto tecnico: policy del sorgente, contratti OpenAPI, build riproducibili, hash, controlli live e gate operatore devono combaciare.",
+            "span": "Motivo di release"
+          }
+        ],
+        "eyebrow": "Perché",
+        "h2": "Un client legacy è utile solo se può ancora essere gestito con fiducia",
+        "p": "eMule BB è insieme prodotto e disciplina tecnica: preservare una applicazione nativa Windows con vero comportamento di rete e circondarla di build, test, documentazione, automazione e processo di release moderni."
+      }
+    },
+    "doc_section": [
+      "Approfondisci",
+      "Guide dettagliate e documenti sorgente"
+    ],
+    "docs": {
+      "controllers": [
+        "Guida controller e REST",
+        "Uso di controller locali fidati e confini dell'automazione."
+      ],
+      "downloads": [
+        "Guida download e ricerca",
+        "Modalità di ricerca, fiducia nei risultati, categorie e workflow avanzati."
+      ],
+      "emulebb": [
+        "Guida prodotto eMule BB",
+        "Panoramica per setup, tuning, automazione e uso consapevole della release."
+      ],
+      "network": [
+        "Guida rete",
+        "Riferimento per eD2K, Kad, binding, UPnP, firewall e diagnosi connessione."
+      ],
+      "release": [
+        "Dashboard release 0.7.3",
+        "Gate beta pianificati, riferimenti di prova e regole di prontezza."
+      ],
+      "rest_adapters": [
+        "Contratti adapter REST",
+        "Superficie qBittorrent-compatible e Torznab per autori di controller."
+      ],
+      "rest_contract": [
+        "Contratto REST API",
+        "Contratto leggibile della superficie JSON autenticata."
+      ],
+      "setup": [
+        "Guida di setup",
+        "Modello di installazione, profilo iniziale e note pratiche di avvio."
+      ],
+      "sharing": [
+        "Guida condivisione",
+        "Directory condivise, share monitorate, grandi librerie e file di policy."
+      ],
+      "troubleshooting": [
+        "Guida troubleshooting",
+        "Controlli per sintomo su Low ID, rete, condivisione e automazione."
+      ]
+    },
+    "language_link": "Lingue",
+    "menu": {
+      "close_label": "Chiudi navigazione principale",
+      "label": "Menu",
+      "open_label": "Apri navigazione principale"
+    },
+    "repo_section": [
+      "Workspace pubblico",
+      "Repository principali"
+    ],
+    "repos": {
+      "build": "orchestrazione build, validazione e release",
+      "emule": "app desktop e sorgente prodotto",
+      "setup": "setup riproducibile del workspace",
+      "tests": "test nativi, Python, UI, REST e live E2E",
+      "tooling": "roadmap, backlog, policy, audit e documenti di riferimento"
+    }
+  },
+  "nl": {
+    "content": {
+      "automation": {
+        "eyebrow": "Controller-oppervlak",
+        "h2": "REST automation zonder de desktop-app te vervangen",
+        "p": "De breedband release track biedt een resource-oriented JSON API <code>/api/v1</code> via de bestaande WebServer listener. De API authenticeert met <code>X-API-Key</code>, levert JSON envelopes en laat native eMule-statuswijzigingen via de app lopen.",
+        "pills": [
+          "Transfers",
+          "Searches",
+          "Servers",
+          "Kad",
+          "Shared files",
+          "Uploads",
+          "Categories",
+          "Logs",
+          "Statistics",
+          "Preferences"
+        ],
+        "pills_label": "REST API-gebieden"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Breedband-uploadcontrole",
+            "p": "Begrensde slotdoelen, hergebruik van zwakke slots, ratio-weergave en seeding controls houden snelle uploads nuttig zonder het eD2K-protocol te wijzigen.",
+            "span": "Delen en upload"
+          },
+          {
+            "h3": "Binding, NAT en blootstellingsbeleid",
+            "p": "Interface-aware binding, UPnP/NAT-validatie, HTTPS, allowed-IP rules en WebServer-erfenis houden externe oppervlakken expliciet en testbaar.",
+            "span": "Netwerkcontrole"
+          },
+          {
+            "h3": "Actuele defaults voor grote sessies",
+            "p": "Grotere socket buffers, queue/source limits, file buffering, timeouts, recursieve sync en long paths richten zich op moderne Windows-systemen en grote bibliotheken.",
+            "span": "Prestaties en schaal"
+          },
+          {
+            "h3": "eD2K en Kad blijven eerst",
+            "p": "Server, globale en Kad search blijven de native basis, met Kad identity, bad-node handling, cleanup en timing binnen compatibiliteitsgrenzen.",
+            "span": "Klassiek netwerk"
+          },
+          {
+            "h3": "REST en controller workflows",
+            "p": "Geauthenticeerde JSON endpoints dekken transfers, searches, shared files, servers, Kad, logs, categories, uploads, statistics, preferences en controlled shutdown.",
+            "span": "Automatisering"
+          },
+          {
+            "h3": "Bewijs vóór publieke pakketten",
+            "p": "De beta <code>0.7.3</code> hangt af van native tests, REST contracts, live controller lanes, network adversity, packaging en x64/ARM64-repetities.",
+            "span": "Release-discipline"
+          }
+        ],
+        "eyebrow": "Functies",
+        "h2": "Wat eMule BB rond de klassieke client toevoegt",
+        "p": "Het werk richt zich op gedrag dat de operator ziet: voorspelbare upload policy, veiliger binding, vaste prestatielimieten, grote bibliotheken, lokale automatisering en bewijs voor de geplande release <code>0.7.3</code>."
+      },
+      "footer_links_label": "Footerlinks",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Begin met goede eMule-gewoonten",
+            "p": "Gebruik vertrouwde server lists, bootstrap Kad bewust, houd incoming en shared folders voorspelbaar en bewaar de klassieke workflow voor je automatiseert.",
+            "span": ""
+          },
+          {
+            "h3": "Stem upload af op je echte verbinding",
+            "p": "Stel een eindige upload limit in, kies een realistisch clientdoel en laat de breedband policy minder maar sterkere slots bevoordelen.",
+            "span": ""
+          },
+          {
+            "h3": "Beheer grote bibliotheken bewust",
+            "p": "Gebruik Windows met long paths, houd shared roots schoon, volg ratios en behandel zeldzame bestanden als bewuste publicatiekeuzes.",
+            "span": ""
+          },
+          {
+            "h3": "Automatiseer alleen op vertrouwde netwerken",
+            "p": "Schakel WebServer/REST in met API key, configureer binding en firewall zorgvuldig en gebruik controllers die native eMule-semantiek respecteren.",
+            "span": ""
+          },
+          {
+            "h3": "Volg release-gereedheid",
+            "p": "Behandel de publieke branch als actieve pre-release totdat <code>0.7.3</code>-gates, operator checks en live E2E evidence anders aangeven.",
+            "span": ""
+          },
+          {
+            "h3": "Gebruik de documentatie voor diepte",
+            "p": "De homepage blijft compact. Productgids, REST contract, breedbandnotities en release docs staan als Markdown in de tooling repository.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Productgids",
+        "h2": "Een kort gebruiksmodel",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "Klassieke eMule, afgestemd op moderne breedband",
+        "guide": "Productgids",
+        "h1": "eMule BB houdt eD2K en Kad bruikbaar voor serieuze gebruikers.",
+        "lead": "Een eMule voor power users met snelle uploads, grote gedeelde bibliotheken, altijd actieve Windows-sessies en lokale controller workflows zonder de vertrouwde desktop-app op te geven.",
+        "panel_h2": "Behoudend waar compatibiliteit telt. Modern waar controle telt.",
+        "panel_kicker": "Producthouding",
+        "panel_p": "eMule BB houdt de native eMule-workflow centraal en voegt breedbandgerichte queue-logica, lokale API-besturing en release-validatie toe.",
+        "signals": [
+          "Originele eD2K/Kad-compatibiliteit",
+          "Controle over upload slots",
+          "VPN/interface binding",
+          "Actuele prestatielimieten",
+          "Geauthenticeerde JSON REST API",
+          "Publieke 0.7.3 gepland",
+          "Workspace voor release-validatie"
+        ],
+        "source": "Broncode"
+      },
+      "intro": "eMule broadband edition, kortweg <strong>eMule BB</strong>, is een zelfstandige productlijn voor mensen die het gedistribueerde model van eMule nog steeds waardevol vinden. Het behoudt de klassieke desktop workflows en maakt de client beter uitvoerbaar, observeerbaar, automatiseerbaar en valideerbaar op moderne Windows-systemen.",
+      "meta_description": "eMule BB is een moderne eMule-editie voor breedband-uploadcontrole, VPN/interface binding, actuele prestatielimieten, grote gedeelde bibliotheken, REST automation, eD2K, Kad en geavanceerde workflows.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Geen toevallige protocol drift",
+            "p": "Kad- en eD2K-wijzigingen blijven binnen local routing, timing, validation en control paths. Wire formats, opcodes en native workflows zijn compatibiliteitsgrenzen.",
+            "span": "Compatibiliteit"
+          },
+          {
+            "h3": "Vaste, reviewbare defaults",
+            "p": "Moderne aannames rond bandwidth, memory, socket, queue en timeout worden expliciete defaults of advanced preferences.",
+            "span": "Limieten"
+          },
+          {
+            "h3": "Controller-contracten, geen screen scraping",
+            "p": "De geauthenticeerde JSON API volgt een OpenAPI-contract, weigert malformed inputs en laat native state mutations via de app lopen.",
+            "span": "REST"
+          },
+          {
+            "h3": "Bewijs vóór labels",
+            "p": "Het proces registreert commands, commits, logs, package paths, hashes, live evidence en operator decisions zodat een tag een gecontroleerd resultaat is.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Implementatiemethode",
+        "h2": "Moderniseren rond de legacy-kern, daarna het resultaat bewijzen",
+        "p": "De stijl is bewust behoudend. eMule BB wijzigt lokale policy, limits, diagnostics, API boundaries en release discipline terwijl eD2K/Kad-compatibiliteit default blijft."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Waarom"
+        },
+        {
+          "id": "features",
+          "label": "Functies"
+        },
+        {
+          "id": "guide",
+          "label": "Gids"
+        },
+        {
+          "id": "docs",
+          "label": "Documentatie"
+        },
+        {
+          "id": "automation",
+          "label": "Automatisering"
+        },
+        {
+          "id": "release",
+          "label": "Uitgave"
+        },
+        {
+          "id": "repos",
+          "label": "Repositories"
+        }
+      ],
+      "nav_label": "Hoofdnavigatie",
+      "og_description": "Moderne eMule voor uploadcontrole, VPN/interface binding, grote bibliotheken, REST automation, eD2K/Kad-compatibiliteit en release-validatie. De eerste publieke versie 0.7.3 is gepland en nog niet uitgebracht.",
+      "og_title": "eMule broadband edition | eMule BB in het Nederlands",
+      "product_summary_label": "Samenvatting van eMule BB",
+      "project_links_label": "Projectlinks",
+      "release": {
+        "cards": [
+          {
+            "h3": "Huidige status",
+            "p": "Het eerste publieke doel is <code>0.7.3</code>. Het is nog niet uitgebracht. Het finale bewijs is gepauzeerd door operator-richting en de publieke status blijft gekoppeld aan actieve release docs.",
+            "span": ""
+          },
+          {
+            "h3": "Build- en pakketbewijs",
+            "p": "Het bewijs omvat workspace validation, Debug en Release x64 app builds, Release ARM64 app builds, test binaries, package generation, clean-worktree checks en SHA-256 hashes.",
+            "span": ""
+          },
+          {
+            "h3": "Gedragsbewijs",
+            "p": "De gates dekken native suites, REST contract, OpenAPI drift, malformed requests, UI automation, live controller-surface E2E, volledige Release x64 live E2E en network adversity.",
+            "span": ""
+          },
+          {
+            "h3": "Controller-bewijs",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr en qBittorrent-compatible lanes bewijzen automation zonder het native contract <code>/api/v1</code> te verzwakken.",
+            "span": ""
+          },
+          {
+            "h3": "Compatibiliteitsbewijs",
+            "p": "Origineel eD2K/Kad-gedrag blijft default. Breedband, REST en controllers worden rond dat compatibiliteitsdoel toegevoegd.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Release-status",
+        "h2": "Publieke versie 0.7.3 is gepland, heeft gates en is nog niet uitgebracht",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Publieke workspace",
+        "h2": "Primaire repositories",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "Moderne eMule voor breedband-uploadcontrole, VPN/interface binding, grote gedeelde bibliotheken, REST automation, eD2K/Kad-compatibiliteit en geavanceerde workflows. De eerste publieke versie is gepland als 0.7.3 en nog niet uitgebracht.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Therapeut voor upload slots",
+            "p": "Laat zwakke slots precies lang genoeg hun gevoelens verwerken voordat ze met formulier en cooldown terug de queue in gaan.",
+            "span": ""
+          },
+          {
+            "h3": "Archivaris van Kad-bootstrap",
+            "p": "Bewaart de heilige lijst nodes die ooit in 2007 werkte en daarom een zorgvuldig gevalideerde tweede kans verdient.",
+            "span": ""
+          },
+          {
+            "h3": "Bewaker van release gates",
+            "p": "Laat builds alleen binnen met tests, live evidence en een overtuigende verklaring over de laatste socket.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Projectcultuur",
+        "h2": "De mensen die voorkomen dat de queue performancekunst wordt",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB in het Nederlands",
+      "why": {
+        "cards": [
+          {
+            "h3": "eD2K en Kad praktisch houden",
+            "p": "Het doel is geen nostalgie en geen rewrite. Het klassieke model moet bruikbaar blijven voor lange sessies, zeldzame bestanden, bewust seeding en gebruikers die nog een native client willen.",
+            "span": "Productreden"
+          },
+          {
+            "h3": "Oude aannames zichtbaar maken",
+            "p": "Defaults rond upload slots, timeouts, buffers, grote bibliotheken en WebServer-blootstelling worden expliciet, zodat ze reviewbaar, testbaar en documenteerbaar zijn.",
+            "span": "Technische reden"
+          },
+          {
+            "h3": "Modern bewijs toepassen op legacy-code",
+            "p": "De workspace behandelt release als technisch artefact: source policy, OpenAPI-contracten, reproduceerbare builds, hashes, live checks en operator gates moeten kloppen.",
+            "span": "Release-reden"
+          }
+        ],
+        "eyebrow": "Waarom",
+        "h2": "Een legacy-client is alleen nuttig als je hem nog met vertrouwen kunt beheren",
+        "p": "eMule BB is tegelijk productwerk en technische discipline: een native Windows-app met echt netwerkgedrag behouden en er moderne build, tests, documentatie, automatisering en release-proces omheen zetten."
+      }
+    },
+    "doc_section": [
+      "Meer lezen",
+      "Gedetailleerde gidsen en brondocumenten"
+    ],
+    "docs": {
+      "controllers": [
+        "Controllers en REST-gids",
+        "Gebruik van vertrouwde lokale controllers en automatiseringsgrenzen."
+      ],
+      "downloads": [
+        "Download- en zoekgids",
+        "Zoekmodi, vertrouwen in resultaten, categorieën en power-user workflows."
+      ],
+      "emulebb": [
+        "eMule BB productgids",
+        "Overzicht voor setup, tuning, automatisering en release-bewust gebruik."
+      ],
+      "network": [
+        "Netwerkgids",
+        "Referentie voor eD2K, Kad, binding, UPnP, firewall en verbindingsdiagnose."
+      ],
+      "release": [
+        "0.7.3 release-dashboard",
+        "Geplande beta gates, evidence pointers en gereedheidsregels."
+      ],
+      "rest_adapters": [
+        "REST adapter-contracten",
+        "qBittorrent-compatible en Torznab oppervlak voor controller-auteurs."
+      ],
+      "rest_contract": [
+        "REST API-contract",
+        "Leesbaar contract voor het geauthenticeerde JSON-besturingsoppervlak."
+      ],
+      "setup": [
+        "Setupgids",
+        "Installatiemodel, eerste profielgedrag en praktische startnotities."
+      ],
+      "sharing": [
+        "Deelgids",
+        "Shared directories, bewaakte shares, grote bibliotheken en policy files."
+      ],
+      "troubleshooting": [
+        "Troubleshootinggids",
+        "Symptoomgerichte checks voor Low ID, netwerk, delen en automatisering."
+      ]
+    },
+    "language_link": "Talen",
+    "menu": {
+      "close_label": "Hoofdnavigatie sluiten",
+      "label": "Menu",
+      "open_label": "Hoofdnavigatie openen"
+    },
+    "repo_section": [
+      "Publieke workspace",
+      "Primaire repositories"
+    ],
+    "repos": {
+      "build": "build-, validatie- en release-orchestratie",
+      "emule": "desktop-app en productbron",
+      "setup": "reproduceerbare workspace setup",
+      "tests": "native, Python-, UI-, REST- en live E2E-tests",
+      "tooling": "roadmap, backlog, policy, audits en referentiedocs"
+    }
+  },
+  "pl": {
+    "content": {
+      "automation": {
+        "eyebrow": "Powierzchnia sterowania",
+        "h2": "REST automation bez zastępowania aplikacji desktop",
+        "p": "Linia broadband release udostępnia resource-oriented JSON API <code>/api/v1</code> przez istniejący listener WebServer. Uwierzytelnia przez <code>X-API-Key</code>, zwraca JSON envelopes i prowadzi zmiany stanu eMule przez aplikację.",
+        "pills": [
+          "Transfers",
+          "Searches",
+          "Servers",
+          "Kad",
+          "Shared files",
+          "Uploads",
+          "Categories",
+          "Logs",
+          "Statistics",
+          "Preferences"
+        ],
+        "pills_label": "Obszary REST API"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Kontrola uploadu na szybkich łączach",
+            "p": "Ograniczone cele slots, recykling słabych slots, odczyty ratio i kontrola seeding utrzymują szybki upload bez zmiany protokołu eD2K.",
+            "span": "Udostępnianie i upload"
+          },
+          {
+            "h3": "Binding, NAT i polityka ekspozycji",
+            "p": "Interface-aware binding, walidacja UPnP/NAT, HTTPS, allowed-IP rules i dziedziczenie WebServer utrzymują powierzchnie zdalne jawne i testowalne.",
+            "span": "Kontrola sieci"
+          },
+          {
+            "h3": "Aktualne defaults dla dużych sesji",
+            "p": "Większe socket buffers, limity queue/source, file buffering, timeouts, rekursywny sync i long paths są ukierunkowane na współczesny Windows i duże biblioteki.",
+            "span": "Wydajność i skala"
+          },
+          {
+            "h3": "eD2K i Kad pozostają pierwsze",
+            "p": "Server, global i Kad search pozostają natywną podstawą, a Kad identity, bad-node handling, cleanup i timing mieszczą się w granicach zgodności.",
+            "span": "Klasyczna sieć"
+          },
+          {
+            "h3": "REST i controller workflows",
+            "p": "Uwierzytelnione JSON endpoints obejmują transfers, searches, shared files, servers, Kad, logs, categories, uploads, statistics, preferences i controlled shutdown.",
+            "span": "Automatyzacja"
+          },
+          {
+            "h3": "Dowody przed publicznymi pakietami",
+            "p": "Beta <code>0.7.3</code> zależy od native tests, REST contracts, live controller lanes, network adversity, packaging i prób x64/ARM64.",
+            "span": "Dyscyplina release"
+          }
+        ],
+        "eyebrow": "Funkcje",
+        "h2": "Co eMule BB dodaje wokół klasycznego klienta",
+        "p": "Praca skupia się na zachowaniu widocznym dla operatora: przewidywalny upload, bezpieczniejszy binding, stałe limity wydajności, duże biblioteki, lokalna automatyzacja i dowody dla planowanego release <code>0.7.3</code>."
+      },
+      "footer_links_label": "Linki w stopce",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Zacznij od dobrych nawyków eMule",
+            "p": "Używaj zaufanych server lists, uruchamiaj Kad świadomie, trzymaj incoming i shared folders przewidywalnie i zachowaj klasyczny workflow przed automatyzacją.",
+            "span": ""
+          },
+          {
+            "h3": "Dostosuj upload do realnego łącza",
+            "p": "Ustaw skończony upload limit, wybierz realistyczny cel klientów i pozwól broadband policy preferować mniej, ale mocniejszych slots.",
+            "span": ""
+          },
+          {
+            "h3": "Dbaj o duże biblioteki",
+            "p": "Używaj Windows z long paths, utrzymuj shared roots w porządku, obserwuj ratios i traktuj rzadkie pliki jak świadome publikacje.",
+            "span": ""
+          },
+          {
+            "h3": "Automatyzuj tylko w zaufanych sieciach",
+            "p": "Włącz WebServer/REST z API key, ostrożnie ustaw binding i firewall oraz używaj controllers szanujących natywną semantykę eMule.",
+            "span": ""
+          },
+          {
+            "h3": "Śledź gotowość release",
+            "p": "Traktuj publiczną branch jak aktywny pre-release, dopóki gates <code>0.7.3</code>, operator checks i live E2E evidence nie powiedzą inaczej.",
+            "span": ""
+          },
+          {
+            "h3": "Szczegóły są w dokumentacji",
+            "p": "Homepage pozostaje zwarta. Przewodnik produktu, kontrakt REST, notatki o broadband i dokumenty release są w Markdown w repozytorium tooling.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Przewodnik produktu",
+        "h2": "Krótki model pracy",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "Klasyczny eMule, dostrojony do współczesnych łączy",
+        "guide": "Przewodnik produktu",
+        "h1": "eMule BB utrzymuje eD2K i Kad jako użyteczne narzędzia dla wymagających użytkowników.",
+        "lead": "eMule dla power userów: szybki upload, duże biblioteki współdzielone, stale działające sesje Windows i lokalne controller workflows bez porzucania znanej aplikacji desktop.",
+        "panel_h2": "Konserwatywnie tam, gdzie liczy się zgodność. Nowocześnie tam, gdzie liczy się kontrola.",
+        "panel_kicker": "Podejście produktu",
+        "panel_p": "eMule BB zostawia natywny workflow eMule w centrum i dodaje obsługę queue dla szybkich łączy, lokalne sterowanie przez API oraz walidację release.",
+        "signals": [
+          "Oryginalna zgodność eD2K/Kad",
+          "Kontrola upload slots",
+          "VPN/interface binding",
+          "Aktualne limity wydajności",
+          "Uwierzytelniona JSON REST API",
+          "Publiczna 0.7.3 planowana",
+          "Workspace walidacji release"
+        ],
+        "source": "Kod źródłowy"
+      },
+      "intro": "eMule broadband edition, krótko <strong>eMule BB</strong>, to niezależna linia produktu dla osób, które nadal cenią rozproszony model eMule. Zachowuje klasyczne desktop workflows, a jednocześnie ułatwia uruchamianie, obserwowanie, automatyzowanie i walidowanie klienta na aktualnych systemach Windows.",
+      "meta_description": "eMule BB to nowoczesna edycja eMule do kontroli uploadu na szybkich łączach, VPN/interface binding, aktualnych limitów wydajności, dużych bibliotek współdzielonych, REST automation, eD2K, Kad i zaawansowanych workflows.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Bez przypadkowego protocol drift",
+            "p": "Zmiany Kad i eD2K zostają w local routing, timing, validation i control paths. Wire formats, opcodes i native workflows są granicami zgodności.",
+            "span": "Zgodność"
+          },
+          {
+            "h3": "Stałe, sprawdzalne defaults",
+            "p": "Nowoczesne założenia o bandwidth, memory, socket, queue i timeout są wyrażone jako jawne defaults albo advanced preferences.",
+            "span": "Limity"
+          },
+          {
+            "h3": "Kontrakty sterowania, nie screen scraping",
+            "p": "Uwierzytelniona JSON API trzyma się kontraktu OpenAPI, odrzuca malformed inputs i prowadzi native state mutations przez aplikację.",
+            "span": "REST"
+          },
+          {
+            "h3": "Dowody przed etykietami",
+            "p": "Proces zapisuje commands, commits, logs, package paths, hashes, live evidence i operator decisions, aby tag był sprawdzonym wynikiem.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Metoda implementacji",
+        "h2": "Modernizować wokół legacy-core, a potem dowieść wyniku",
+        "p": "Styl jest celowo konserwatywny. eMule BB zmienia lokalną policy, limits, diagnostics, API boundaries i release discipline, zachowując domyślną zgodność eD2K/Kad."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Dlaczego"
+        },
+        {
+          "id": "features",
+          "label": "Funkcje"
+        },
+        {
+          "id": "guide",
+          "label": "Przewodnik"
+        },
+        {
+          "id": "docs",
+          "label": "Dokumentacja"
+        },
+        {
+          "id": "automation",
+          "label": "Automatyzacja"
+        },
+        {
+          "id": "release",
+          "label": "Wydanie"
+        },
+        {
+          "id": "repos",
+          "label": "Repozytoria"
+        }
+      ],
+      "nav_label": "Główna nawigacja",
+      "og_description": "Nowoczesny eMule do kontroli uploadu, VPN/interface binding, dużych bibliotek, REST automation, zgodności eD2K/Kad i walidacji release. Pierwsza publiczna wersja 0.7.3 jest planowana i nie została jeszcze wydana.",
+      "og_title": "eMule broadband edition | eMule BB po polsku",
+      "product_summary_label": "Podsumowanie eMule BB",
+      "project_links_label": "Linki projektu",
+      "release": {
+        "cards": [
+          {
+            "h3": "Aktualny status",
+            "p": "Pierwszy publiczny target to <code>0.7.3</code>. Nie został jeszcze wydany. Końcowy dowód jest wstrzymany decyzją operatora, a publiczny status pozostaje związany z aktywnymi dokumentami.",
+            "span": ""
+          },
+          {
+            "h3": "Dowód build i pakietu",
+            "p": "Dowód obejmuje workspace validation, Debug i Release x64 app builds, Release ARM64 app builds, test binaries, package generation, clean-worktree checks oraz SHA-256 hashes.",
+            "span": ""
+          },
+          {
+            "h3": "Dowód zachowania",
+            "p": "Gates obejmują native suites, REST contract, OpenAPI drift, malformed requests, UI automation, live controller-surface E2E, pełny Release x64 live E2E i network adversity.",
+            "span": ""
+          },
+          {
+            "h3": "Dowód controllers",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr i qBittorrent-compatible lanes pokazują automation bez osłabiania natywnego kontraktu <code>/api/v1</code>.",
+            "span": ""
+          },
+          {
+            "h3": "Dowód zgodności",
+            "p": "Oryginalne zachowanie eD2K/Kad pozostaje default. Broadband, REST i controllers są dodawane wokół tego celu zgodności.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Status wydania",
+        "h2": "Publiczna wersja 0.7.3 jest planowana, ma gates i nie została jeszcze wydana",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Publiczny workspace",
+        "h2": "Główne repozytoria",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "Nowoczesny eMule do kontroli uploadu na szybkich łączach, VPN/interface binding, dużych bibliotek współdzielonych, REST automation, zgodności eD2K/Kad i zaawansowanych workflows. Pierwsza publiczna wersja jest planowana jako 0.7.3 i nie została jeszcze wydana.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Terapeuta upload slots",
+            "p": "Daje słabym slots dokładnie tyle czasu na emocje, ile trzeba, po czym odsyła je do queue z formularzem i cooldown.",
+            "span": ""
+          },
+          {
+            "h3": "Archiwista bootstrap Kad",
+            "p": "Pilnuje świętej listy nodes, która zadziałała raz w 2007 roku i zasługuje na dobrze zweryfikowaną drugą szansę.",
+            "span": ""
+          },
+          {
+            "h3": "Bramkarz release gates",
+            "p": "Wpuszcza builds tylko wtedy, gdy przynoszą testy, live evidence i sensowne wyjaśnienie ostatniego socket.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Kultura projektu",
+        "h2": "Ludzie, którzy nie pozwalają queue stać się performancem",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB po polsku",
+      "why": {
+        "cards": [
+          {
+            "h3": "Utrzymać eD2K i Kad w praktyce",
+            "p": "To nie nostalgia ani rewrite. Chodzi o utrzymanie klasycznego modelu dla długich sesji, rzadkich plików, świadomego seeding i użytkowników chcących natywnego klienta.",
+            "span": "Powód produktowy"
+          },
+          {
+            "h3": "Ujawnić stare założenia",
+            "p": "Defaults dotyczące upload slots, timeouts, buffers, dużych bibliotek i ekspozycji WebServer stają się jawne, testowalne i dokumentowalne.",
+            "span": "Powód techniczny"
+          },
+          {
+            "h3": "Dowodzić legacy-code nowoczesnymi metodami",
+            "p": "Workspace traktuje release jako artefakt inżynierski: source policy, kontrakty OpenAPI, powtarzalne builds, hashes, live checks i operator gates muszą się zgadzać.",
+            "span": "Powód release"
+          }
+        ],
+        "eyebrow": "Dlaczego",
+        "h2": "Klient legacy ma sens tylko wtedy, gdy można nim nadal pewnie zarządzać",
+        "p": "eMule BB to produkt i dyscyplina inżynierska: zachować natywną aplikację Windows z prawdziwym zachowaniem sieciowym oraz otoczyć ją nowoczesnym build, testami, dokumentacją, automatyzacją i procesem release."
+      }
+    },
+    "doc_section": [
+      "Więcej informacji",
+      "Szczegółowe przewodniki i dokumenty źródłowe"
+    ],
+    "docs": {
+      "controllers": [
+        "Przewodnik controllers i REST",
+        "Użycie zaufanych lokalnych controllers i granice automatyzacji."
+      ],
+      "downloads": [
+        "Przewodnik pobierania i search",
+        "Tryby search, zaufanie do wyników, kategorie i power-user workflows."
+      ],
+      "emulebb": [
+        "Przewodnik produktu eMule BB",
+        "Omówienie setup, strojenia, automatyzacji i użycia świadomego release."
+      ],
+      "network": [
+        "Przewodnik sieci",
+        "Referencja eD2K, Kad, binding, UPnP, firewall i diagnostyka połączeń."
+      ],
+      "release": [
+        "Panel release 0.7.3",
+        "Planowane beta gates, wskaźniki evidence i reguły gotowości."
+      ],
+      "rest_adapters": [
+        "Kontrakty REST adapters",
+        "qBittorrent-compatible i Torznab dla autorów controllers."
+      ],
+      "rest_contract": [
+        "Kontrakt REST API",
+        "Czytelny kontrakt uwierzytelnionej powierzchni JSON."
+      ],
+      "setup": [
+        "Przewodnik setup",
+        "Model instalacji, pierwszy profil i praktyczne notatki startowe."
+      ],
+      "sharing": [
+        "Przewodnik udostępniania",
+        "Shared directories, monitored shares, duże biblioteki i pliki policy."
+      ],
+      "troubleshooting": [
+        "Przewodnik troubleshooting",
+        "Kontrole objawowe dla Low ID, sieci, sharing i automatyzacji."
+      ]
+    },
+    "language_link": "Języki",
+    "menu": {
+      "close_label": "Zamknij główną nawigację",
+      "label": "Menu",
+      "open_label": "Otwórz główną nawigację"
+    },
+    "repo_section": [
+      "Publiczny workspace",
+      "Główne repozytoria"
+    ],
+    "repos": {
+      "build": "orkiestracja build, validation i release",
+      "emule": "aplikacja desktop i źródło produktu",
+      "setup": "powtarzalny setup workspace",
+      "tests": "testy native, Python, UI, REST i live E2E",
+      "tooling": "roadmap, backlog, policy, audits i reference docs"
+    }
+  },
+  "pt_br": {
+    "content": {
+      "automation": {
+        "eyebrow": "Superfície de controle",
+        "h2": "REST automation sem substituir o aplicativo desktop",
+        "p": "A linha de release de banda larga expõe uma JSON API <code>/api/v1</code> orientada a recursos a partir do listener WebServer existente. Ela autentica com <code>X-API-Key</code>, entrega envelopes JSON e mantém mudanças de estado do eMule mediadas pelo aplicativo.",
+        "pills": [
+          "Transferências",
+          "Buscas",
+          "Servidores",
+          "Kad",
+          "Arquivos compartilhados",
+          "Uploads",
+          "Categorias",
+          "Logs",
+          "Estatísticas",
+          "Preferências"
+        ],
+        "pills_label": "Áreas da REST API"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Controle de upload em banda larga",
+            "p": "Metas limitadas de slots, reciclagem de slots fracos, leitura de ratios e controles de seeding mantêm links rápidos úteis sem alterar o protocolo de upload eD2K.",
+            "span": "Compartilhamento e upload"
+          },
+          {
+            "h3": "Binding, NAT e política de exposição",
+            "p": "Interface-aware binding, validação UPnP/NAT, HTTPS, regras de IP permitido e herança do WebServer mantêm superfícies remotas explícitas e testáveis.",
+            "span": "Controle de rede"
+          },
+          {
+            "h3": "Defaults atuais para sessões grandes",
+            "p": "Buffers maiores, limites de queue/source, file buffering, timeouts, sync recursiva e orientação de long paths miram Windows atuais e bibliotecas grandes.",
+            "span": "Desempenho e escala"
+          },
+          {
+            "h3": "eD2K e Kad continuam em primeiro lugar",
+            "p": "Busca Server, global e Kad seguem como base nativa, com identidade Kad, tratamento de nós ruins, limpeza e timing dentro de limites compatíveis.",
+            "span": "Rede clássica"
+          },
+          {
+            "h3": "REST e workflows de controle",
+            "p": "Endpoints JSON autenticados cobrem transferências, buscas, arquivos compartilhados, servidores, Kad, logs, categorias, uploads, estatísticas, preferências e shutdown controlado.",
+            "span": "Automação"
+          },
+          {
+            "h3": "Evidência antes de pacotes públicos",
+            "p": "A beta <code>0.7.3</code> depende de testes nativos, contratos REST, lanes live de controladores, adversidade de rede, packaging e ensaios x64/ARM64.",
+            "span": "Disciplina de release"
+          }
+        ],
+        "eyebrow": "Recursos",
+        "h2": "O que eMule BB adiciona ao redor do cliente clássico",
+        "p": "O foco está no comportamento visível para o operador: política de upload previsível, binding mais seguro, limites fixos de desempenho, bibliotecas grandes, automação local e evidência para o release planejado <code>0.7.3</code>."
+      },
+      "footer_links_label": "Links do rodapé",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Comece por bons hábitos do eMule",
+            "p": "Use listas confiáveis de servidores, inicialize Kad com cuidado, mantenha pastas incoming e compartilhadas previsíveis e preserve o workflow clássico antes da automação.",
+            "span": ""
+          },
+          {
+            "h3": "Ajuste o upload ao seu link real",
+            "p": "Defina um limite finito de upload, escolha uma meta realista de clientes e deixe a política de banda larga favorecer menos slots, porém mais fortes.",
+            "span": ""
+          },
+          {
+            "h3": "Cuide de bibliotecas grandes",
+            "p": "Use Windows com long paths, mantenha raízes de compartilhamento limpas, acompanhe ratios e trate arquivos raros como decisões deliberadas de publicação.",
+            "span": ""
+          },
+          {
+            "h3": "Automatize só em redes confiáveis",
+            "p": "Ative WebServer/REST com API key, aplique binding e firewall com cuidado e use controladores que respeitem a semântica nativa do eMule.",
+            "span": ""
+          },
+          {
+            "h3": "Acompanhe a prontidão do release",
+            "p": "Trate a branch pública como pre-release ativo até que os gates <code>0.7.3</code>, checks do operador e evidência live E2E digam o contrário.",
+            "span": ""
+          },
+          {
+            "h3": "Use a documentação para detalhes",
+            "p": "A página principal é compacta. Guia do produto, contrato REST, notas de banda larga e documentos de release vivem como Markdown no repositório de tooling.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Guia do produto",
+        "h2": "Um modelo curto de operação",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "O eMule clássico, ajustado para a banda larga atual",
+        "guide": "Guia do produto",
+        "h1": "eMule BB mantém eD2K e Kad úteis para usuários exigentes.",
+        "lead": "Um eMule para usuários avançados, com links de upload rápidos, grandes bibliotecas compartilhadas, sessões Windows sempre ativas e workflows locais de controle sem abandonar o aplicativo desktop conhecido.",
+        "panel_h2": "Conservador onde a compatibilidade importa. Moderno onde o controle importa.",
+        "panel_kicker": "Postura do produto",
+        "panel_p": "eMule BB mantém o workflow nativo do eMule no centro e adiciona filas preparadas para banda larga, controle local por API e validação de release ao redor dele.",
+        "signals": [
+          "Compatibilidade eD2K/Kad original",
+          "Controle de slots de upload em banda larga",
+          "VPN/interface binding",
+          "Limites de desempenho atuais",
+          "JSON REST API autenticada",
+          "0.7.3 pública planejada",
+          "Workspace de validação de release"
+        ],
+        "source": "Código-fonte"
+      },
+      "intro": "eMule broadband edition, ou simplesmente <strong>eMule BB</strong>, é uma linha de produto independente para quem ainda valoriza o modelo distribuído do eMule. Ele preserva os workflows clássicos do desktop e torna o cliente mais fácil de executar, observar, automatizar e validar em sistemas Windows atuais.",
+      "meta_description": "eMule BB é uma edição moderna do eMule para controle de upload em banda larga, VPN/interface binding, limites de desempenho atuais, grandes bibliotecas compartilhadas, REST automation, eD2K, Kad e workflows avançados.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Sem drift casual de protocolo",
+            "p": "Mudanças Kad e eD2K ficam em rotas locais, timing, validação e controle. Wire formats, opcodes e workflows nativos são limites de compatibilidade.",
+            "span": "Compatibilidade"
+          },
+          {
+            "h3": "Defaults fixos e revisáveis",
+            "p": "Suposições modernas de bandwidth, memória, socket, queue e timeout aparecem como defaults explícitos ou preferências avançadas.",
+            "span": "Limites"
+          },
+          {
+            "h3": "Contratos de controle, não screen scraping",
+            "p": "A JSON API autenticada segue contrato OpenAPI, rejeita entradas malformadas e encaminha mutações nativas pelo aplicativo.",
+            "span": "REST"
+          },
+          {
+            "h3": "Evidência antes de etiquetas",
+            "p": "O processo registra comandos, commits, logs, caminhos de pacote, hashes, evidência live e decisões do operador para que o tag seja um resultado verificado.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Método de implementação",
+        "h2": "Modernizar ao redor do núcleo legado e então provar o resultado",
+        "p": "O estilo é deliberadamente conservador. eMule BB muda política local, limites, diagnósticos, limites de API e disciplina de release mantendo compatibilidade eD2K/Kad como default."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Por quê"
+        },
+        {
+          "id": "features",
+          "label": "Recursos"
+        },
+        {
+          "id": "guide",
+          "label": "Guia"
+        },
+        {
+          "id": "docs",
+          "label": "Documentação"
+        },
+        {
+          "id": "automation",
+          "label": "Automação"
+        },
+        {
+          "id": "release",
+          "label": "Lançamento"
+        },
+        {
+          "id": "repos",
+          "label": "Repositórios"
+        }
+      ],
+      "nav_label": "Navegação principal",
+      "og_description": "eMule moderno para controle de upload em banda larga, VPN/interface binding, limites de desempenho atuais, bibliotecas grandes, REST automation, compatibilidade eD2K/Kad e validação de release. A primeira versão pública 0.7.3 está planejada e ainda não foi lançada.",
+      "og_title": "eMule broadband edition | eMule BB em português do Brasil",
+      "product_summary_label": "Resumo do eMule BB",
+      "project_links_label": "Links do projeto",
+      "release": {
+        "cards": [
+          {
+            "h3": "Estado atual",
+            "p": "O primeiro alvo público é <code>0.7.3</code>. Ele ainda não foi lançado. A prova final está pausada por direção do operador e o status público segue os documentos ativos.",
+            "span": ""
+          },
+          {
+            "h3": "Prova de build e pacote",
+            "p": "A prova cobre validação do workspace, builds Debug e Release x64, builds Release ARM64, binários de teste, geração de pacote, worktree limpo e hashes SHA-256.",
+            "span": ""
+          },
+          {
+            "h3": "Prova de comportamento",
+            "p": "Os gates cobrem suites nativas, contrato REST, drift OpenAPI, requests malformados, automação UI, E2E live de controladores, Release x64 live E2E completo e adversidade de rede.",
+            "span": ""
+          },
+          {
+            "h3": "Prova de controladores",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr e lanes compatíveis com qBittorrent provam automação sem enfraquecer o contrato nativo <code>/api/v1</code>.",
+            "span": ""
+          },
+          {
+            "h3": "Prova de compatibilidade",
+            "p": "O comportamento eD2K/Kad original permanece default. Banda larga, REST e controladores são adicionados ao redor desse objetivo de compatibilidade.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Estado do release",
+        "h2": "A versão pública 0.7.3 está planejada, tem gates e ainda não foi lançada",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Workspace público",
+        "h2": "Repositórios principais",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "eMule moderno para controle de upload em banda larga, VPN/interface binding, limites de desempenho atuais, grandes bibliotecas compartilhadas, REST automation, compatibilidade eD2K/Kad e workflows avançados. A primeira versão pública está planejada como 0.7.3 e ainda não foi lançada.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Terapeuta de slots de upload",
+            "p": "Ajuda slots fracos a processar seus sentimentos pelo tempo exato antes de devolvê-los à queue com prancheta e cooldown.",
+            "span": ""
+          },
+          {
+            "h3": "Arquivista de bootstrap Kad",
+            "p": "Mantém a lista sagrada de nós que funcionaram uma vez em 2007 e merecem uma segunda chance bem validada.",
+            "span": ""
+          },
+          {
+            "h3": "Porteiro dos gates de release",
+            "p": "Só deixa builds entrarem se trouxerem testes, evidência live e uma boa explicação sobre o último socket.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Cultura do projeto",
+        "h2": "A equipe que impede a queue de virar arte performática",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB em português do Brasil",
+      "why": {
+        "cards": [
+          {
+            "h3": "Manter eD2K e Kad práticos",
+            "p": "A meta não é nostalgia nem reescrita. É manter o modelo clássico útil para sessões longas, arquivos raros, seeding deliberado e usuários que ainda querem um cliente nativo.",
+            "span": "Motivo de produto"
+          },
+          {
+            "h3": "Tornar explícitas as suposições antigas",
+            "p": "Defaults de slots de upload, timeouts, buffers, bibliotecas grandes e exposição do WebServer ficam visíveis para revisão, teste e documentação.",
+            "span": "Motivo técnico"
+          },
+          {
+            "h3": "Aplicar prova moderna a código legado",
+            "p": "O workspace trata release como artefato de engenharia: política de fonte, contratos OpenAPI, builds reproduzíveis, hashes, checks live e gates de operador precisam fechar.",
+            "span": "Motivo de release"
+          }
+        ],
+        "eyebrow": "Por quê",
+        "h2": "Um cliente legado só é útil se ainda puder ser operado com confiança",
+        "p": "eMule BB é produto e também disciplina de engenharia: preservar uma aplicação nativa Windows com comportamento real de rede e cercá-la de build, testes, documentação, automação e processo de release modernos."
+      }
+    },
+    "doc_section": [
+      "Leia mais",
+      "Guias detalhados e documentos-fonte"
+    ],
+    "docs": {
+      "controllers": [
+        "Guia de controladores e REST",
+        "Uso de controladores locais confiáveis e limites da automação."
+      ],
+      "downloads": [
+        "Guia de downloads e busca",
+        "Modos de busca, confiança nos resultados, categorias e workflows avançados."
+      ],
+      "emulebb": [
+        "Guia do produto eMule BB",
+        "Visão geral para setup, ajuste, automação e uso atento ao release."
+      ],
+      "network": [
+        "Guia de rede",
+        "Referência de eD2K, Kad, binding, UPnP, firewall e diagnóstico de conexão."
+      ],
+      "release": [
+        "Painel do release 0.7.3",
+        "Gates planejados da beta, evidências e regras de prontidão."
+      ],
+      "rest_adapters": [
+        "Contratos de adaptadores REST",
+        "Superfície qBittorrent-compatible e Torznab para autores de controladores."
+      ],
+      "rest_contract": [
+        "Contrato REST API",
+        "Contrato legível da superfície JSON autenticada."
+      ],
+      "setup": [
+        "Guia de setup",
+        "Modelo de instalação, perfil inicial e notas práticas de inicialização."
+      ],
+      "sharing": [
+        "Guia de compartilhamento",
+        "Diretórios compartilhados, shares monitorados, bibliotecas grandes e arquivos de política."
+      ],
+      "troubleshooting": [
+        "Guia de solução de problemas",
+        "Checks por sintoma para Low ID, rede, compartilhamento e automação."
+      ]
+    },
+    "language_link": "Idiomas",
+    "menu": {
+      "close_label": "Fechar navegação principal",
+      "label": "Menu",
+      "open_label": "Abrir navegação principal"
+    },
+    "repo_section": [
+      "Workspace público",
+      "Repositórios principais"
+    ],
+    "repos": {
+      "build": "orquestração de build, validação e release",
+      "emule": "aplicativo desktop e fonte do produto",
+      "setup": "setup reproduzível do workspace",
+      "tests": "testes nativos, Python, UI, REST e live E2E",
+      "tooling": "roadmap, backlog, políticas, auditorias e docs de referência"
+    }
+  },
+  "pt_pt": {
+    "content": {
+      "automation": {
+        "eyebrow": "Superfície de controlo",
+        "h2": "REST automation sem substituir a aplicação desktop",
+        "p": "A linha de release de banda larga expõe uma JSON API <code>/api/v1</code> orientada a recursos a partir do listener WebServer existente. Autentica com <code>X-API-Key</code>, entrega envelopes JSON e mantém alterações de estado do eMule mediadas pela aplicação.",
+        "pills": [
+          "Transferências",
+          "Pesquisas",
+          "Servidores",
+          "Kad",
+          "Ficheiros partilhados",
+          "Uploads",
+          "Categorias",
+          "Logs",
+          "Estatísticas",
+          "Preferências"
+        ],
+        "pills_label": "Áreas da REST API"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Controlo de upload em banda larga",
+            "p": "Metas limitadas de slots, reciclagem de slots fracos, leitura de ratios e controlos de seeding mantêm ligações rápidas úteis sem alterar o protocolo de upload eD2K.",
+            "span": "Partilha e upload"
+          },
+          {
+            "h3": "Binding, NAT e política de exposição",
+            "p": "Interface-aware binding, validação UPnP/NAT, HTTPS, regras de IP permitido e herança do WebServer mantêm superfícies remotas explícitas e testáveis.",
+            "span": "Controlo de rede"
+          },
+          {
+            "h3": "Defaults actuais para sessões grandes",
+            "p": "Buffers maiores, limites de queue/source, file buffering, timeouts, sync recursiva e orientação de long paths visam Windows actuais e bibliotecas grandes.",
+            "span": "Desempenho e escala"
+          },
+          {
+            "h3": "eD2K e Kad continuam em primeiro lugar",
+            "p": "Pesquisa Server, global e Kad seguem como base nativa, com identidade Kad, tratamento de nós maus, limpeza e timing dentro de limites compatíveis.",
+            "span": "Rede clássica"
+          },
+          {
+            "h3": "REST e workflows de controlo",
+            "p": "Endpoints JSON autenticados cobrem transferências, pesquisas, ficheiros partilhados, servidores, Kad, logs, categorias, uploads, estatísticas, preferências e shutdown controlado.",
+            "span": "Automação"
+          },
+          {
+            "h3": "Evidência antes de pacotes públicos",
+            "p": "A beta <code>0.7.3</code> depende de testes nativos, contratos REST, lanes live de controladores, adversidade de rede, packaging e ensaios x64/ARM64.",
+            "span": "Disciplina de release"
+          }
+        ],
+        "eyebrow": "Funcionalidades",
+        "h2": "O que eMule BB acrescenta ao cliente clássico",
+        "p": "O foco está no comportamento visível para o operador: política de upload previsível, binding mais seguro, limites fixos de desempenho, bibliotecas grandes, automação local e evidência para o release planeado <code>0.7.3</code>."
+      },
+      "footer_links_label": "Ligações do rodapé",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Começar por bons hábitos do eMule",
+            "p": "Usa listas fiáveis de servidores, inicializa Kad com cuidado, mantém pastas incoming e partilhadas previsíveis e preserva o workflow clássico antes da automação.",
+            "span": ""
+          },
+          {
+            "h3": "Ajustar o upload à ligação real",
+            "p": "Define um limite finito de upload, escolhe uma meta realista de clientes e deixa a política de banda larga favorecer menos slots, mas mais fortes.",
+            "span": ""
+          },
+          {
+            "h3": "Cuidar de bibliotecas grandes",
+            "p": "Usa Windows com long paths, mantém raízes de partilha limpas, acompanha ratios e trata ficheiros raros como decisões deliberadas de publicação.",
+            "span": ""
+          },
+          {
+            "h3": "Automatizar só em redes fiáveis",
+            "p": "Activa WebServer/REST com API key, aplica binding e firewall com cuidado e usa controladores que respeitem a semântica nativa do eMule.",
+            "span": ""
+          },
+          {
+            "h3": "Acompanhar a prontidão do release",
+            "p": "Trata a branch pública como pre-release activo até que os gates <code>0.7.3</code>, checks do operador e evidência live E2E indiquem o contrário.",
+            "span": ""
+          },
+          {
+            "h3": "Usar a documentação para detalhe",
+            "p": "A página principal é compacta. Guia do produto, contrato REST, notas de banda larga e documentos de release vivem como Markdown no repositório de tooling.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Guia do produto",
+        "h2": "Um modelo curto de operação",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "O eMule clássico, afinado para a banda larga actual",
+        "guide": "Guia do produto",
+        "h1": "eMule BB mantém eD2K e Kad úteis para utilizadores exigentes.",
+        "lead": "Um eMule para utilizadores avançados, com uploads rápidos, grandes bibliotecas partilhadas, sessões Windows sempre activas e workflows locais de controlo sem abandonar a aplicação desktop conhecida.",
+        "panel_h2": "Conservador onde a compatibilidade importa. Moderno onde o controlo importa.",
+        "panel_kicker": "Postura do produto",
+        "panel_p": "eMule BB mantém o workflow nativo do eMule no centro e acrescenta filas preparadas para banda larga, controlo local por API e validação de release à sua volta.",
+        "signals": [
+          "Compatibilidade eD2K/Kad original",
+          "Controlo de slots de upload em banda larga",
+          "VPN/interface binding",
+          "Limites de desempenho actuais",
+          "JSON REST API autenticada",
+          "0.7.3 pública planeada",
+          "Workspace de validação de release"
+        ],
+        "source": "Código-fonte"
+      },
+      "intro": "eMule broadband edition, ou simplesmente <strong>eMule BB</strong>, é uma linha de produto independente para quem ainda valoriza o modelo distribuído do eMule. Preserva os workflows clássicos de desktop e torna o cliente mais fácil de executar, observar, automatizar e validar em sistemas Windows actuais.",
+      "meta_description": "eMule BB é uma edição moderna do eMule para controlo de upload em banda larga, VPN/interface binding, limites de desempenho actuais, grandes bibliotecas partilhadas, REST automation, eD2K, Kad e workflows avançados.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Sem drift casual de protocolo",
+            "p": "Mudanças Kad e eD2K ficam em rotas locais, timing, validação e controlo. Wire formats, opcodes e workflows nativos são limites de compatibilidade.",
+            "span": "Compatibilidade"
+          },
+          {
+            "h3": "Defaults fixos e revistos",
+            "p": "Suposições modernas de bandwidth, memória, socket, queue e timeout aparecem como defaults explícitos ou preferências avançadas.",
+            "span": "Limites"
+          },
+          {
+            "h3": "Contratos de controlo, não screen scraping",
+            "p": "A JSON API autenticada segue contrato OpenAPI, rejeita entradas malformadas e encaminha mutações nativas pela aplicação.",
+            "span": "REST"
+          },
+          {
+            "h3": "Evidência antes de etiquetas",
+            "p": "O processo regista comandos, commits, logs, caminhos de pacote, hashes, evidência live e decisões do operador para que o tag seja um resultado verificado.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Método de implementação",
+        "h2": "Modernizar à volta do núcleo legado e depois provar o resultado",
+        "p": "O estilo é deliberadamente conservador. eMule BB muda política local, limites, diagnósticos, limites de API e disciplina de release mantendo compatibilidade eD2K/Kad como default."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Porquê"
+        },
+        {
+          "id": "features",
+          "label": "Funcionalidades"
+        },
+        {
+          "id": "guide",
+          "label": "Guia"
+        },
+        {
+          "id": "docs",
+          "label": "Documentação"
+        },
+        {
+          "id": "automation",
+          "label": "Automação"
+        },
+        {
+          "id": "release",
+          "label": "Lançamento"
+        },
+        {
+          "id": "repos",
+          "label": "Repositórios"
+        }
+      ],
+      "nav_label": "Navegação principal",
+      "og_description": "eMule moderno para controlo de upload em banda larga, VPN/interface binding, limites de desempenho actuais, bibliotecas grandes, REST automation, compatibilidade eD2K/Kad e validação de release. A primeira versão pública 0.7.3 está planeada e ainda não foi lançada.",
+      "og_title": "eMule broadband edition | eMule BB em português europeu",
+      "product_summary_label": "Resumo do eMule BB",
+      "project_links_label": "Ligações do projecto",
+      "release": {
+        "cards": [
+          {
+            "h3": "Estado actual",
+            "p": "O primeiro alvo público é <code>0.7.3</code>. Ainda não foi lançado. A prova final está pausada por orientação do operador e o estado público segue os documentos activos.",
+            "span": ""
+          },
+          {
+            "h3": "Prova de build e pacote",
+            "p": "A prova cobre validação do workspace, builds Debug e Release x64, builds Release ARM64, binários de teste, geração de pacote, worktree limpa e hashes SHA-256.",
+            "span": ""
+          },
+          {
+            "h3": "Prova de comportamento",
+            "p": "Os gates cobrem suites nativas, contrato REST, drift OpenAPI, requests malformados, automação UI, E2E live de controladores, Release x64 live E2E completo e adversidade de rede.",
+            "span": ""
+          },
+          {
+            "h3": "Prova de controladores",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr e lanes compatíveis com qBittorrent provam automação sem enfraquecer o contrato nativo <code>/api/v1</code>.",
+            "span": ""
+          },
+          {
+            "h3": "Prova de compatibilidade",
+            "p": "O comportamento eD2K/Kad original permanece default. Banda larga, REST e controladores são acrescentados à volta desse objectivo de compatibilidade.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Estado do release",
+        "h2": "A versão pública 0.7.3 está planeada, tem gates e ainda não foi lançada",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Workspace público",
+        "h2": "Repositórios principais",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "eMule moderno para controlo de upload em banda larga, VPN/interface binding, limites de desempenho actuais, grandes bibliotecas partilhadas, REST automation, compatibilidade eD2K/Kad e workflows avançados. A primeira versão pública está planeada como 0.7.3 e ainda não foi lançada.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Terapeuta de slots de upload",
+            "p": "Ajuda slots fracos a processar os sentimentos pelo tempo exacto antes de os devolver à queue com prancheta e cooldown.",
+            "span": ""
+          },
+          {
+            "h3": "Arquivista de bootstrap Kad",
+            "p": "Mantém a lista sagrada de nós que funcionaram uma vez em 2007 e merecem uma segunda oportunidade bem validada.",
+            "span": ""
+          },
+          {
+            "h3": "Porteiro dos gates de release",
+            "p": "Só deixa builds entrar se trouxerem testes, evidência live e uma boa explicação sobre o último socket.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Cultura do projecto",
+        "h2": "A equipa que impede a queue de virar teatro de desempenho",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB em português europeu",
+      "why": {
+        "cards": [
+          {
+            "h3": "Manter eD2K e Kad práticos",
+            "p": "A meta não é nostalgia nem reescrita. É manter o modelo clássico útil para sessões longas, ficheiros raros, seeding deliberado e utilizadores que ainda querem um cliente nativo.",
+            "span": "Motivo de produto"
+          },
+          {
+            "h3": "Tornar explícitas as suposições antigas",
+            "p": "Defaults de slots de upload, timeouts, buffers, bibliotecas grandes e exposição do WebServer ficam visíveis para revisão, teste e documentação.",
+            "span": "Motivo técnico"
+          },
+          {
+            "h3": "Aplicar prova moderna a código legado",
+            "p": "O workspace trata release como artefacto de engenharia: política de fonte, contratos OpenAPI, builds reproduzíveis, hashes, checks live e gates de operador precisam de fechar.",
+            "span": "Motivo de release"
+          }
+        ],
+        "eyebrow": "Porquê",
+        "h2": "Um cliente legado só é útil se ainda puder ser operado com confiança",
+        "p": "eMule BB é produto e também disciplina de engenharia: preservar uma aplicação nativa Windows com comportamento real de rede e rodeá-la de build, testes, documentação, automação e processo de release modernos."
+      }
+    },
+    "doc_section": [
+      "Ler mais",
+      "Guias detalhados e documentos-fonte"
+    ],
+    "docs": {
+      "controllers": [
+        "Guia de controladores e REST",
+        "Uso de controladores locais fiáveis e limites da automação."
+      ],
+      "downloads": [
+        "Guia de downloads e pesquisa",
+        "Modos de pesquisa, confiança nos resultados, categorias e workflows avançados."
+      ],
+      "emulebb": [
+        "Guia do produto eMule BB",
+        "Visão geral para setup, afinação, automação e uso atento ao release."
+      ],
+      "network": [
+        "Guia de rede",
+        "Referência de eD2K, Kad, binding, UPnP, firewall e diagnóstico de ligação."
+      ],
+      "release": [
+        "Painel do release 0.7.3",
+        "Gates planeados da beta, evidências e regras de prontidão."
+      ],
+      "rest_adapters": [
+        "Contratos de adaptadores REST",
+        "Superfície qBittorrent-compatible e Torznab para autores de controladores."
+      ],
+      "rest_contract": [
+        "Contrato REST API",
+        "Contrato legível da superfície JSON autenticada."
+      ],
+      "setup": [
+        "Guia de setup",
+        "Modelo de instalação, perfil inicial e notas práticas de arranque."
+      ],
+      "sharing": [
+        "Guia de partilha",
+        "Directórios partilhados, shares monitorizadas, bibliotecas grandes e ficheiros de política."
+      ],
+      "troubleshooting": [
+        "Guia de resolução de problemas",
+        "Checks por sintoma para Low ID, rede, partilha e automação."
+      ]
+    },
+    "language_link": "Idiomas",
+    "menu": {
+      "close_label": "Fechar navegação principal",
+      "label": "Menu",
+      "open_label": "Abrir navegação principal"
+    },
+    "repo_section": [
+      "Workspace público",
+      "Repositórios principais"
+    ],
+    "repos": {
+      "build": "orquestração de build, validação e release",
+      "emule": "aplicação desktop e fonte do produto",
+      "setup": "setup reproduzível do workspace",
+      "tests": "testes nativos, Python, UI, REST e live E2E",
+      "tooling": "roadmap, backlog, políticas, auditorias e docs de referência"
+    }
+  },
+  "ru": {
+    "content": {
+      "automation": {
+        "eyebrow": "Поверхность управления",
+        "h2": "REST automation без замены desktop-приложения",
+        "p": "Broadband release track открывает resource-oriented JSON API <code>/api/v1</code> через существующий WebServer listener. Она использует <code>X-API-Key</code>, отдает JSON envelopes и проводит изменения состояния eMule через приложение.",
+        "pills": [
+          "Transfers",
+          "Searches",
+          "Servers",
+          "Kad",
+          "Shared files",
+          "Uploads",
+          "Categories",
+          "Logs",
+          "Statistics",
+          "Preferences"
+        ],
+        "pills_label": "Области REST API"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Контроль upload на широкополосных линиях",
+            "p": "Ограниченные цели slots, переработка слабых slots, ratio-индикаторы и seeding controls сохраняют быстрый upload полезным без изменения протокола eD2K.",
+            "span": "Обмен и upload"
+          },
+          {
+            "h3": "Binding, NAT и политика экспозиции",
+            "p": "Interface-aware binding, проверка UPnP/NAT, HTTPS, allowed-IP rules и наследование WebServer делают удаленные поверхности явными и тестируемыми.",
+            "span": "Контроль сети"
+          },
+          {
+            "h3": "Актуальные defaults для больших сессий",
+            "p": "Большие socket buffers, queue/source limits, file buffering, timeouts, рекурсивная sync и long paths ориентированы на современные Windows и большие библиотеки.",
+            "span": "Производительность и масштаб"
+          },
+          {
+            "h3": "eD2K и Kad остаются первыми",
+            "p": "Server, global и Kad search остаются нативной основой; Kad identity, bad-node handling, cleanup и timing остаются в границах совместимости.",
+            "span": "Классическая сеть"
+          },
+          {
+            "h3": "REST и controller workflows",
+            "p": "Аутентифицированные JSON endpoints покрывают transfers, searches, shared files, servers, Kad, logs, categories, uploads, statistics, preferences и controlled shutdown.",
+            "span": "Автоматизация"
+          },
+          {
+            "h3": "Доказательства до публичных пакетов",
+            "p": "Бета <code>0.7.3</code> зависит от native tests, REST contracts, live controller lanes, network adversity, packaging и репетиций x64/ARM64.",
+            "span": "Дисциплина release"
+          }
+        ],
+        "eyebrow": "Возможности",
+        "h2": "Что eMule BB добавляет вокруг классического клиента",
+        "p": "Работа сосредоточена на поведении, видимом оператору: предсказуемый upload, более безопасный binding, фиксированные лимиты, большие библиотеки, локальная автоматизация и доказательства для запланированного release <code>0.7.3</code>."
+      },
+      "footer_links_label": "Ссылки внизу страницы",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Начинайте с проверенных привычек eMule",
+            "p": "Используйте надежные server lists, осознанно запускайте Kad, держите incoming и shared folders предсказуемыми и сохраняйте классический workflow до автоматизации.",
+            "span": ""
+          },
+          {
+            "h3": "Настройте upload под реальный канал",
+            "p": "Задайте конечный upload limit, выберите реалистичную цель клиентов и позвольте broadband policy предпочитать меньше, но сильнее slots.",
+            "span": ""
+          },
+          {
+            "h3": "Ухаживайте за большими библиотеками",
+            "p": "Используйте Windows с long paths, держите shared roots чистыми, следите за ratios и относитесь к редким файлам как к осознанной публикации.",
+            "span": ""
+          },
+          {
+            "h3": "Автоматизируйте только в доверенных сетях",
+            "p": "Включайте WebServer/REST с API key, аккуратно настраивайте binding и firewall и используйте controllers, уважающие нативную семантику eMule.",
+            "span": ""
+          },
+          {
+            "h3": "Следите за готовностью release",
+            "p": "Считайте публичную branch активным pre-release, пока gates <code>0.7.3</code>, operator checks и live E2E evidence не покажут обратное.",
+            "span": ""
+          },
+          {
+            "h3": "За деталями идите в документацию",
+            "p": "Homepage остается компактной. Гайд по продукту, REST contract, заметки о broadband и release docs живут как Markdown в tooling repository.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Гайд по продукту",
+        "h2": "Короткая модель эксплуатации",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "Классический eMule, настроенный для современного широкополосного доступа",
+        "guide": "Гайд по продукту",
+        "h1": "eMule BB сохраняет eD2K и Kad полезными для требовательных пользователей.",
+        "lead": "eMule для опытных пользователей: быстрый upload, большие shared libraries, постоянные сессии Windows и локальные controller workflows без отказа от привычного desktop-приложения.",
+        "panel_h2": "Консервативен там, где важна совместимость. Современен там, где важен контроль.",
+        "panel_kicker": "Позиция продукта",
+        "panel_p": "eMule BB оставляет нативный workflow eMule в центре и добавляет очереди для широкополосного upload, локальное управление через API и release-валидацию.",
+        "signals": [
+          "Оригинальная совместимость eD2K/Kad",
+          "Контроль upload slots",
+          "VPN/interface binding",
+          "Актуальные лимиты производительности",
+          "Аутентифицированная JSON REST API",
+          "Публичная 0.7.3 запланирована",
+          "Workspace для release-валидации"
+        ],
+        "source": "Исходный код"
+      },
+      "intro": "eMule broadband edition, коротко <strong>eMule BB</strong>, — независимая продуктовая линия для тех, кому по-прежнему важна распределенная модель eMule. Она сохраняет классические desktop workflows и делает клиент проще в запуске, наблюдении, автоматизации и проверке на современных Windows-системах.",
+      "meta_description": "eMule BB — современная редакция eMule для контроля upload на широкополосных линиях, VPN/interface binding, актуальных лимитов производительности, больших shared libraries, REST automation, eD2K, Kad и продвинутых workflows.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Без случайного protocol drift",
+            "p": "Изменения Kad и eD2K остаются в локальных routing, timing, validation и control paths. Wire formats, opcodes и native desktop workflows — границы совместимости.",
+            "span": "Совместимость"
+          },
+          {
+            "h3": "Фиксированные и проверяемые defaults",
+            "p": "Современные предположения о bandwidth, memory, socket, queue и timeout выражены как явные defaults или advanced preferences.",
+            "span": "Лимиты"
+          },
+          {
+            "h3": "Controller contracts, не screen scraping",
+            "p": "Аутентифицированная JSON API следует OpenAPI-backed contract, отклоняет malformed inputs и проводит native state mutations через приложение.",
+            "span": "REST"
+          },
+          {
+            "h3": "Доказательства перед labels",
+            "p": "Процесс записывает commands, commits, logs, package paths, hashes, live evidence и operator decisions, чтобы tag был проверенным результатом.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Метод реализации",
+        "h2": "Модернизировать вокруг legacy-ядра, затем доказать результат",
+        "p": "Стиль намеренно консервативен. eMule BB меняет локальную policy, limits, diagnostics, API boundaries и release discipline, сохраняя совместимость eD2K/Kad по умолчанию."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Зачем"
+        },
+        {
+          "id": "features",
+          "label": "Возможности"
+        },
+        {
+          "id": "guide",
+          "label": "Гайд"
+        },
+        {
+          "id": "docs",
+          "label": "Документация"
+        },
+        {
+          "id": "automation",
+          "label": "Автоматизация"
+        },
+        {
+          "id": "release",
+          "label": "Выпуск"
+        },
+        {
+          "id": "repos",
+          "label": "Репозитории"
+        }
+      ],
+      "nav_label": "Основная навигация",
+      "og_description": "Современный eMule для контроля upload, VPN/interface binding, больших библиотек, REST automation, совместимости eD2K/Kad и release-валидации. Первая публичная версия 0.7.3 запланирована и еще не выпущена.",
+      "og_title": "eMule broadband edition | eMule BB на русском",
+      "product_summary_label": "Кратко об eMule BB",
+      "project_links_label": "Ссылки проекта",
+      "release": {
+        "cards": [
+          {
+            "h3": "Текущий статус",
+            "p": "Первый публичный target — <code>0.7.3</code>. Он еще не выпущен. Финальное доказательство приостановлено по указанию оператора, а публичный статус связан с активными release docs.",
+            "span": ""
+          },
+          {
+            "h3": "Доказательство build и пакета",
+            "p": "Доказательство покрывает workspace validation, Debug и Release x64 app builds, Release ARM64 app builds, test binaries, package generation, clean worktree и SHA-256 hashes.",
+            "span": ""
+          },
+          {
+            "h3": "Доказательство поведения",
+            "p": "Gates покрывают native suites, REST contract, OpenAPI drift, malformed requests, UI automation, live controller-surface E2E, полный Release x64 live E2E и network adversity.",
+            "span": ""
+          },
+          {
+            "h3": "Доказательство controllers",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr и qBittorrent-compatible lanes показывают automation без ослабления нативного контракта <code>/api/v1</code>.",
+            "span": ""
+          },
+          {
+            "h3": "Доказательство совместимости",
+            "p": "Оригинальное поведение eD2K/Kad остается default. Broadband, REST и controllers добавляются вокруг этой цели совместимости.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Состояние release",
+        "h2": "Публичная версия 0.7.3 запланирована, проходит gates и еще не выпущена",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Публичный workspace",
+        "h2": "Основные репозитории",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "Современный eMule для контроля upload на широкополосных линиях, VPN/interface binding, больших shared libraries, REST automation, совместимости eD2K/Kad и продвинутых workflows. Первая публичная версия запланирована как 0.7.3 и еще не выпущена.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Терапевт upload slots",
+            "p": "Дает слабым slots ровно столько времени на переживания, сколько нужно, а затем возвращает их в queue с формой и cooldown.",
+            "span": ""
+          },
+          {
+            "h3": "Архивариус bootstrap Kad",
+            "p": "Хранит священный список nodes, который однажды работал в 2007 году и заслуживает аккуратно проверенного второго шанса.",
+            "span": ""
+          },
+          {
+            "h3": "Охранник release gates",
+            "p": "Пропускает builds только с тестами, live evidence и убедительным объяснением судьбы последнего socket.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Культура проекта",
+        "h2": "Люди, которые не дают queue стать перформансом",
+        "p": ""
+      },
+      "title": "eMule broadband edition | eMule BB на русском",
+      "why": {
+        "cards": [
+          {
+            "h3": "Сохранить eD2K и Kad практичными",
+            "p": "Цель — не ностальгия и не rewrite. Важно сохранить классическую модель для длинных сессий, редких файлов, осознанного seeding и нативного клиента.",
+            "span": "Причина продукта"
+          },
+          {
+            "h3": "Вывести старые предположения на свет",
+            "p": "Defaults для upload slots, timeouts, buffers, больших библиотек и WebServer становятся явными, чтобы их можно было проверять и документировать.",
+            "span": "Техническая причина"
+          },
+          {
+            "h3": "Доказывать legacy-код современным способом",
+            "p": "Workspace относится к release как к инженерному артефакту: source policy, OpenAPI-контракты, воспроизводимые builds, hashes, live checks и operator gates должны сходиться.",
+            "span": "Причина release"
+          }
+        ],
+        "eyebrow": "Зачем",
+        "h2": "Legacy-клиент полезен только тогда, когда им все еще можно уверенно управлять",
+        "p": "eMule BB — это продуктовая работа и инженерная дисциплина: сохранить нативное Windows-приложение с реальным сетевым поведением и окружить его современными build, тестами, документацией, автоматизацией и release-процессом."
+      }
+    },
+    "doc_section": [
+      "Подробнее",
+      "Подробные гайды и исходные документы"
+    ],
+    "docs": {
+      "controllers": [
+        "Гайд по controllers и REST",
+        "Использование доверенных локальных controllers и границы automation."
+      ],
+      "downloads": [
+        "Гайд по downloads и search",
+        "Режимы search, доверие к результатам, categories и advanced workflows."
+      ],
+      "emulebb": [
+        "Гайд по eMule BB",
+        "Обзор setup, tuning, automation и использования с учетом release."
+      ],
+      "network": [
+        "Гайд по сети",
+        "Справка по eD2K, Kad, binding, UPnP, firewall и диагностике соединений."
+      ],
+      "release": [
+        "Панель release 0.7.3",
+        "Запланированные beta gates, ссылки на evidence и правила готовности."
+      ],
+      "rest_adapters": [
+        "Контракты REST adapters",
+        "qBittorrent-compatible и Torznab поверхность для авторов controllers."
+      ],
+      "rest_contract": [
+        "Контракт REST API",
+        "Читаемый контракт аутентифицированной JSON-поверхности управления."
+      ],
+      "setup": [
+        "Гайд по setup",
+        "Модель установки, первый профиль и практические заметки по запуску."
+      ],
+      "sharing": [
+        "Гайд по sharing",
+        "Shared directories, monitored shares, большие библиотеки и policy files."
+      ],
+      "troubleshooting": [
+        "Гайд по troubleshooting",
+        "Проверки по симптомам для Low ID, сети, sharing и automation."
+      ]
+    },
+    "language_link": "Языки",
+    "menu": {
+      "close_label": "Закрыть основную навигацию",
+      "label": "Меню",
+      "open_label": "Открыть основную навигацию"
+    },
+    "repo_section": [
+      "Публичный workspace",
+      "Основные репозитории"
+    ],
+    "repos": {
+      "build": "build, validation и release orchestration",
+      "emule": "desktop app и исходники продукта",
+      "setup": "воспроизводимый setup workspace",
+      "tests": "native, Python, UI, REST и live E2E tests",
+      "tooling": "roadmap, backlog, policy, audits и reference docs"
+    }
+  },
+  "tr": {
+    "content": {
+      "automation": {
+        "eyebrow": "Controller yüzeyi",
+        "h2": "Desktop uygulamasını değiştirmeden REST automation",
+        "p": "Broadband release track, mevcut WebServer listener üzerinden resource-oriented JSON API <code>/api/v1</code> sunar. <code>X-API-Key</code> ile kimlik doğrular, JSON envelopes döner ve native eMule state değişikliklerini uygulama üzerinden geçirir.",
+        "pills": [
+          "Transfers",
+          "Searches",
+          "Servers",
+          "Kad",
+          "Shared files",
+          "Uploads",
+          "Categories",
+          "Logs",
+          "Statistics",
+          "Preferences"
+        ],
+        "pills_label": "REST API alanları"
+      },
+      "docs": {
+        "eyebrow": "Read more",
+        "h2": "Detailed guides and source documents",
+        "links": [],
+        "p": ""
+      },
+      "features": {
+        "cards": [
+          {
+            "h3": "Geniş bant upload kontrolü",
+            "p": "Sınırlı slot hedefleri, zayıf slot recycling, ratio göstergeleri ve seeding controls hızlı upload'u eD2K protokolünü değiştirmeden kullanışlı tutar.",
+            "span": "Paylaşım ve upload"
+          },
+          {
+            "h3": "Binding, NAT ve açıklık politikası",
+            "p": "Interface-aware binding, UPnP/NAT doğrulaması, HTTPS, allowed-IP rules ve WebServer mirası uzak yüzeyleri açık ve test edilebilir tutar.",
+            "span": "Ağ kontrolü"
+          },
+          {
+            "h3": "Büyük oturumlar için güncel defaults",
+            "p": "Daha büyük socket buffers, queue/source limits, file buffering, timeouts, recursive sync ve long paths desteği modern Windows ve büyük kütüphaneleri hedefler.",
+            "span": "Performans ve ölçek"
+          },
+          {
+            "h3": "eD2K ve Kad önce gelir",
+            "p": "Server, global ve Kad search native temel olarak kalır; Kad identity, bad-node handling, cleanup ve timing uyumluluk sınırları içinde tutulur.",
+            "span": "Klasik ağ"
+          },
+          {
+            "h3": "REST ve controller workflows",
+            "p": "Kimlik doğrulamalı JSON endpoints transfers, searches, shared files, servers, Kad, logs, categories, uploads, statistics, preferences ve controlled shutdown alanlarını kapsar.",
+            "span": "Otomasyon"
+          },
+          {
+            "h3": "Public paketlerden önce kanıt",
+            "p": "<code>0.7.3</code> beta; native tests, REST contracts, live controller lanes, network adversity, packaging ve x64/ARM64 provalarına bağlıdır.",
+            "span": "Release disiplini"
+          }
+        ],
+        "eyebrow": "Özellikler",
+        "h2": "eMule BB'nin klasik client etrafına ekledikleri",
+        "p": "Çalışma operatörün görebildiği davranışa odaklanır: öngörülebilir upload policy, daha güvenli binding, sabit performans sınırları, büyük kütüphaneler, yerel otomasyon ve planlanan <code>0.7.3</code> release için kanıt."
+      },
+      "footer_links_label": "Alt bağlantılar",
+      "guide": {
+        "cards": [
+          {
+            "h3": "Bilinen iyi eMule alışkanlıklarından başla",
+            "p": "Güvenilir server lists kullan, Kad'i bilinçli başlat, incoming ve shared folders düzenli tut, otomasyon eklemeden önce klasik workflow'u koru.",
+            "span": ""
+          },
+          {
+            "h3": "Upload'u gerçek bağlantıya göre ayarla",
+            "p": "Sonlu bir upload limit belirle, gerçekçi bir client hedefi seç ve broadband policy'nin daha az ama daha güçlü slots tercih etmesine izin ver.",
+            "span": ""
+          },
+          {
+            "h3": "Büyük kütüphaneleri düzenli tut",
+            "p": "Long paths destekli Windows kullan, shared roots alanlarını temiz tut, ratios izle ve nadir dosyaları bilinçli yayın kararı olarak ele al.",
+            "span": ""
+          },
+          {
+            "h3": "Sadece güvenilen ağlarda otomatikleştir",
+            "p": "WebServer/REST'i API key ile aç, binding ve firewall'u dikkatle ayarla ve native eMule semantiğine saygılı controllers kullan.",
+            "span": ""
+          },
+          {
+            "h3": "Release hazırlığını izle",
+            "p": "Public branch'i, <code>0.7.3</code> gates, operator checks ve live E2E evidence aksini söyleyene kadar aktif pre-release kabul et.",
+            "span": ""
+          },
+          {
+            "h3": "Ayrıntılar için belgeleri kullan",
+            "p": "Homepage kısa kalır. Ürün kılavuzu, REST contract, broadband notları ve release docs tooling repository içinde Markdown olarak yaşar.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Ürün kılavuzu",
+        "h2": "Kısa işletim modeli",
+        "p": ""
+      },
+      "hero": {
+        "eyebrow": "Klasik eMule, modern geniş bant için ayarlandı",
+        "guide": "Ürün kılavuzu",
+        "h1": "eMule BB, eD2K ve Kad'i ciddi kullanıcılar için kullanışlı tutar.",
+        "lead": "Hızlı upload bağlantıları, büyük paylaşılan kütüphaneler, sürekli açık Windows oturumları ve tanıdık desktop uygulamasından vazgeçmeden yerel controller workflows isteyen power user'lar için eMule.",
+        "panel_h2": "Uyumluluğun önemli olduğu yerde tutucu. Kontrolün önemli olduğu yerde modern.",
+        "panel_kicker": "Ürün duruşu",
+        "panel_p": "eMule BB, native eMule workflow'u merkezde tutar; çevresine geniş bant queue davranışı, yerel API kontrolü ve release doğrulaması ekler.",
+        "signals": [
+          "Orijinal eD2K/Kad uyumluluğu",
+          "Upload slot kontrolü",
+          "VPN/interface binding",
+          "Güncel performans sınırları",
+          "Kimlik doğrulamalı JSON REST API",
+          "Public 0.7.3 planlandı",
+          "Release doğrulama workspace'i"
+        ],
+        "source": "Kaynak kod"
+      },
+      "intro": "eMule broadband edition, kısaca <strong>eMule BB</strong>, eMule'un dağıtık paylaşım modeline hâlâ değer verenler için bağımsız bir ürün çizgisidir. Klasik desktop workflows korunur; istemci modern Windows sistemlerinde daha kolay çalıştırılır, gözlenir, otomatikleştirilir ve doğrulanır.",
+      "meta_description": "eMule BB; geniş bant upload kontrolü, VPN/interface binding, güncel performans sınırları, büyük paylaşılan kütüphaneler, REST automation, eD2K, Kad ve ileri workflows için modern bir eMule sürümüdür.",
+      "method": {
+        "cards": [
+          {
+            "h3": "Gelişigüzel protocol drift yok",
+            "p": "Kad ve eD2K değişiklikleri local routing, timing, validation ve control paths içinde kalır. Wire formats, opcodes ve native workflows uyumluluk sınırıdır.",
+            "span": "Uyumluluk"
+          },
+          {
+            "h3": "Sabit ve review edilebilir defaults",
+            "p": "Bandwidth, memory, socket, queue ve timeout varsayımları gizli adaptif davranış yerine açık defaults veya advanced preferences olur.",
+            "span": "Sınırlar"
+          },
+          {
+            "h3": "Controller contracts, screen scraping değil",
+            "p": "Kimlik doğrulamalı JSON API OpenAPI-backed contract izler, malformed inputs reddeder ve native state mutations uygulama üzerinden yürütür.",
+            "span": "REST"
+          },
+          {
+            "h3": "Etiketlerden önce kanıt",
+            "p": "Süreç commands, commits, logs, package paths, hashes, live evidence ve operator decisions kaydeder; tag doğrulanmış bir sonuç olur.",
+            "span": "Release"
+          }
+        ],
+        "eyebrow": "Uygulama yöntemi",
+        "h2": "Legacy çekirdeğin etrafında modernleştir, sonra sonucu kanıtla",
+        "p": "Stil bilinçli olarak tutucudur. eMule BB yerel policy, limits, diagnostics, API boundaries ve release discipline alanlarını değiştirirken eD2K/Kad uyumluluğunu default tutar."
+      },
+      "nav": [
+        {
+          "id": "why",
+          "label": "Neden"
+        },
+        {
+          "id": "features",
+          "label": "Özellikler"
+        },
+        {
+          "id": "guide",
+          "label": "Kılavuz"
+        },
+        {
+          "id": "docs",
+          "label": "Belgeler"
+        },
+        {
+          "id": "automation",
+          "label": "Otomasyon"
+        },
+        {
+          "id": "release",
+          "label": "Yayın"
+        },
+        {
+          "id": "repos",
+          "label": "Depolar"
+        }
+      ],
+      "nav_label": "Ana gezinme",
+      "og_description": "Geniş bant upload kontrolü, VPN/interface binding, büyük kütüphaneler, REST automation, eD2K/Kad uyumluluğu ve release doğrulaması için modern eMule. İlk public sürüm 0.7.3 planlandı ve henüz yayınlanmadı.",
+      "og_title": "eMule broadband edition | Türkçe eMule BB",
+      "product_summary_label": "eMule BB özeti",
+      "project_links_label": "Proje bağlantıları",
+      "release": {
+        "cards": [
+          {
+            "h3": "Güncel durum",
+            "p": "İlk public hedef <code>0.7.3</code>. Henüz yayınlanmadı. Final kanıt operatör yönlendirmesiyle duraklatıldı ve public durum aktif release docs'a bağlı kalır.",
+            "span": ""
+          },
+          {
+            "h3": "Build ve paket kanıtı",
+            "p": "Kanıt workspace validation, Debug ve Release x64 app builds, Release ARM64 app builds, test binaries, package generation, clean-worktree checks ve SHA-256 hashes kapsar.",
+            "span": ""
+          },
+          {
+            "h3": "Davranış kanıtı",
+            "p": "Gates native suites, REST contract, OpenAPI drift, malformed requests, UI automation, live controller-surface E2E, tam Release x64 live E2E ve network adversity kapsar.",
+            "span": ""
+          },
+          {
+            "h3": "Controller kanıtı",
+            "p": "aMuTorrent, Prowlarr, Radarr, Sonarr ve qBittorrent-compatible lanes, native <code>/api/v1</code> contract zayıflamadan automation çalıştığını gösterir.",
+            "span": ""
+          },
+          {
+            "h3": "Uyumluluk kanıtı",
+            "p": "Orijinal eD2K/Kad davranışı default kalır. Broadband, REST ve controllers bu uyumluluk hedefinin çevresine eklenir.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Release durumu",
+        "h2": "Public 0.7.3 planlandı, gates altında ve henüz yayınlanmadı",
+        "p": ""
+      },
+      "repos": {
+        "eyebrow": "Public workspace",
+        "h2": "Ana depolar",
+        "links": [],
+        "p": ""
+      },
+      "structured_description": "Geniş bant upload kontrolü, VPN/interface binding, büyük paylaşılan kütüphaneler, REST automation, eD2K/Kad uyumluluğu ve ileri workflows için modern eMule. İlk public sürüm 0.7.3 olarak planlandı ve henüz yayınlanmadı.",
+      "team": {
+        "cards": [
+          {
+            "h3": "Upload slot terapisti",
+            "p": "Zayıf slots duygularını tam gerektiği kadar işler, sonra form ve cooldown ile queue'ya geri gönderilir.",
+            "span": ""
+          },
+          {
+            "h3": "Kad bootstrap arşivcisi",
+            "p": "2007'de bir kez çalışan ve bu yüzden dikkatle doğrulanmış ikinci şansı hak eden nodes listesini korur.",
+            "span": ""
+          },
+          {
+            "h3": "Release gate görevlisi",
+            "p": "Builds yalnızca test, live evidence ve son socket hakkında makul açıklama getirdiğinde içeri girer.",
+            "span": ""
+          }
+        ],
+        "eyebrow": "Proje kültürü",
+        "h2": "Queue'nun performans sanatına dönüşmesini engelleyen ekip",
+        "p": ""
+      },
+      "title": "eMule broadband edition | Türkçe eMule BB",
+      "why": {
+        "cards": [
+          {
+            "h3": "eD2K ve Kad'i pratik tutmak",
+            "p": "Amaç nostalji ya da rewrite değil. Klasik modeli uzun oturumlar, nadir dosyalar, bilinçli seeding ve native client isteyen kullanıcılar için kullanışlı tutmaktır.",
+            "span": "Ürün nedeni"
+          },
+          {
+            "h3": "Eski varsayımları görünür yapmak",
+            "p": "Upload slots, timeouts, buffers, büyük kütüphaneler ve WebServer açıklığı için defaults görünür olur; review, test ve dokümantasyon yapılabilir.",
+            "span": "Teknik neden"
+          },
+          {
+            "h3": "Legacy code üstünde modern kanıt üretmek",
+            "p": "Workspace release'i mühendislik çıktısı olarak görür: source policy, OpenAPI contracts, tekrarlanabilir builds, hashes, live checks ve operator gates aynı çizgide olmalıdır.",
+            "span": "Release nedeni"
+          }
+        ],
+        "eyebrow": "Neden",
+        "h2": "Legacy bir client ancak güvenle işletilebiliyorsa işe yarar",
+        "p": "eMule BB hem ürün çalışması hem de mühendislik disiplinidir: gerçek ağ davranışı olan native Windows uygulamasını korumak ve etrafına modern build, test, dokümantasyon, otomasyon ve release süreci koymak."
+      }
+    },
+    "doc_section": [
+      "Devamını oku",
+      "Ayrıntılı kılavuzlar ve kaynak belgeler"
+    ],
+    "docs": {
+      "controllers": [
+        "Controllers ve REST kılavuzu",
+        "Güvenilir yerel controllers kullanımı ve automation sınırları."
+      ],
+      "downloads": [
+        "Downloads ve search kılavuzu",
+        "Search modları, sonuç güveni, categories ve power-user workflows."
+      ],
+      "emulebb": [
+        "eMule BB ürün kılavuzu",
+        "Setup, tuning, automation ve release-bilinçli kullanım için genel bakış."
+      ],
+      "network": [
+        "Ağ kılavuzu",
+        "eD2K, Kad, binding, UPnP, firewall ve bağlantı tanısı referansı."
+      ],
+      "release": [
+        "0.7.3 release paneli",
+        "Planlanan beta gates, evidence bağlantıları ve readiness kuralları."
+      ],
+      "rest_adapters": [
+        "REST adapter contracts",
+        "Controller yazarları için qBittorrent-compatible ve Torznab yüzeyi."
+      ],
+      "rest_contract": [
+        "REST API contract",
+        "Kimlik doğrulamalı JSON kontrol yüzeyi için okunabilir contract."
+      ],
+      "setup": [
+        "Setup kılavuzu",
+        "Kurulum modeli, ilk profil davranışı ve pratik başlangıç notları."
+      ],
+      "sharing": [
+        "Paylaşım kılavuzu",
+        "Shared directories, monitored shares, büyük kütüphaneler ve policy files."
+      ],
+      "troubleshooting": [
+        "Troubleshooting kılavuzu",
+        "Low ID, ağ, sharing ve automation için belirti odaklı checks."
+      ]
+    },
+    "language_link": "Diller",
+    "menu": {
+      "close_label": "Ana gezinmeyi kapat",
+      "label": "Menü",
+      "open_label": "Ana gezinmeyi aç"
+    },
+    "repo_section": [
+      "Açık workspace",
+      "Ana depolar"
+    ],
+    "repos": {
+      "build": "build, validation ve release orchestration",
+      "emule": "desktop app ve ürün kaynağı",
+      "setup": "tekrarlanabilir workspace setup",
+      "tests": "native, Python, UI, REST ve live E2E tests",
+      "tooling": "roadmap, backlog, policy, audits ve reference docs"
+    }
+  }
+}
