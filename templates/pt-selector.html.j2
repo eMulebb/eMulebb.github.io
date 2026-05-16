@@ -9,12 +9,15 @@
 <meta content="eMule broadband edition | Português" property="og:title"/>
 <meta content="Escolha a página do eMule BB em português do Brasil ou em português de Portugal." property="og:description"/>
 <meta content="website" property="og:type"/>
-<meta content="https://emulebb.github.io/pt/" property="og:url"/>
+<meta content="{{ site_base_url }}/pt/" property="og:url"/>
 <meta content="summary" name="twitter:card"/>
-<link href="https://emulebb.github.io/pt/" rel="canonical"/>
-<link href="https://emulebb.github.io/sitemap.xml" rel="sitemap" type="application/xml"/><link href="https://emulebb.github.io/" hreflang="en" rel="alternate"/><link href="https://emulebb.github.io/es/" hreflang="es" rel="alternate"/><link href="https://emulebb.github.io/pt-br/" hreflang="pt-BR" rel="alternate"/><link href="https://emulebb.github.io/pt-pt/" hreflang="pt-PT" rel="alternate"/><link href="https://emulebb.github.io/it/" hreflang="it" rel="alternate"/><link href="https://emulebb.github.io/ru/" hreflang="ru" rel="alternate"/><link href="https://emulebb.github.io/de/" hreflang="de" rel="alternate"/><link href="https://emulebb.github.io/fr/" hreflang="fr" rel="alternate"/><link href="https://emulebb.github.io/pl/" hreflang="pl" rel="alternate"/><link href="https://emulebb.github.io/nl/" hreflang="nl" rel="alternate"/><link href="https://emulebb.github.io/tr/" hreflang="tr" rel="alternate"/><link href="https://emulebb.github.io/" hreflang="x-default" rel="alternate"/>
+<link href="{{ site_base_url }}/pt/" rel="canonical"/>
+<link href="{{ site_base_url }}/sitemap.xml" rel="sitemap" type="application/xml"/>
+{%- for alternate in alternates -%}
+<link href="{{ alternate.url }}" hreflang="{{ alternate.hreflang }}" rel="alternate"/>
+{%- endfor %}
 <title>eMule broadband edition | Português</title>
-<link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" rel="stylesheet"/>
+<link href="{{ pico_cdn }}" rel="stylesheet"/>
 <link href="../styles.css" rel="stylesheet"/>
 <script type="application/ld+json">
       {
@@ -24,7 +27,7 @@
               "alternateName": "eMule BB",
               "applicationCategory": "FileSharingApplication",
               "operatingSystem": "Windows",
-              "url": "https://emulebb.github.io/",
+              "url": "{{ site_base_url }}/",
               "codeRepository": "https://github.com/eMulebb/eMule",
               "description": "eMule BB é uma linha moderna do eMule para controle de upload em banda larga, VPN/interface binding, REST automation, eD2K/Kad e workflows de usuários avançados."
       }

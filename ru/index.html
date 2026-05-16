@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="eMule broadband edition или eMule BB — это современная сборка eMule для управления широкополосной загрузкой, привязки VPN/интерфейса, улучшенных настроек производительности по умолчанию, больших общих библиотек, автоматизации REST, eD2K, Kad и рабочих процессов опытных пользователей." name="description"/>
+<meta content="eMule BB — современная редакция eMule для контроля upload на широкополосных линиях, VPN/interface binding, актуальных лимитов производительности, больших shared libraries, REST automation, eD2K, Kad и продвинутых workflows." name="description"/>
 <meta content="index,follow" name="robots"/>
 <meta content="eMulebb" name="author"/>
 <meta content="eMule broadband edition | eMule BB на русском" property="og:title"/>
-<meta content="Современный eMule для управления широкополосной загрузкой, привязка VPN/интерфейса, улучшенные настройки производительности по умолчанию, большие библиотеки, автоматизация REST, совместимость eD2K/Kad и проверка уровня выпуска. Первый публичный выпуск 0.7.3 запланирован, но еще не выпущен." property="og:description"/>
+<meta content="Современный eMule для контроля upload, VPN/interface binding, больших библиотек, REST automation, совместимости eD2K/Kad и release-валидации. Первая публичная версия 0.7.3 запланирована и еще не выпущена." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://emulebb.github.io/ru/" property="og:url"/>
 <meta content="summary" name="twitter:card"/>
@@ -26,7 +26,7 @@
               "operatingSystem": "Windows",
               "url": "https://emulebb.github.io/ru/",
               "codeRepository": "https://github.com/eMulebb/eMule",
-              "description": "Современный eMule для управления широкополосной загрузкой, привязка VPN/интерфейса, улучшенные настройки производительности по умолчанию, большие общие библиотеки, автоматизация REST, совместимость eD2K/Kad и рабочие процессы для опытных пользователей. Первый публичный выпуск запланирован как 0.7.3 и еще не выпущен."
+              "description": "\u0421\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0439 eMule \u0434\u043b\u044f \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f upload \u043d\u0430 \u0448\u0438\u0440\u043e\u043a\u043e\u043f\u043e\u043b\u043e\u0441\u043d\u044b\u0445 \u043b\u0438\u043d\u0438\u044f\u0445, VPN/interface binding, \u0431\u043e\u043b\u044c\u0448\u0438\u0445 shared libraries, REST automation, \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u0438\u043c\u043e\u0441\u0442\u0438 eD2K/Kad \u0438 \u043f\u0440\u043e\u0434\u0432\u0438\u043d\u0443\u0442\u044b\u0445 workflows. \u041f\u0435\u0440\u0432\u0430\u044f \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u0430\u044f \u0432\u0435\u0440\u0441\u0438\u044f \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430 \u043a\u0430\u043a 0.7.3 \u0438 \u0435\u0449\u0435 \u043d\u0435 \u0432\u044b\u043f\u0443\u0449\u0435\u043d\u0430."
       }
     </script>
 </head>
@@ -38,299 +38,207 @@
 <small>eMule BB</small>
 </span>
 </a>
-<nav aria-label="Primary navigation">
+<nav aria-label="Основная навигация">
 <a href="#why">Зачем</a>
-<a href="#features">Функции</a>
-<a href="#guide">Гид</a>
-<a href="#docs">Документы</a>
+<a href="#features">Возможности</a>
+<a href="#guide">Гайд</a>
+<a href="#docs">Документация</a>
 <a href="#automation">Автоматизация</a>
-<a href="#release">Релиз</a>
-<a href="#repos">Репо</a>
+<a href="#release">Выпуск</a>
+<a href="#repos">Репозитории</a>
 </nav>
 </header>
 <main id="top">
 <section class="hero">
 <div class="hero-copy">
-<p class="eyebrow">Классический eMule, настроенный на современный широкополосный доступ</p>
-<h1>eMule BB делает eD2K и Kad полезными для серьезных пользователей.</h1>
-<p class="lead">
-            Опытный пользователь eMule для быстрой загрузки ссылок, больших общих библиотек,
-            постоянные сеансы Windows и рабочие процессы локального контроллера без
-            отказ от привычного настольного приложения.
-          </p>
-<div aria-label="Project links" class="actions">
-<a class="button primary" href="https://github.com/eMulebb/eMule">Код</a>
-<a class="button secondary" href="#guide">Гид продукта</a>
+<p class="eyebrow">Классический eMule, настроенный для современного широкополосного доступа</p>
+<h1>eMule BB сохраняет eD2K и Kad полезными для требовательных пользователей.</h1>
+<p class="lead">eMule для опытных пользователей: быстрый upload, большие shared libraries, постоянные сессии Windows и локальные controller workflows без отказа от привычного desktop-приложения.</p>
+<div aria-label="Ссылки проекта" class="actions">
+<a class="button primary" href="https://github.com/eMulebb/eMule">Исходный код</a>
+<a class="button secondary" href="#guide">Гайд по продукту</a>
 </div>
 </div>
-<aside aria-label="eMule BB product summary" class="hero-panel">
-<p class="panel-kicker">Положение продукта</p>
-<h2>Консервативен там, где важна совместимость. Современность, где контроль имеет значение.</h2>
-<p>
-            eMule BB сохраняет собственный рабочий процесс eMule в центре и добавляет
-            поведение очереди с учетом широкополосного доступа, локальное управление через API и уровень выпуска
-            проверка вокруг него.
-          </p>
+<aside aria-label="Кратко об eMule BB" class="hero-panel">
+<p class="panel-kicker">Позиция продукта</p>
+<h2>Консервативен там, где важна совместимость. Современен там, где важен контроль.</h2>
+<p>eMule BB оставляет нативный workflow eMule в центре и добавляет очереди для широкополосного upload, локальное управление через API и release-валидацию.</p>
 <div class="signal-list">
-<span>Стандартная совместимость с eD2K/Kad</span>
-<span>Управление слотом широкополосной загрузки</span>
-<span>Привязка VPN/интерфейса</span>
-<span>Современные ограничения производительности</span>
-<span>Аутентифицированный JSON REST API</span>
-<span>Публичный 0.7.3 запланирован</span>
-<span>Рабочая область проверки уровня выпуска</span>
+<span>Оригинальная совместимость eD2K/Kad</span>
+<span>Контроль upload slots</span>
+<span>VPN/interface binding</span>
+<span>Актуальные лимиты производительности</span>
+<span>Аутентифицированная JSON REST API</span>
+<span>Публичная 0.7.3 запланирована</span>
+<span>Workspace для release-валидации</span>
 </div>
 </aside>
 </section>
 <section class="intro">
-<p>
-          eMule broadband edition, компактно <strong>eMule BB</strong>, является
-          независимая линейка продуктов для людей, которые все еще ценят распределенную версию eMule.
-          модель совместного использования. Он сохраняет классические рабочие процессы рабочего стола, одновременно делая
-          клиент легче запускать, наблюдать, автоматизировать и проверять текущие
-          Системы Windows.
-        </p>
+<p>eMule broadband edition, коротко <strong>eMule BB</strong>, — независимая продуктовая линия для тех, кому по-прежнему важна распределенная модель eMule. Она сохраняет классические desktop workflows и делает клиент проще в запуске, наблюдении, автоматизации и проверке на современных Windows-системах.</p>
 </section>
 <section class="section motivation" id="why">
 <div class="section-heading">
-<p class="eyebrow">Why</p>
-<h2>Устаревший клиент полезен только в том случае, если с ним по-прежнему можно уверенно работать.</h2>
-<p>
-            eMule BB — это частично результат разработки продукта, частично — дисциплинированное обучение.
-            упражнение: возьмите сложное собственное приложение Windows с реальной сетью.
-            поведение, сохраняйте то, что все еще имеет значение, и окружайте его добрыми
-            ожидаемый процесс сборки, тестирования, документирования, автоматизации и выпуска
-            из современного проекта с открытым исходным кодом.
-          </p>
+<p class="eyebrow">Зачем</p>
+<h2>Legacy-клиент полезен только тогда, когда им все еще можно уверенно управлять</h2>
+<p>eMule BB — это продуктовая работа и инженерная дисциплина: сохранить нативное Windows-приложение с реальным сетевым поведением и окружить его современными build, тестами, документацией, автоматизацией и release-процессом.</p>
 </div>
 <div aria-label="eMule BB motivation" class="motivation-grid">
 <article>
 <span>Причина продукта</span>
-<h3>Сохраняйте практичность eD2K и Kad</h3>
-<p>
-              Цель — не ностальгия или переписывание. Это сохранение классики
-              модель совместного использования, пригодная для длительных сеансов, редких файлов, преднамеренных
-              раздача, а также пользователи, которым все еще нужен собственный настольный клиент.
-            </p>
+<h3>Сохранить eD2K и Kad практичными</h3>
+<p>Цель — не ностальгия и не rewrite. Важно сохранить классическую модель для длинных сессий, редких файлов, осознанного seeding и нативного клиента.</p>
 </article>
 <article>
-<span>Инженерная причина</span>
-<h3>Переместите старые предположения на дневной свет</h3>
-<p>
-              Устаревшие настройки по умолчанию в отношении слотов загрузки, тайм-аутов, буферов, больших
-              библиотеки и экспозиция WebServer сделаны явными, поэтому каждое изменение
-              можно просматривать, тестировать, документировать и корректировать без догадок.
-            </p>
+<span>Техническая причина</span>
+<h3>Вывести старые предположения на свет</h3>
+<p>Defaults для upload slots, timeouts, buffers, больших библиотек и WebServer становятся явными, чтобы их можно было проверять и документировать.</p>
 </article>
 <article>
-<span>Причина выпуска</span>
-<h3>Практикуйте современное доказательство на устаревшем коде</h3>
-<p>
-              Рабочая область рассматривает выпуск как инженерный артефакт: источник
-              политика, контракты OpenAPI, воспроизводимые сборки, хэши пакетов,
-              проверки сети в реальном времени и шлюзы оператора должны выстроиться в очередь перед
-              создается первый общедоступный тег выпуска.
-            </p>
+<span>Причина release</span>
+<h3>Доказывать legacy-код современным способом</h3>
+<p>Workspace относится к release как к инженерному артефакту: source policy, OpenAPI-контракты, воспроизводимые builds, hashes, live checks и operator gates должны сходиться.</p>
 </article>
 </div>
 </section>
 <section class="section" id="features">
 <div class="section-heading">
-<p class="eyebrow">Features</p>
-<h2>Что eMule BB добавляет в классический клиент</h2>
-<p>
-            Работа сосредоточена на видимом для оператора поведении: предсказуемая загрузка.
-            политика, более безопасная привязка к сети, современные фиксированные ограничения производительности,
-            работа с большой библиотекой, локальная автоматизация и выпуск доказательств того, что
-            можно проверить перед запланированным <code>0.7.3</code> релиз называется
-            готов.
-          </p>
+<p class="eyebrow">Возможности</p>
+<h2>Что eMule BB добавляет вокруг классического клиента</h2>
+<p>Работа сосредоточена на поведении, видимом оператору: предсказуемый upload, более безопасный binding, фиксированные лимиты, большие библиотеки, локальная автоматизация и доказательства для запланированного release <code>0.7.3</code>.</p>
 </div>
 <div aria-label="eMule broadband feature groups" class="feature-table">
 <article>
-<span>Делимся и загружаем</span>
-<h3>Контроль широкополосной загрузки</h3>
-<p>
-              Ограниченные целевые слоты, переработка слабых слотов, считывание коэффициентов и
-              элементы управления раздачей сохраняют полезные ссылки для быстрой загрузки без изменений
-              протокол загрузки eD2K.
-            </p>
+<span>Обмен и upload</span>
+<h3>Контроль upload на широкополосных линиях</h3>
+<p>Ограниченные цели slots, переработка слабых slots, ratio-индикаторы и seeding controls сохраняют быстрый upload полезным без изменения протокола eD2K.</p>
 </article>
 <article>
-<span>Сетевой контроль</span>
-<h3>Политика привязки, NAT и раскрытия информации</h3>
-<p>
-              Привязка с учетом интерфейса, проверка сопоставления UPnP/NAT, HTTPS,
-              правила разрешенных IP-адресов и наследование WebServer сохраняют удаленные поверхности.
-              явные и проверяемые.
-            </p>
+<span>Контроль сети</span>
+<h3>Binding, NAT и политика экспозиции</h3>
+<p>Interface-aware binding, проверка UPnP/NAT, HTTPS, allowed-IP rules и наследование WebServer делают удаленные поверхности явными и тестируемыми.</p>
 </article>
 <article>
 <span>Производительность и масштаб</span>
-<h3>Современные настройки по умолчанию для больших сеансов</h3>
-<p>
-              Более высокие буферы сокетов, ограничения очереди/источника, буферизация файлов,
-              значения тайм-аута по умолчанию, рекурсивная синхронизация общего доступа и руководство по длинному пути
-              нацелены на текущие системы Windows и большие библиотеки.
-            </p>
+<h3>Актуальные defaults для больших сессий</h3>
+<p>Большие socket buffers, queue/source limits, file buffering, timeouts, рекурсивная sync и long paths ориентированы на современные Windows и большие библиотеки.</p>
 </article>
 <article>
 <span>Классическая сеть</span>
 <h3>eD2K и Kad остаются первыми</h3>
-<p>
-              Серверный, глобальный поиск и поиск Kad остаются исходной основой, при этом
-              Kad отслеживание личности, обработка неисправных узлов, очистка и синхронизация
-              хранится в границах совместимости.
-            </p>
+<p>Server, global и Kad search остаются нативной основой; Kad identity, bad-node handling, cleanup и timing остаются в границах совместимости.</p>
 </article>
 <article>
-<span>Automation</span>
-<h3>REST и рабочие процессы контроллера</h3>
-<p>
-              Аутентифицированные конечные точки JSON охватывают передачу, поиск, совместное использование
-              файлы, серверы, Kad, логи, категории, загрузки, статистика,
-              настройки и контролируемое завершение работы с помощью доверенных локальных инструментов.
-            </p>
+<span>Автоматизация</span>
+<h3>REST и controller workflows</h3>
+<p>Аутентифицированные JSON endpoints покрывают transfers, searches, shared files, servers, Kad, logs, categories, uploads, statistics, preferences и controlled shutdown.</p>
 </article>
 <article>
-<span>Дисциплина выпуска</span>
-<h3>Доказательства перед публичными пакетами</h3>
-<p>
-              Планируемый <code>0.7.3</code> бета-версия зависит от проверки
-              собственные тесты, контракты REST, линии живого контроллера, сеть
-              невзгоды, упаковка и репетиции x64/ARM64.
-            </p>
+<span>Дисциплина release</span>
+<h3>Доказательства до публичных пакетов</h3>
+<p>Бета <code>0.7.3</code> зависит от native tests, REST contracts, live controller lanes, network adversity, packaging и репетиций x64/ARM64.</p>
 </article>
 </div>
 </section>
 <section class="section guide" id="guide">
 <div class="section-heading">
-<p class="eyebrow">Руководство по продукту</p>
-<h2>Краткая операционная модель</h2>
+<p class="eyebrow">Гайд по продукту</p>
+<h2>Короткая модель эксплуатации</h2>
 </div>
 <div class="guide-grid">
 <article>
 <span>01</span>
-<h3>Начните с известных полезных привычек eMule</h3>
-<p>
-              Используйте списки доверенных серверов, сознательно загружайте Kad, продолжайте получать входящие сообщения.
-              и общие каталоги предсказуемы и сохраняют классику
-              рабочий процесс поиска, добавления и обмена перед наложением автоматизации на верхний уровень.
-            </p>
+<h3>Начинайте с проверенных привычек eMule</h3>
+<p>Используйте надежные server lists, осознанно запускайте Kad, держите incoming и shared folders предсказуемыми и сохраняйте классический workflow до автоматизации.</p>
 </article>
 <article>
 <span>02</span>
-<h3>Настройте загрузку для вашей реальной ссылки</h3>
-<p>
-              Установите конечный лимит загрузки, выберите реалистичную цель загрузки клиента,
-              и пусть политика широкополосной связи отдает предпочтение меньшему количеству более сильных слотов вместо
-              сотня низкочастотных сеансов.
-            </p>
+<h3>Настройте upload под реальный канал</h3>
+<p>Задайте конечный upload limit, выберите реалистичную цель клиентов и позвольте broadband policy предпочитать меньше, но сильнее slots.</p>
 </article>
 <article>
 <span>03</span>
-<h3>Курировать большие библиотеки</h3>
-<p>
-              Используйте установки Windows с поддержкой длинного пути, следите за чистотой корневых ресурсов общих ресурсов, наблюдайте
-              коэффициенты за все время и сеансы и рассматривать редкие файлы как преднамеренные.
-              издательские решения.
-            </p>
+<h3>Ухаживайте за большими библиотеками</h3>
+<p>Используйте Windows с long paths, держите shared roots чистыми, следите за ratios и относитесь к редким файлам как к осознанной публикации.</p>
 </article>
 <article>
 <span>04</span>
 <h3>Автоматизируйте только в доверенных сетях</h3>
-<p>
-              Включите поверхность WebServer/REST с помощью ключа API, привязки и брандмауэра.
-              будьте осторожны и используйте контроллеры, которые соблюдают встроенную передачу eMule.
-              и удалить семантику.
-            </p>
+<p>Включайте WebServer/REST с API key, аккуратно настраивайте binding и firewall и используйте controllers, уважающие нативную семантику eMule.</p>
 </article>
 <article>
 <span>05</span>
-<h3>Отслеживать готовность выпуска</h3>
-<p>
-              Рассматривайте публичную ветку как активную предварительную работу до тех пор, пока
-              запланировано <code>0.7.3</code> открытие ворот, проверки операторов и живое
-              Доказательства E2E говорят об обратном.
-            </p>
+<h3>Следите за готовностью release</h3>
+<p>Считайте публичную branch активным pre-release, пока gates <code>0.7.3</code>, operator checks и live E2E evidence не покажут обратное.</p>
 </article>
 <article>
 <span>06</span>
-<h3>Используйте документацию для глубины</h3>
-<p>
-              Домашняя страница остается компактной. Подробное руководство по продукту, REST
-              контракт, заметки о широкополосном доступе и документы о выпуске в формате Markdown
-              в общедоступном репозитории инструментов.
-            </p>
+<h3>За деталями идите в документацию</h3>
+<p>Homepage остается компактной. Гайд по продукту, REST contract, заметки о broadband и release docs живут как Markdown в tooling repository.</p>
 </article>
 </div>
 </section>
 <section class="section docs" id="docs">
 <div class="section-heading">
-<p class="eyebrow">Читать далее</p>
-<h2>Подробные руководства и исходные документы</h2>
+<p class="eyebrow">Devamını oku</p>
+<h2>Ayrıntılı kılavuzlar ve kaynak belgeler</h2>
 </div>
 <div class="doc-list">
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-EMULEBB.md">
-<strong>eMule BB руководство по продукту</strong>
-<span>Обзор продукта для установки, настройки, автоматизации и использования с учетом выпуска.</span>
+<strong>eMule BB ürün kılavuzu</strong>
+<span>Setup, tuning, automation ve release-bilinçli kullanım için genel bakış.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-SETUP.md">
-<strong>Руководство по настройке</strong>
-<span>Модель установки, поведение профиля при первом запуске и практические замечания по запуску.</span>
+<strong>Setup kılavuzu</strong>
+<span>Kurulum modeli, ilk profil davranışı ve pratik başlangıç notları.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-NETWORK.md">
-<strong>Сетевой гид</strong>
-<span>eD2K, Kad, привязка, UPnP, брандмауэр и справочник по диагностике соединений.</span>
+<strong>Ağ kılavuzu</strong>
+<span>eD2K, Kad, binding, UPnP, firewall ve bağlantı tanısı referansı.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-SHARING.md">
-<strong>Руководство по обмену</strong>
-<span>Общие каталоги, отслеживаемые общие ресурсы, большие библиотеки и файлы политики общего доступа.</span>
+<strong>Paylaşım kılavuzu</strong>
+<span>Shared directories, monitored shares, büyük kütüphaneler ve policy files.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-DOWNLOADS-SEARCH.md">
-<strong>Руководство по загрузке и поиску</strong>
-<span>Режимы поиска, доверие к результатам, категории и рабочие процессы с файлами для опытных пользователей.</span>
+<strong>Downloads ve search kılavuzu</strong>
+<span>Search modları, sonuç güveni, categories ve power-user workflows.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-CONTROLLERS-REST.md">
-<strong>Контроллеры и руководство REST</strong>
-<span>Доверенное использование локального контроллера и границы автоматизации.</span>
+<strong>Controllers ve REST kılavuzu</strong>
+<span>Güvenilir yerel controllers kullanımı ve automation sınırları.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/rest/REST-API-CONTRACT.md">
-<strong>REST API-контракт</strong>
-<span>Читаемый человеком контракт для аутентифицированной поверхности управления JSON.</span>
+<strong>REST API contract</strong>
+<span>Kimlik doğrulamalı JSON kontrol yüzeyi için okunabilir contract.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/rest/REST-API-ADAPTERS.md">
-<strong>REST контракты адаптера</strong>
-<span>qBittorrent-совместимый и поверхность адаптера Torznab для авторов контроллеров.</span>
+<strong>REST adapter contracts</strong>
+<span>Controller yazarları için qBittorrent-compatible ve Torznab yüzeyi.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/reference/GUIDE-TROUBLESHOOTING.md">
-<strong>Руководство по устранению неполадок</strong>
-<span>Проверки по симптомам на наличие низкого идентификатора, проблем с сетью, совместного использования и автоматизации.</span>
+<strong>Troubleshooting kılavuzu</strong>
+<span>Low ID, ağ, sharing ve automation için belirti odaklı checks.</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling/blob/main/docs/active/RELEASE-0.7.3.md">
-<strong>Панель управления выпуском 0.7.3</strong>
-<span>Текущие запланированные этапы бета-тестирования, указатели доказательств и правила готовности.</span>
+<strong>0.7.3 release paneli</strong>
+<span>Planlanan beta gates, evidence bağlantıları ve readiness kuralları.</span>
 </a>
 </div>
 </section>
 <section class="section automation" id="automation">
 <div>
-<p class="eyebrow">Поверхность контроллера</p>
-<h2>REST автоматизация без замены настольного приложения</h2>
+<p class="eyebrow">Поверхность управления</p>
+<h2>REST automation без замены desktop-приложения</h2>
 </div>
 <div class="automation-copy">
-<p>
-            Версия для широкополосной связи демонстрирует ориентированную на ресурсы
-            <code>/api/v1</code> JSON API из существующего прослушивателя WebServer.
-            Он аутентифицируется с <code>X-API-Key</code>, обслуживает конверты JSON,
-            и сохраняет собственные изменения состояния eMule, передаваемые через приложение.
-          </p>
-<div aria-label="REST API areas" class="pill-list">
+<p>Broadband release track открывает resource-oriented JSON API <code>/api/v1</code> через существующий WebServer listener. Она использует <code>X-API-Key</code>, отдает JSON envelopes и проводит изменения состояния eMule через приложение.</p>
+<div aria-label="Области REST API" class="pill-list">
 <span>Transfers</span>
 <span>Searches</span>
 <span>Servers</span>
 <span>Kad</span>
-<span>Общие файлы</span>
+<span>Shared files</span>
 <span>Uploads</span>
 <span>Categories</span>
 <span>Logs</span>
@@ -341,179 +249,134 @@
 </section>
 <section class="section release" id="release">
 <div class="section-heading">
-<p class="eyebrow">Релизная поза</p>
-<h2>Публичный выпуск 0.7.3 запланирован, закрыт и еще не выпущен.</h2>
+<p class="eyebrow">Состояние release</p>
+<h2>Публичная версия 0.7.3 запланирована, проходит gates и еще не выпущена</h2>
 </div>
-<div class="release-grid">
+<div aria-label="eMule BB release proof" class="release-grid">
 <article>
+<span></span>
 <strong>Текущий статус</strong>
-<p>
-              Первой целью публичного выпуска является <code>0.7.3</code>. Это еще не
-              выпущен. Окончательное подтверждение в настоящее время приостановлено по указанию оператора.
-              и публичный статус остается привязанным к документам активной версии.
-            </p>
+<p>Первый публичный target — <code>0.7.3</code>. Он еще не выпущен. Финальное доказательство приостановлено по указанию оператора, а публичный статус связан с активными release docs.</p>
 </article>
 <article>
-<strong>Доказательство сборки и упаковки</strong>
-<p>
-              Требуемые доказательства включают проверку рабочей области, отладку и выпуск x64.
-              сборки приложений, сборки приложений Release ARM64, тестовые двоичные файлы, пакет
-              генерация, проверки чистого рабочего дерева и записанные хэши SHA-256.
-            </p>
+<span></span>
+<strong>Доказательство build и пакета</strong>
+<p>Доказательство покрывает workspace validation, Debug и Release x64 app builds, Release ARM64 app builds, test binaries, package generation, clean worktree и SHA-256 hashes.</p>
 </article>
 <article>
+<span></span>
 <strong>Доказательство поведения</strong>
-<p>
-              Тестовые ворота охватывают собственные пакеты, контракт REST и дрейф OpenAPI,
-              некорректные запросы, автоматизация пользовательского интерфейса, E2E на интерактивной поверхности контроллера,
-              полная версия x64 Live E2E и сценарии сетевых проблем.
-            </p>
+<p>Gates покрывают native suites, REST contract, OpenAPI drift, malformed requests, UI automation, live controller-surface E2E, полный Release x64 live E2E и network adversity.</p>
 </article>
 <article>
-<strong>Доказательство контроллера</strong>
-<p>
-              Совместимость с aMuTorrent, Prowlarr, Radarr, Sonarr и qBittorrent
-              переходные полосы доказывают, что автоматизация работает, не ослабляя
-              родной <code>/api/v1</code> contract.
-            </p>
+<span></span>
+<strong>Доказательство controllers</strong>
+<p>aMuTorrent, Prowlarr, Radarr, Sonarr и qBittorrent-compatible lanes показывают automation без ослабления нативного контракта <code>/api/v1</code>.</p>
 </article>
 <article>
+<span></span>
 <strong>Доказательство совместимости</strong>
-<p>
-              Стандартное поведение eD2K/Kad остается по умолчанию. Широкополосный доступ, REST и
-              функции контроллера добавляются вокруг этой цели совместимости и
-              по сравнению с базовым уровнем сообщества, где полезно тестирование четности.
-            </p>
+<p>Оригинальное поведение eD2K/Kad остается default. Broadband, REST и controllers добавляются вокруг этой цели совместимости.</p>
 </article>
 </div>
 </section>
 <section class="section method" id="method">
 <div class="section-heading">
 <p class="eyebrow">Метод реализации</p>
-<h2>Модернизируйте устаревшее ядро, а затем докажите результат</h2>
-<p>
-            Стиль реализации намеренно консервативен. eMule BB
-            меняет локальную политику, ограничения, диагностику, границы API и выпуск
-            дисциплину, сохраняя стандартную совместимость eD2K/Kad по умолчанию.
-          </p>
+<h2>Модернизировать вокруг legacy-ядра, затем доказать результат</h2>
+<p>Стиль намеренно консервативен. eMule BB меняет локальную policy, limits, diagnostics, API boundaries и release discipline, сохраняя совместимость eD2K/Kad по умолчанию.</p>
 </div>
 <div aria-label="eMule BB implementation methods" class="method-grid">
 <article>
-<span>Compatibility</span>
-<h3>Никакого случайного отклонения протокола</h3>
-<p>
-              Изменения Kad и eD2K остаются внутри локальной маршрутизации, синхронизации, проверки и т. д.
-              и пути управления. Форматы проводов, коды операций и собственный рабочий стол
-              рабочие процессы остаются границами совместимости.
-            </p>
+<span>Совместимость</span>
+<h3>Без случайного protocol drift</h3>
+<p>Изменения Kad и eD2K остаются в локальных routing, timing, validation и control paths. Wire formats, opcodes и native desktop workflows — границы совместимости.</p>
 </article>
 <article>
-<span>Limits</span>
-<h3>Фиксированные, проверяемые настройки по умолчанию</h3>
-<p>
-              Современные предположения о пропускной способности, памяти, сокете, очереди и тайм-ауте.
-              вместо этого выражаются в виде явных значений по умолчанию или расширенных предпочтений.
-              скрытого адаптивного поведения.
-            </p>
+<span>Лимиты</span>
+<h3>Фиксированные и проверяемые defaults</h3>
+<p>Современные предположения о bandwidth, memory, socket, queue и timeout выражены как явные defaults или advanced preferences.</p>
 </article>
 <article>
 <span>REST</span>
-<h3>Контроллер сжимается, а не очищает экран</h3>
-<p>
-              Аутентифицированный API JSON соответствует контракту, поддерживаемому OpenAPI,
-              отклоняет неверные входные данные и маршалирует мутации исходного состояния
-              через приложение, где клиент настольного компьютера владеет этим состоянием.
-            </p>
+<h3>Controller contracts, не screen scraping</h3>
+<p>Аутентифицированная JSON API следует OpenAPI-backed contract, отклоняет malformed inputs и проводит native state mutations через приложение.</p>
 </article>
 <article>
 <span>Release</span>
-<h3>Доказательства до ярлыков</h3>
-<p>
-              В процессе выпуска записываются команды, коммиты, журналы, пакеты
-              пути, хеши, живые доказательства и решения оператора, поэтому тег выпуска
-              это проверенный результат, а не упражнение по присвоению имен.
-            </p>
+<h3>Доказательства перед labels</h3>
+<p>Процесс записывает commands, commits, logs, package paths, hashes, live evidence и operator decisions, чтобы tag был проверенным результатом.</p>
 </article>
 </div>
 </section>
 <section class="section repos" id="repos">
 <div class="section-heading">
-<p class="eyebrow">Общественное рабочее пространство</p>
-<h2>Первичные репозитории</h2>
+<p class="eyebrow">Публичный workspace</p>
+<h2>Основные репозитории</h2>
 </div>
 <div class="repo-list">
 <a href="https://github.com/eMulebb/eMule">
 <strong>eMule</strong>
-<span>настольное приложение и источник продукта</span>
+<span>desktop app и исходники продукта</span>
 </a>
 <a href="https://github.com/eMulebb/eMulebb-setup">
 <strong>eMulebb-setup</strong>
-<span>воспроизводимая настройка рабочего пространства</span>
+<span>воспроизводимый setup workspace</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-build">
 <strong>eMule-build</strong>
-<span>оркестрация сборки, проверки и выпуска</span>
+<span>build, validation и release orchestration</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-build-tests">
 <strong>eMule-build-tests</strong>
-<span>нативные тесты, Python, UI, REST и живые тесты E2E</span>
+<span>native, Python, UI, REST и live E2E tests</span>
 </a>
 <a href="https://github.com/eMulebb/eMule-tooling">
 <strong>eMule-tooling</strong>
-<span>дорожная карта, журнал невыполненных работ, политика, аудит и справочная документация</span>
+<span>roadmap, backlog, policy, audits и reference docs</span>
 </a>
 </div>
 </section>
 <section class="section team" id="team">
 <div class="section-heading">
-<p class="eyebrow">История проекта</p>
-<h2>Люди, которые не дают очереди превратиться в перформанс</h2>
+<p class="eyebrow">Культура проекта</p>
+<h2>Люди, которые не дают queue стать перформансом</h2>
 </div>
 <div class="team-grid">
 <article>
 <span>01</span>
-<h3>Загрузить Slot Therapist</h3>
-<p>
-              Помогает неэффективным слотам справляться со своими чувствами ровно долго
-              достаточно, прежде чем проводить их обратно в очередь с планшетом и
-              время восстановления.
-            </p>
+<h3>Терапевт upload slots</h3>
+<p>Дает слабым slots ровно столько времени на переживания, сколько нужно, а затем возвращает их в queue с формой и cooldown.</p>
 </article>
 <article>
 <span>02</span>
-<h3>Kad Архивариус Bootstrap</h3>
-<p>
-              Поддерживает священный список узлов, которые работали один раз в 2007 году и
-              поэтому заслуживают уважительного и тщательно обоснованного второго шанса.
-            </p>
+<h3>Архивариус bootstrap Kad</h3>
+<p>Хранит священный список nodes, который однажды работал в 2007 году и заслуживает аккуратно проверенного второго шанса.</p>
 </article>
 <article>
 <span>03</span>
-<h3>Вышибала врат выпуска</h3>
-<p>
-              Давайте встроимся в комнату только после того, как принесут анализы, живые доказательства,
-              и убедительное объяснение того, что случилось с последней розеткой.
-            </p>
+<h3>Охранник release gates</h3>
+<p>Пропускает builds только с тестами, live evidence и убедительным объяснением судьбы последнего socket.</p>
 </article>
 </div>
 </section>
 </main>
 <footer>
 <span>eMule broadband edition</span>
-<div aria-label="Footer links" class="footer-links">
-<a href="../">English</a>
-<a href="../es/">Español</a>
-<a href="../pt-br/">Português (Brasil)</a>
-<a href="../pt-pt/">Português (Portugal)</a>
-<a href="../it/">Italiano</a>
-<a href="../ru/">Русский</a>
-<a href="../de/">Deutsch</a>
-<a href="../fr/">Français</a>
-<a href="../pl/">Polski</a>
-<a href="../nl/">Nederlands</a>
-<a href="../tr/">Türkçe</a>
-<a href="https://github.com/eMulebb">GitHub</a>
-</div>
+<div aria-label="Ссылки внизу страницы" class="footer-links">
+        <a href="../">English</a>
+        <a href="../es/">Español</a>
+        <a href="../pt-br/">Português (Brasil)</a>
+        <a href="../pt-pt/">Português (Portugal)</a>
+        <a href="../it/">Italiano</a>
+        <a href="../ru/">Русский</a>
+        <a href="../de/">Deutsch</a>
+        <a href="../fr/">Français</a>
+        <a href="../pl/">Polski</a>
+        <a href="../nl/">Nederlands</a>
+        <a href="../tr/">Türkçe</a>
+        <a href="https://github.com/eMulebb">GitHub</a>
+      </div>
 </footer>
 </body>
 </html>

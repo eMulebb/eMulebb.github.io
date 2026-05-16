@@ -22,6 +22,12 @@ publishing-policy changes.
   stay `index,follow`.
 - Keep `pt/` as the Portuguese regional chooser only; it must stay
   `noindex,follow` and must not be listed in `sitemap.xml`.
+- The generated HTML pages are committed, but the production source is the
+  Jinja2 renderer in `tools\render_pages.py` plus templates under `templates\`.
+- Preserve technical terms such as `eD2K`, `Kad`, `REST`, `JSON`, `API`,
+  `WebServer`, `VPN/interface binding`, `UPnP/NAT`, `x64`, `ARM64`, `Debug`,
+  `Release`, repo names, file paths, URLs, command names, and code identifiers
+  in localized copy unless the English source intentionally changes them.
 - Use granular commits: separate policy, content, layout, SEO, and locale work.
 - Run the static validation checks in `docs/SITE-HANDBOOK.md` before committing
   and pushing.
@@ -30,6 +36,11 @@ publishing-policy changes.
 
 - Page production and validation helpers are tracked in
   `..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py`.
+- Use `python -m pip install -r requirements.txt` when the local Python
+  environment does not already have the renderer dependencies.
+- Use `python tools\render_pages.py --lastmod YYYY-MM-DD` to regenerate static
+  pages and `python tools\render_pages.py --lastmod YYYY-MM-DD --check` to
+  confirm committed HTML is up to date with the templates.
 - Use `python ..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate`
   before publishing locale, metadata, sitemap, asset-policy, or navigation
   changes.

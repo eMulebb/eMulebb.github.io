@@ -120,6 +120,9 @@ Before adding or changing a feature entry:
   release language set:
   `/es/`, `/pt-br/`, `/pt-pt/`, `/it/`, `/ru/`, `/de/`, `/fr/`, `/pl/`,
   `/nl/`, and `/tr/`.
+- Generated HTML is committed for GitHub Pages, but localized homepage content
+  must be changed in `tools/render_pages.py` and rendered through the Jinja2
+  templates under `templates/`.
 - Completed locale pages use `index,follow`.
 - `/pt/` is a compatibility chooser for the regional Portuguese pages and must
   stay `noindex,follow` and out of `sitemap.xml`.
@@ -132,6 +135,10 @@ Before adding or changing a feature entry:
   - switch from `noindex,follow` to `index,follow`
 - Do not let localized pages independently diverge in feature claims or release
   status.
+- Preserve established technical terms in localized copy, including `eD2K`,
+  `Kad`, `REST`, `JSON`, `API`, `WebServer`, `VPN/interface binding`,
+  `UPnP/NAT`, `x64`, `ARM64`, `Debug`, `Release`, repo names, paths, URLs,
+  commands, and code identifiers.
 
 ## SEO And Metadata Policy
 
@@ -160,8 +167,8 @@ Search/publishing rules:
 - Keep cards at `8px` border radius or less.
 - Maintain stable section IDs for anchor navigation.
 - Sticky-header anchor behavior must be tested on desktop and mobile.
-- Mobile nav should remain usable without wrapping into a tall unpredictable
-  header. Horizontal scroll is acceptable.
+- Mobile nav should remain usable without horizontal scrolling; the current
+  pattern is a wrapped grid on small screens and a horizontal nav on desktop.
 - Use CSS variables in `:root` for shared colors.
 - Do not introduce a one-hue palette; retain restrained contrast across teal,
   blue, green, red, and gold accents.
@@ -191,8 +198,11 @@ Push after each coherent commit when the user has requested publishing.
 Run these checks before committing and pushing:
 
 ```powershell
+python -m pip install -r requirements.txt
+python tools\render_pages.py --lastmod 2026-05-16 --check
+python ..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate
 git diff --check
-rg -n "emule-logo|Logo\.jpg|<img|\.jpg|\.png|\.gif|favicon" index.html styles.css es it pt
+rg -n "emule-logo|Logo\.jpg|<img|\.jpg|\.png|\.gif|favicon" index.html styles.css es pt-br pt-pt it ru de fr pl nl tr pt
 ```
 
 Anchor check:

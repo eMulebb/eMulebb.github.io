@@ -1,0 +1,186 @@
+{%- macro section_heading(section) -%}
+<div class="section-heading">
+<p class="eyebrow">{{ section.eyebrow }}</p>
+<h2>{{ section.h2 }}</h2>
+{%- if section.p %}
+<p>{{ section.p | safe }}</p>
+{%- endif %}
+</div>
+{%- endmacro -%}
+{%- macro card_grid(label, class_name, cards, title_tag="h3") -%}
+<div aria-label="{{ label }}" class="{{ class_name }}">
+{%- for card in cards %}
+<article>
+<span>{{ card.span }}</span>
+{%- if title_tag == "strong" %}
+<strong>{{ card.h3 }}</strong>
+{%- else %}
+<h3>{{ card.h3 }}</h3>
+{%- endif %}
+<p>{{ card.p | safe }}</p>
+</article>
+{%- endfor %}
+</div>
+{%- endmacro -%}
+<!doctype html>
+<html lang="{{ page.html_lang }}">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="{{ content.meta_description }}" name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="eMulebb" name="author"/>
+<meta content="{{ content.og_title }}" property="og:title"/>
+<meta content="{{ content.og_description }}" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="{{ page.url }}" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<link href="{{ page.url }}" rel="canonical"/>
+<link href="{{ site_base_url }}/sitemap.xml" rel="sitemap" type="application/xml"/>
+{%- for alternate in alternates -%}
+<link href="{{ alternate.url }}" hreflang="{{ alternate.hreflang }}" rel="alternate"/>
+{%- endfor %}
+<title>{{ content.title }}</title>
+<link href="{{ pico_cdn }}" rel="stylesheet"/>
+<link href="{{ page.stylesheet_href }}" rel="stylesheet"/>
+<script type="application/ld+json">
+      {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "eMule broadband edition",
+              "alternateName": "eMule BB",
+              "applicationCategory": "FileSharingApplication",
+              "operatingSystem": "Windows",
+              "url": "{{ page.url }}",
+              "codeRepository": "https://github.com/eMulebb/eMule",
+              "description": {{ content.structured_description | tojson }}
+      }
+    </script>
+</head>
+<body>
+<header class="site-header">
+<a aria-label="eMule broadband edition home" class="brand" href="#top">
+<span>
+<strong>eMule broadband edition</strong>
+<small>eMule BB</small>
+</span>
+</a>
+<nav aria-label="{{ content.nav_label }}">
+{%- for item in content.nav %}
+<a href="#{{ item.id }}">{{ item.label }}</a>
+{%- endfor %}
+</nav>
+</header>
+<main id="top">
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow">{{ content.hero.eyebrow }}</p>
+<h1>{{ content.hero.h1 }}</h1>
+<p class="lead">{{ content.hero.lead }}</p>
+<div aria-label="{{ content.project_links_label }}" class="actions">
+<a class="button primary" href="https://github.com/eMulebb/eMule">{{ content.hero.source }}</a>
+<a class="button secondary" href="#guide">{{ content.hero.guide }}</a>
+</div>
+</div>
+<aside aria-label="{{ content.product_summary_label }}" class="hero-panel">
+<p class="panel-kicker">{{ content.hero.panel_kicker }}</p>
+<h2>{{ content.hero.panel_h2 }}</h2>
+<p>{{ content.hero.panel_p }}</p>
+<div class="signal-list">
+{%- for signal in content.hero.signals %}
+<span>{{ signal }}</span>
+{%- endfor %}
+</div>
+</aside>
+</section>
+<section class="intro">
+<p>{{ content.intro | safe }}</p>
+</section>
+<section class="section motivation" id="why">
+{{ section_heading(content.why) }}
+{{ card_grid("eMule BB motivation", "motivation-grid", content.why.cards) }}
+</section>
+<section class="section" id="features">
+{{ section_heading(content.features) }}
+{{ card_grid("eMule broadband feature groups", "feature-table", content.features.cards) }}
+</section>
+<section class="section guide" id="guide">
+{{ section_heading(content.guide) }}
+<div class="guide-grid">
+{%- for card in content.guide.cards %}
+<article>
+<span>{{ "%02d"|format(loop.index) }}</span>
+<h3>{{ card.h3 }}</h3>
+<p>{{ card.p | safe }}</p>
+</article>
+{%- endfor %}
+</div>
+</section>
+<section class="section docs" id="docs">
+{{ section_heading(content.docs) }}
+<div class="doc-list">
+{%- for link in content.docs.links %}
+<a href="{{ link.href }}">
+<strong>{{ link.title }}</strong>
+<span>{{ link.text }}</span>
+</a>
+{%- endfor %}
+</div>
+</section>
+<section class="section automation" id="automation">
+<div>
+<p class="eyebrow">{{ content.automation.eyebrow }}</p>
+<h2>{{ content.automation.h2 }}</h2>
+</div>
+<div class="automation-copy">
+<p>{{ content.automation.p | safe }}</p>
+<div aria-label="{{ content.automation.pills_label }}" class="pill-list">
+{%- for pill in content.automation.pills %}
+<span>{{ pill }}</span>
+{%- endfor %}
+</div>
+</div>
+</section>
+<section class="section release" id="release">
+{{ section_heading(content.release) }}
+{{ card_grid("eMule BB release proof", "release-grid", content.release.cards, "strong") }}
+</section>
+<section class="section method" id="method">
+{{ section_heading(content.method) }}
+{{ card_grid("eMule BB implementation methods", "method-grid", content.method.cards) }}
+</section>
+<section class="section repos" id="repos">
+{{ section_heading(content.repos) }}
+<div class="repo-list">
+{%- for repo in content.repos.links %}
+<a href="{{ repo.href }}">
+<strong>{{ repo.title }}</strong>
+<span>{{ repo.text }}</span>
+</a>
+{%- endfor %}
+</div>
+</section>
+<section class="section team" id="team">
+{{ section_heading(content.team) }}
+<div class="team-grid">
+{%- for card in content.team.cards %}
+<article>
+<span>{{ "%02d"|format(loop.index) }}</span>
+<h3>{{ card.h3 }}</h3>
+<p>{{ card.p }}</p>
+</article>
+{%- endfor %}
+</div>
+</section>
+</main>
+<footer>
+<span>eMule broadband edition</span>
+<div aria-label="{{ content.footer_links_label }}" class="footer-links">
+{%- for locale in footer_locales %}
+        <a href="{{ locale.href }}">{{ locale.label }}</a>
+{%- endfor %}
+        <a href="https://github.com/eMulebb">GitHub</a>
+      </div>
+</footer>
+</body>
+</html>
