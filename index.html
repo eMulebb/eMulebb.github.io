@@ -383,18 +383,17 @@
 </footer>
 <script>
       (function () {
-        var root = document.documentElement;
         var button = document.querySelector(".menu-toggle");
         var nav = document.getElementById("primary-nav");
         if (!button || !nav) {
           return;
         }
-        root.classList.add("has-js");
         function setOpen(open) {
           nav.classList.toggle("is-open", open);
           button.setAttribute("aria-expanded", String(open));
           button.setAttribute("aria-label", open ? "Close primary navigation" : "Open primary navigation");
         }
+        setOpen(false);
         button.addEventListener("click", function () {
           setOpen(button.getAttribute("aria-expanded") !== "true");
         });

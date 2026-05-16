@@ -114,7 +114,7 @@ code {
 
 nav {
   grid-column: 1 / -1;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 8px;
   width: 100%;
@@ -124,11 +124,7 @@ nav {
   padding-bottom: 0;
 }
 
-.has-js nav {
-  display: none;
-}
-
-.has-js nav.is-open {
+nav.is-open {
   display: flex;
 }
 
@@ -547,7 +543,6 @@ footer {
     display: none;
   }
 
-  .has-js nav,
   nav {
     grid-column: auto;
     display: flex;
