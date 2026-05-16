@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import difflib
+import copy
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -205,8 +206,8 @@ CONTENT: dict[str, dict[str, Any]] = {
 def clone_base(key: str, overrides: dict[str, Any]) -> dict[str, Any]:
     """Create a localized content dictionary from explicit localized sections."""
 
-    merged = dict(CONTENT["en"])
-    merged.update(overrides)
+    merged = copy.deepcopy(CONTENT["en"])
+    merged.update(copy.deepcopy(overrides))
     return merged
 
 
