@@ -65,7 +65,10 @@
 <small>eMule BB</small>
 </span>
 </a>
-<nav aria-label="{{ content.nav_label }}">
+<button aria-controls="primary-nav" aria-expanded="false" aria-label="{{ content.menu.open_label }}" class="menu-toggle" type="button">
+<span class="menu-toggle-label">{{ content.menu.label }}</span>
+</button>
+<nav aria-label="{{ content.nav_label }}" id="primary-nav">
 {%- for item in content.nav %}
 <a href="#{{ item.id }}">{{ item.label }}</a>
 {%- endfor %}
@@ -182,5 +185,29 @@
         <a href="https://github.com/eMulebb">GitHub</a>
       </div>
 </footer>
+<script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".menu-toggle");
+        var nav = document.getElementById("primary-nav");
+        if (!button || !nav) {
+          return;
+        }
+        root.classList.add("has-js");
+        function setOpen(open) {
+          nav.classList.toggle("is-open", open);
+          button.setAttribute("aria-expanded", String(open));
+          button.setAttribute("aria-label", open ? {{ content.menu.close_label | tojson }} : {{ content.menu.open_label | tojson }});
+        }
+        button.addEventListener("click", function () {
+          setOpen(button.getAttribute("aria-expanded") !== "true");
+        });
+        nav.addEventListener("click", function (event) {
+          if (event.target && event.target.closest("a")) {
+            setOpen(false);
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

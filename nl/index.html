@@ -38,7 +38,10 @@
 <small>eMule BB</small>
 </span>
 </a>
-<nav aria-label="Hoofdnavigatie">
+<button aria-controls="primary-nav" aria-expanded="false" aria-label="Hoofdnavigatie openen" class="menu-toggle" type="button">
+<span class="menu-toggle-label">Menu</span>
+</button>
+<nav aria-label="Hoofdnavigatie" id="primary-nav">
 <a href="#why">Waarom</a>
 <a href="#features">Functies</a>
 <a href="#guide">Gids</a>
@@ -378,5 +381,29 @@
         <a href="https://github.com/eMulebb">GitHub</a>
       </div>
 </footer>
+<script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".menu-toggle");
+        var nav = document.getElementById("primary-nav");
+        if (!button || !nav) {
+          return;
+        }
+        root.classList.add("has-js");
+        function setOpen(open) {
+          nav.classList.toggle("is-open", open);
+          button.setAttribute("aria-expanded", String(open));
+          button.setAttribute("aria-label", open ? "Hoofdnavigatie sluiten" : "Hoofdnavigatie openen");
+        }
+        button.addEventListener("click", function () {
+          setOpen(button.getAttribute("aria-expanded") !== "true");
+        });
+        nav.addEventListener("click", function (event) {
+          if (event.target && event.target.closest("a")) {
+            setOpen(false);
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

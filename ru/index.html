@@ -38,7 +38,10 @@
 <small>eMule BB</small>
 </span>
 </a>
-<nav aria-label="Основная навигация">
+<button aria-controls="primary-nav" aria-expanded="false" aria-label="Открыть основную навигацию" class="menu-toggle" type="button">
+<span class="menu-toggle-label">Меню</span>
+</button>
+<nav aria-label="Основная навигация" id="primary-nav">
 <a href="#why">Зачем</a>
 <a href="#features">Возможности</a>
 <a href="#guide">Гайд</a>
@@ -378,5 +381,29 @@
         <a href="https://github.com/eMulebb">GitHub</a>
       </div>
 </footer>
+<script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".menu-toggle");
+        var nav = document.getElementById("primary-nav");
+        if (!button || !nav) {
+          return;
+        }
+        root.classList.add("has-js");
+        function setOpen(open) {
+          nav.classList.toggle("is-open", open);
+          button.setAttribute("aria-expanded", String(open));
+          button.setAttribute("aria-label", open ? "\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u043e\u0441\u043d\u043e\u0432\u043d\u0443\u044e \u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044e" : "\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043e\u0441\u043d\u043e\u0432\u043d\u0443\u044e \u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044e");
+        }
+        button.addEventListener("click", function () {
+          setOpen(button.getAttribute("aria-expanded") !== "true");
+        });
+        nav.addEventListener("click", function (event) {
+          if (event.target && event.target.closest("a")) {
+            setOpen(false);
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

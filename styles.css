@@ -2,7 +2,7 @@
   color-scheme: light;
   --bg: #f5f6f2;
   --ink: #15181d;
-  --muted: #27313a;
+  --muted: #1f252b;
   --line: #d7dad4;
   --panel: #ffffff;
   --panel-soft: #eef3f5;
@@ -31,7 +31,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 176px;
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -76,6 +76,8 @@ code {
   top: 0;
   z-index: 10;
   display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
   gap: 10px;
   padding: 10px 18px;
   border-bottom: 1px solid rgba(21, 24, 29, 0.12);
@@ -88,6 +90,7 @@ code {
   min-height: 44px;
   align-items: center;
   text-decoration: none;
+  min-width: 0;
 }
 
 .brand span {
@@ -110,13 +113,42 @@ code {
 }
 
 nav {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
   width: 100%;
   max-width: 100%;
   overflow: visible;
+  padding-top: 4px;
   padding-bottom: 0;
+}
+
+.has-js nav {
+  display: none;
+}
+
+.has-js nav.is-open {
+  display: flex;
+}
+
+.menu-toggle {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(21, 24, 29, 0.18);
+  border-radius: 8px;
+  margin: 0;
+  padding: 8px 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 nav a,
@@ -149,7 +181,7 @@ nav a:hover {
 }
 
 [id] {
-  scroll-margin-top: 176px;
+  scroll-margin-top: 72px;
 }
 
 .hero,
@@ -201,7 +233,7 @@ h3 {
 
 .lead {
   max-width: 720px;
-  color: #303740;
+  color: var(--muted);
   font-size: 1.12rem;
 }
 
@@ -264,7 +296,7 @@ h3 {
 .signal-list span {
   border: 1px solid var(--line);
   background: var(--panel-soft);
-  color: #27313a;
+  color: var(--muted);
 }
 
 .intro {
@@ -454,11 +486,11 @@ footer {
 
 @media (min-width: 560px) {
   html {
-    scroll-padding-top: 132px;
+    scroll-padding-top: 78px;
   }
 
   [id] {
-    scroll-margin-top: 132px;
+    scroll-margin-top: 78px;
   }
 
   h1 {
@@ -478,10 +510,6 @@ footer {
   .site-header {
     padding-right: 28px;
     padding-left: 28px;
-  }
-
-  nav {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   footer {
@@ -515,11 +543,19 @@ footer {
     align-items: center;
   }
 
+  .menu-toggle {
+    display: none;
+  }
+
+  .has-js nav,
   nav {
+    grid-column: auto;
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
     width: auto;
+    padding-top: 0;
   }
 
   nav a {

@@ -38,7 +38,10 @@
 <small>eMule BB</small>
 </span>
 </a>
-<nav aria-label="Główna nawigacja">
+<button aria-controls="primary-nav" aria-expanded="false" aria-label="Otwórz główną nawigację" class="menu-toggle" type="button">
+<span class="menu-toggle-label">Menu</span>
+</button>
+<nav aria-label="Główna nawigacja" id="primary-nav">
 <a href="#why">Dlaczego</a>
 <a href="#features">Funkcje</a>
 <a href="#guide">Przewodnik</a>
@@ -378,5 +381,29 @@
         <a href="https://github.com/eMulebb">GitHub</a>
       </div>
 </footer>
+<script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".menu-toggle");
+        var nav = document.getElementById("primary-nav");
+        if (!button || !nav) {
+          return;
+        }
+        root.classList.add("has-js");
+        function setOpen(open) {
+          nav.classList.toggle("is-open", open);
+          button.setAttribute("aria-expanded", String(open));
+          button.setAttribute("aria-label", open ? "Zamknij g\u0142\u00f3wn\u0105 nawigacj\u0119" : "Otw\u00f3rz g\u0142\u00f3wn\u0105 nawigacj\u0119");
+        }
+        button.addEventListener("click", function () {
+          setOpen(button.getAttribute("aria-expanded") !== "true");
+        });
+        nav.addEventListener("click", function (event) {
+          if (event.target && event.target.closest("a")) {
+            setOpen(false);
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

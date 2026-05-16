@@ -643,12 +643,27 @@ REPO_SECTION_COPY = {
     "tr": ("Açık workspace", "Ana depolar"),
 }
 
+MENU_COPY = {
+    "en": {"label": "Menu", "open_label": "Open primary navigation", "close_label": "Close primary navigation"},
+    "es": {"label": "Menú", "open_label": "Abrir navegación principal", "close_label": "Cerrar navegación principal"},
+    "pt_br": {"label": "Menu", "open_label": "Abrir navegação principal", "close_label": "Fechar navegação principal"},
+    "pt_pt": {"label": "Menu", "open_label": "Abrir navegação principal", "close_label": "Fechar navegação principal"},
+    "it": {"label": "Menu", "open_label": "Apri navigazione principale", "close_label": "Chiudi navigazione principale"},
+    "ru": {"label": "Меню", "open_label": "Открыть основную навигацию", "close_label": "Закрыть основную навигацию"},
+    "de": {"label": "Menü", "open_label": "Hauptnavigation öffnen", "close_label": "Hauptnavigation schließen"},
+    "fr": {"label": "Menu", "open_label": "Ouvrir la navigation principale", "close_label": "Fermer la navigation principale"},
+    "pl": {"label": "Menu", "open_label": "Otwórz główną nawigację", "close_label": "Zamknij główną nawigację"},
+    "nl": {"label": "Menu", "open_label": "Hoofdnavigatie openen", "close_label": "Hoofdnavigatie sluiten"},
+    "tr": {"label": "Menü", "open_label": "Ana gezinmeyi aç", "close_label": "Ana gezinmeyi kapat"},
+}
+
 
 def with_generated_links() -> None:
     """Populate repeated docs and repo link sections for every locale."""
 
     for page in PAGES:
         content = CONTENT[page.key]
+        content["menu"] = MENU_COPY[page.key]
         content["docs"]["eyebrow"], content["docs"]["h2"] = DOC_SECTION_COPY[page.key]
         content["docs"]["links"] = [
             {"href": href, "title": DOC_COPY[page.key][key][0], "text": DOC_COPY[page.key][key][1]}
