@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
   --bg: #f5f6f2;
-  --ink: #15181d;
-  --muted: #1f252b;
+  --ink: #000000;
+  --muted: #000000;
   --line: #d7dad4;
   --panel: #ffffff;
   --panel-soft: #eef3f5;
@@ -16,6 +16,13 @@
   --pico-font-size: 100%;
   --pico-line-height: 1.55;
   --pico-color: var(--ink);
+  --pico-muted-color: var(--ink);
+  --pico-h1-color: var(--ink);
+  --pico-h2-color: var(--ink);
+  --pico-h3-color: var(--ink);
+  --pico-h4-color: var(--ink);
+  --pico-h5-color: var(--ink);
+  --pico-h6-color: var(--ink);
   --pico-background-color: var(--bg);
   --pico-primary: var(--teal);
   --pico-primary-background: var(--teal);
@@ -41,6 +48,26 @@ body {
   color: var(--ink);
   font-family: var(--pico-font-family-sans-serif);
   letter-spacing: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+dt,
+dd,
+span,
+small,
+strong,
+em,
+a,
+button {
+  color: var(--ink);
 }
 
 body > header,
@@ -246,8 +273,9 @@ h3 {
 }
 
 .button.primary {
-  background: var(--teal);
-  color: #fff;
+  border: 1px solid var(--teal);
+  background: var(--panel-soft);
+  color: var(--ink);
 }
 
 .button.secondary {
@@ -429,13 +457,15 @@ h3 {
 .automation {
   display: grid;
   gap: 24px;
-  background: var(--dark);
-  color: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--ink);
 }
 
 .automation .eyebrow,
 .automation-copy p {
-  color: #cdd5d8;
+  color: var(--ink);
 }
 
 .automation-copy p {
@@ -444,8 +474,9 @@ h3 {
 }
 
 .pill-list span {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
 }
 
 .repos {
@@ -456,8 +487,9 @@ footer {
   display: grid;
   gap: 16px;
   padding: 28px 18px;
-  background: var(--ink);
-  color: #fff;
+  border-top: 1px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--ink);
 }
 
 .footer-links {
@@ -467,7 +499,7 @@ footer {
 }
 
 .footer-links a {
-  color: #fff;
+  color: var(--ink);
 }
 
 .stub-page {
