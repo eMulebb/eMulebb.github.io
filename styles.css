@@ -2,7 +2,7 @@
   color-scheme: light;
   --bg: #f5f6f2;
   --ink: #15181d;
-  --muted: #59626d;
+  --muted: #27313a;
   --line: #d7dad4;
   --panel: #ffffff;
   --panel-soft: #eef3f5;
@@ -31,7 +31,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 116px;
+  scroll-padding-top: 176px;
 }
 
 body {
@@ -110,30 +110,32 @@ code {
 }
 
 nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
+  width: 100%;
   max-width: 100%;
-  overflow-x: auto;
-  padding-bottom: 2px;
-  scrollbar-width: thin;
+  overflow: visible;
+  padding-bottom: 0;
 }
 
 nav a,
 .button {
   min-height: 46px;
   display: inline-flex;
-  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  padding: 10px 14px;
+  padding: 10px 12px;
   text-decoration: none;
   font-weight: 800;
-  white-space: nowrap;
 }
 
 nav a {
-  color: var(--muted);
+  width: 100%;
+  border: 1px solid rgba(21, 24, 29, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
 }
 
 nav a:hover {
@@ -141,8 +143,13 @@ nav a:hover {
   color: var(--ink);
 }
 
+.button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
 [id] {
-  scroll-margin-top: 116px;
+  scroll-margin-top: 176px;
 }
 
 .hero,
@@ -447,11 +454,11 @@ footer {
 
 @media (min-width: 560px) {
   html {
-    scroll-padding-top: 108px;
+    scroll-padding-top: 132px;
   }
 
   [id] {
-    scroll-margin-top: 108px;
+    scroll-margin-top: 132px;
   }
 
   h1 {
@@ -471,6 +478,10 @@ footer {
   .site-header {
     padding-right: 28px;
     padding-left: 28px;
+  }
+
+  nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   footer {
@@ -505,7 +516,17 @@ footer {
   }
 
   nav {
+    display: flex;
+    flex-wrap: nowrap;
     justify-content: flex-end;
+    width: auto;
+  }
+
+  nav a {
+    width: auto;
+    border: 0;
+    background: transparent;
+    white-space: nowrap;
   }
 
   .hero {
