@@ -208,7 +208,7 @@ Run these checks before committing and pushing:
 ```powershell
 python -m pip install -r requirements.txt
 python tools\render_pages.py --lastmod 2026-05-16 --check
-python ..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate
+python ..\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate
 git diff --check
 rg -n "emule-logo|Logo\.jpg|<img|\.jpg|\.png|\.gif|favicon" index.html styles.css ar-ae eu bg ca cs da el es ast et fa fi br pt-br pt-pt gl he hu it ja ko lt lv mt nb ru de fr pl nl nn ro sl sq sv tr uk ug-cn ca-valencia ca-valencia-racv vi zh-cn zh-tw languages
 ```
@@ -238,7 +238,7 @@ foreach ($file in $files) {
     ForEach-Object { $_.Groups[1].Value } |
     Sort-Object -Unique
   foreach ($path in $urls) {
-    $local = Join-Path '..\eMulebb-workspace\repos\eMule-tooling' ($path -replace '/', '\')
+    $local = Join-Path '..\eMule-tooling' ($path -replace '/', '\')
     if (-not (Test-Path -LiteralPath $local)) {
       throw "Missing linked doc: ${file}: $path"
     }

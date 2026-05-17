@@ -36,13 +36,13 @@ publishing-policy changes.
 ## Supporting Tooling
 
 - Page production and validation helpers are tracked in
-  `..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py`.
+  `..\eMule-tooling\helpers\pages-site-tools.py`.
 - Use `python -m pip install -r requirements.txt` when the local Python
   environment does not already have the renderer dependencies.
 - Use `python tools\render_pages.py --lastmod YYYY-MM-DD` to regenerate static
   pages and `python tools\render_pages.py --lastmod YYYY-MM-DD --check` to
   confirm committed HTML is up to date with the templates.
-- Use `python ..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate`
+- Use `python ..\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate`
   before publishing locale, metadata, sitemap, asset-policy, or navigation
   changes.
 - Use the renderer to regenerate `sitemap.xml` from the canonical locale table.

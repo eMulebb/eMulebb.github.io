@@ -21,5 +21,5 @@ python tools\render_pages.py --lastmod 2026-05-16 --check
 Run the validation helper before publishing:
 
 ```powershell
-python ..\eMulebb-workspace\repos\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate
+python ..\eMule-tooling\helpers\pages-site-tools.py --pages-root . validate
 ```
