@@ -181,11 +181,11 @@ def s(eyebrow: str, h2: str, p: str = "") -> dict[str, Any]:
 
 CONTENT: dict[str, dict[str, Any]] = {
     "en": {
-        "title": "eMule broadband edition | eMule BB",
-        "meta_description": "eMule broadband edition, or eMule BB, is a modern eMule build for broadband upload control, automated testing, improved performance defaults, large shared libraries, REST automation, eD2K, Kad, and power-user workflows.",
-        "og_title": "eMule broadband edition | eMule BB",
-        "og_description": "Modern eMule for broadband upload control, VPN/interface binding, improved performance defaults, large libraries, REST automation, eD2K/Kad compatibility, and release-grade validation. First public release 0.7.3 is planned and not yet released.",
-        "structured_description": "Modern eMule for broadband upload control, automated testing, improved performance defaults, large shared libraries, REST automation, eD2K/Kad compatibility, and power-user workflows. The first public release is planned as 0.7.3 and is not yet released.",
+        "title": "Modern eMule 2026 | eMule broadband edition",
+        "meta_description": "Modern eMule for 2026: eMule BB adds broadband upload control, automated testing, performance defaults, large libraries, REST automation, eD2K, and Kad.",
+        "og_title": "Modern eMule 2026 | eMule broadband edition",
+        "og_description": "eMule BB is a modern eMule line for 2026 power users: broadband upload control, automated testing, performance-minded defaults, large libraries, REST automation, and eD2K/Kad compatibility.",
+        "structured_description": "Modern eMule for 2026 with broadband upload control, automated testing, performance-minded defaults, large shared libraries, REST automation, eD2K/Kad compatibility, and power-user workflows. The first public release is planned as 0.7.3 and is not yet released.",
         "nav_label": "Primary navigation",
         "project_links_label": "Project links",
         "product_summary_label": "eMule BB product summary",
@@ -200,9 +200,9 @@ CONTENT: dict[str, dict[str, Any]] = {
             {"id": "repos", "label": "Repos"},
         ],
         "hero": {
-            "eyebrow": "Classic eMule, tuned for modern broadband",
-            "h1": "eMule BB keeps eD2K and Kad useful for serious users.",
-            "lead": "A power-user eMule for fast upload links, large shared libraries, always-on Windows sessions, tested release evidence, and local controller workflows without abandoning the familiar desktop app.",
+            "eyebrow": "Modern eMule for 2026, tuned for broadband",
+            "h1": "eMule BB keeps eD2K and Kad useful for modern power users.",
+            "lead": "A 2026-ready eMule for fast upload links, large shared libraries, always-on Windows sessions, tested release evidence, and local controller workflows without abandoning the familiar desktop app.",
             "source": "Source",
             "guide": "Product guide",
             "panel_kicker": "Product posture",

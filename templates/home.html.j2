@@ -34,6 +34,7 @@
 <meta content="{{ content.og_description }}" property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="{{ page.url }}" property="og:url"/>
+<meta content="eMule broadband edition" property="og:site_name"/>
 <meta content="summary" name="twitter:card"/>
 <link href="{{ page.url }}" rel="canonical"/>
 <link href="{{ site_base_url }}/sitemap.xml" rel="sitemap" type="application/xml"/>
@@ -64,6 +65,17 @@
               "description": {{ content.structured_description | tojson }}
       }
     </script>
+{%- if page.directory == "" %}
+<script type="application/ld+json">
+      {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "eMule broadband edition",
+              "alternateName": ["eMule BB", "emulebb"],
+              "url": "{{ site_base_url }}/"
+      }
+    </script>
+{%- endif %}
 </head>
 <body>
 <header class="site-header">
