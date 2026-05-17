@@ -227,7 +227,7 @@ CONTENT: dict[str, dict[str, Any]] = {
                 c("Performance and scale", "Modern defaults for large sessions", "Higher socket buffers, queue/source limits, file buffering, timeout defaults, recursive share sync, and long-path guidance target current Windows systems and large libraries."),
                 c("Classic network", "eD2K and Kad stay first", "Server, global, and Kad search remain the native foundation, with Kad identity tracking, bad-node handling, cleanup, and timing work kept inside compatibility boundaries."),
                 c("Automation", "REST and controller workflows", "Authenticated JSON endpoints cover transfers, searches, shared files, servers, Kad, logs, categories, uploads, statistics, preferences, and controlled shutdown from trusted local tools."),
-                c("Release discipline", "Evidence before public packages", "The planned <code>0.7.3</code> beta depends on native tests, REST contracts, live controller lanes, network adversity, packaging, and x64/ARM64 rehearsals."),
+                c("Release discipline", "Evidence before public packages", "The planned <code>0.7.3</code> beta depends on hosted fast harness CI, native tests, REST contracts, live controller lanes, network adversity, packaging, and x64/ARM64 rehearsals."),
             ],
         },
         "guide": {
@@ -253,9 +253,10 @@ CONTENT: dict[str, dict[str, Any]] = {
             "pills": ["Transfers", "Searches", "Servers", "Kad", "Shared files", "Uploads", "Categories", "Logs", "Statistics", "Preferences"],
         },
         "release": {
-            **s("Release posture", "Public release 0.7.3 is planned, gated, and not yet released"),
+            **s("Testing and release proof", "Public release 0.7.3 is planned, heavily tested, and not yet released"),
             "cards": [
                 c("", "Current status", "The first public release target is <code>0.7.3</code>. It is not yet released. Final proof is currently paused by operator direction, and public status stays tied to the active release docs."),
+                c("", "Hosted fast CI", "The <a href=\"https://github.com/eMulebb/eMule-build-tests/actions/workflows/fast-harness-ci.yml\">Fast Harness CI</a> lane installs the shared Python harness and runs the default non-live, non-native pytest suite on pushes and pull requests."),
                 c("", "Build and package proof", "Required proof covers workspace validation, Debug and Release x64 app builds, Release ARM64 app builds, test binaries, package generation, clean-worktree checks, and recorded SHA-256 hashes."),
                 c("", "Behavior proof", "Test gates cover native suites, REST contract and OpenAPI drift, malformed requests, UI automation, live controller-surface E2E, full Release x64 live E2E, and network-adversity scenarios."),
                 c("", "Controller proof", "aMuTorrent, Prowlarr, Radarr, Sonarr, and qBittorrent-compatible adapter lanes prove that automation works without weakening the native <code>/api/v1</code> contract."),
@@ -424,7 +425,7 @@ def make_stock_locale_content(t: dict[str, Any]) -> dict[str, Any]:
         "guide": {**s(t["nav"][2], t["guide"]), "cards": [c("", t["keep"], t["intro"]), c("", t["control"], t["lead"]), c("", t["docs"], t["docs"]), c("", t["automation"], t["automation"]), c("", "0.7.3", t["release"]), c("", t["product_guide"], t["docs"])]},
         "docs": {**s(t["nav"][3], t["docs"]), "links": []},
         "automation": {"eyebrow": t["nav"][4], "h2": t["automation"], "p": f"{t['automation']} <code>/api/v1</code>, JSON, <code>X-API-Key</code>.", "pills_label": "REST API", "pills": ["Transfers", "Searches", "Servers", "Kad", "Shared files", "Uploads", "Logs", "Preferences"]},
-        "release": {**s(t["nav"][5], t["release"]), "cards": [c("", "0.7.3", t["release"]), c("", t["proof"], t["proof"]), c("", "Live E2E", t["proof"]), c("", "eD2K/Kad", t["keep"]), c("", "Status", t["release"])]},
+        "release": {**s(t["nav"][5], t["release"]), "cards": [c("", "0.7.3", t["release"]), c("", "Fast CI", t["proof"]), c("", t["proof"], t["proof"]), c("", "Live E2E", t["proof"]), c("", "eD2K/Kad", t["keep"]), c("", "Status", t["release"])]},
         "method": {**s(t["method"], t["method"], t["intro"]), "cards": [c("eD2K/Kad", t["keep"], t["keep"]), c("Upload", t["control"], t["control"]), c("REST", "REST API", t["automation"]), c("Release", t["proof"], t["release"])]},
         "repos": {**s(t["nav"][6], t["repos"]), "links": []},
         "team": {**s(t["team"], t["team"]), "cards": [c("", t["control"], t["control"]), c("", "Kad", t["keep"]), c("", t["proof"], t["proof"])]},
