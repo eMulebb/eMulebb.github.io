@@ -187,7 +187,7 @@
         "cards": [
           {
             "h3": "Aktueller Stand",
-            "p": "Das erste öffentliche Ziel ist <code>0.7.3</code>. Es ist noch nicht veröffentlicht. Der finale Nachweis ist durch Operator-Vorgabe pausiert, der öffentliche Stand bleibt an aktive Release-Dokumente gebunden.",
+            "p": "Das erste öffentliche Ziel ist <code>0.7.3</code>. Es ist noch nicht veröffentlicht. Der finale Nachweis läuft, der öffentliche Stand bleibt an aktive Release-Dokumente gebunden.",
             "span": ""
           },
           {
@@ -520,7 +520,7 @@
         "cards": [
           {
             "h3": "Estado actual",
-            "p": "El primer objetivo público es <code>0.7.3</code>. Aún no se ha publicado. La prueba final está pausada por dirección del operador y el estado público sigue ligado a los documentos activos.",
+            "p": "El primer objetivo público es <code>0.7.3</code>. Aún no se ha publicado. La prueba final está en curso y el estado público sigue ligado a los documentos activos.",
             "span": ""
           },
           {
@@ -853,7 +853,7 @@
         "cards": [
           {
             "h3": "État actuel",
-            "p": "La première cible publique est <code>0.7.3</code>. Elle n'est pas encore publiée. La preuve finale est suspendue par consigne opérateur et l'état public reste lié aux documents actifs.",
+            "p": "La première cible publique est <code>0.7.3</code>. Elle n'est pas encore publiée. La preuve finale est en cours et l'état public reste lié aux documents actifs.",
             "span": ""
           },
           {
@@ -1186,7 +1186,7 @@
         "cards": [
           {
             "h3": "Stato attuale",
-            "p": "Il primo target pubblico è <code>0.7.3</code>. Non è ancora uscito. La prova finale è in pausa su indicazione dell'operatore e lo stato pubblico resta legato ai documenti attivi.",
+            "p": "Il primo target pubblico è <code>0.7.3</code>. Non è ancora uscito. La prova finale è in corso e lo stato pubblico resta legato ai documenti attivi.",
             "span": ""
           },
           {
@@ -1519,7 +1519,7 @@
         "cards": [
           {
             "h3": "Huidige status",
-            "p": "Het eerste publieke doel is <code>0.7.3</code>. Het is nog niet uitgebracht. Het finale bewijs is gepauzeerd door operator-richting en de publieke status blijft gekoppeld aan actieve release docs.",
+            "p": "Het eerste publieke doel is <code>0.7.3</code>. Het is nog niet uitgebracht. Het finale bewijs loopt en de publieke status blijft gekoppeld aan actieve release docs.",
             "span": ""
           },
           {
@@ -1852,7 +1852,7 @@
         "cards": [
           {
             "h3": "Aktualny status",
-            "p": "Pierwszy publiczny target to <code>0.7.3</code>. Nie został jeszcze wydany. Końcowy dowód jest wstrzymany decyzją operatora, a publiczny status pozostaje związany z aktywnymi dokumentami.",
+            "p": "Pierwszy publiczny target to <code>0.7.3</code>. Nie został jeszcze wydany. Końcowy dowód jest w toku, a publiczny status pozostaje związany z aktywnymi dokumentami.",
             "span": ""
           },
           {
@@ -2185,7 +2185,7 @@
         "cards": [
           {
             "h3": "Estado atual",
-            "p": "O primeiro alvo público é <code>0.7.3</code>. Ele ainda não foi lançado. A prova final está pausada por direção do operador e o status público segue os documentos ativos.",
+            "p": "O primeiro alvo público é <code>0.7.3</code>. Ele ainda não foi lançado. A prova final está em andamento e o status público segue os documentos ativos.",
             "span": ""
           },
           {
@@ -2518,7 +2518,7 @@
         "cards": [
           {
             "h3": "Estado actual",
-            "p": "O primeiro alvo público é <code>0.7.3</code>. Ainda não foi lançado. A prova final está pausada por orientação do operador e o estado público segue os documentos activos.",
+            "p": "O primeiro alvo público é <code>0.7.3</code>. Ainda não foi lançado. A prova final está em curso e o estado público segue os documentos activos.",
             "span": ""
           },
           {
@@ -2851,7 +2851,7 @@
         "cards": [
           {
             "h3": "Текущий статус",
-            "p": "Первый публичный target — <code>0.7.3</code>. Он еще не выпущен. Финальное доказательство приостановлено по указанию оператора, а публичный статус связан с активными release docs.",
+            "p": "Первый публичный target — <code>0.7.3</code>. Он еще не выпущен. Финальное доказательство выполняется, а публичный статус связан с активными release docs.",
             "span": ""
           },
           {
@@ -3184,7 +3184,7 @@
         "cards": [
           {
             "h3": "Güncel durum",
-            "p": "İlk public hedef <code>0.7.3</code>. Henüz yayınlanmadı. Final kanıt operatör yönlendirmesiyle duraklatıldı ve public durum aktif release docs'a bağlı kalır.",
+            "p": "İlk public hedef <code>0.7.3</code>. Henüz yayınlanmadı. Final kanıt devam ediyor ve public durum aktif release docs'a bağlı kalır.",
             "span": ""
           },
           {
