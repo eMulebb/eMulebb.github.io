@@ -22,6 +22,12 @@ backlog. Those live in the public `eMule-tooling` docs.
   and not yet released until the release docs and user confirmation say otherwise.
 - Feature details should prefer durable reference docs such as:
   - `docs/reference/GUIDE-EMULEBB.md`
+  - `docs/reference/DEVELOPMENT-GUIDE.md`
+  - `docs/reference/GUIDE-SETUP.md`
+  - `docs/reference/GUIDE-NETWORK.md`
+  - `docs/reference/GUIDE-DOWNLOADS-SEARCH.md`
+  - `docs/reference/GUIDE-SHARING.md`
+  - `docs/reference/GUIDE-CONTROLLERS-REST.md`
   - `docs/reference/FEATURE-BROADBAND.md`
   - `docs/reference/FEATURE-MODERN-LIMITS.md`
   - `docs/reference/FEATURE-KAD.md`
@@ -104,6 +110,10 @@ model:
 Before adding or changing a feature entry:
 
 - Confirm the claim against `eMule-tooling` docs or the relevant source repo.
+- Refresh `docs/reference/GUIDE-EMULEBB.md` and focused guide chapters first
+  when the homepage is summarizing newly landed behavior.
+- Use `docs/reference/DEVELOPMENT-GUIDE.md` for the recurring product-guide and
+  development-guide refresh workflow.
 - Avoid ambiguous labels like "modernized" unless the concrete behavior is named.
 - If a feature is not landed, documented, or source-confirmed, keep it out of
   homepage feature copy.
